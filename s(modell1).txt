@@ -1,0 +1,6 @@
+n1(SPECIALIST1)={SPECIALIST, 0 , {<responsible,COMPOSITE>,<visible,COMPOSITE>,<visible,CONTROL>,<modifiable,CONTROL>,<modifiable,SIGNAL>}}
+n1(COMPOSITE1)={COMPOSITE, {<responsible,SPECIALIST>,<modifiable,SPECIALIST>} , {<submodules,COMPOSITE>,<submodules,CONTROL>}}
+n1(COMPOSITE2)={COMPOSITE, {<submodules,COMPOSITE>,<visible,SPECIALIST>} , <consumes,SIGNAL>}
+n1(CONTROL1)=n1(CONTROL2)={CONTROL, {<visible,SPECIALIST>,<submodules,COMPOSITE>} , 0}
+n1(CONTROL3)={CONTROL, {<modifiable,SPECIALIST>,<submodules,COMPOSITE>} , <provides,SIGNAL>}
+n1(SIGNAL1)={SIGNAL, {<modifiable,SPECIALIST>,<consumes,COMPOSITE>,<provides,CONTROL>}, 0}
