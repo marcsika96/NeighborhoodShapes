@@ -131,26 +131,26 @@ fact{
 abstract sig NodeShape {
 	objects : set EObject
 }
-one sig S2,S3,S4,S5,S6 extends NodeShape {
+one sig S2,S3,S4,S5 extends NodeShape {
 
 }
 fact {
 	all o:EObject {
 		(o in S2.objects <=> S2[o])
-and (o in S3.objects <=> S3[o])
-and (o in S4.objects <=> S4[o])
-and (o in S5.objects <=> S5[o])
-and (o in S6.objects <=> S6[o])
-}
-}
+	and (o in S3.objects <=> S3[o])
+	and (o in S4.objects <=> S4[o])
+	and (o in S5.objects <=> S5[o])
 
+}
+}
+/*
 pred S1[spec: Specialist]{
 	spec in Specialist and
-	some comp1, comp2 : Composite, control1, control2 : Control, signal : Signal {
-		comp1 in spec.visible and 
+	some comp1/*, comp2*//* : Composite, /*control1,*//* control2 : Control, signal : Signal {
+--		comp1 in spec.visible and 
 		comp1 in spec.responsibility and
-		comp2 in spec.visible and 
-		control1 in spec.visible  and 
+--		comp2 in spec.visible and 
+--		control1 in spec.visible  and 
 		control2 in spec.modifiable and 
 		signal in spec.modifiable 
 		}
@@ -168,6 +168,7 @@ pred S2 [signal : EObject]{
 
 pred S3 [comp1 : EObject]{
 	comp1 in Composite and
+	comp1.protectedIP in False and
 	some comp2 : Composite, control : Control, spec : Specialist{
 		comp2 in comp1.submodules and 
 		control in comp1. submodules and 
@@ -176,24 +177,23 @@ pred S3 [comp1 : EObject]{
 }
 //TODO: comp2.submodules emptiing
 pred S4 [comp2 : EObject]{
-	comp2 in Composite
-and
-	(some comp1 : Composite, signal : Signal,  spec : Specialist  {
-		comp2 in comp1.submodules and
-		signal in comp2.consumes and
-		comp2 in spec.visible
-		})
-//and 
-//(
+	comp2 in Composite and
 -------ez az a rész ami nem jó valamiért
-//	 comp2.submodules = none ) 
+	comp2.submodules = none and 
+	(some comp1 : Composite, signal : Signal/*,  spec : Specialist*/ /* {
+		comp2 in comp1.submodules and
+		signal in comp2.consumes --and
+--		comp2 in spec.visible
+		})
+
 }
 
 pred S5 [control1 : EObject] {
 	control1 in Control and
-	some comp : Composite,  spec : Specialist{
-		control1 in spec.visible and
-		control1 in comp.submodules
+	some comp : Composite  /*, spec : Specialist*//*{
+--		control1 in spec.visible and
+		control1 in comp.submodules and 
+		control1.provides = none
 		}
 }
 
@@ -226,11 +226,83 @@ fact { some object6 : EObject |
 	 S6[object6]
 }
 
+fact { some object1 , object2 : EObject | S3[object1] and S5[object2] and (object2 in object1.submodules)}
+
 //fact { some o: EObject  | S4[o] }
 
 fact { all spec : Specialist | 	S1[spec]}
 
+*/
 
+pred S1[spec: Specialist]{
+	spec in Specialist and
+	some comp : Composite, control : Control, signal : Signal { 
+		comp in spec.responsibility and
+		control in spec.modifiable and 
+		signal in spec.modifiable 
+		}
+}
 
+pred S2 [comp : EObject]{
+	comp in Composite and
+	comp.protectedIP in True and
+	some comp2 : Composite {
+		comp2 in comp.submodules and 
+		comp.provides = none and
+		comp.consumes = none 
+		}
+}
 
-run {} for exactly 7 EObject, 1 Specialist
+pred S3 [comp : EObject]{
+	comp in Composite and
+	comp.protectedIP in False and
+	some comp2 : Composite, spec : Specialist, control : Control {
+		comp in comp2.submodules and 
+		comp in spec.responsibility and
+		control in comp.submodules and 
+		comp.provides = none and
+		comp.consumes = none 
+		}
+}
+
+pred S4 [control : EObject] {
+	control in Control and
+	some comp : Composite , spec : Specialist, signal : Signal{
+		control in spec.modifiable and
+		control in comp.submodules and 
+		signal in control.provides and 
+ 		control.consumes = none 
+		}
+}
+
+pred S5 [signal : EObject]{
+	signal in Signal and
+	some control : Control{
+		signal in control.provides and
+		signal.^consumes = none
+	}
+}
+
+fact { all object : EObject |
+	 S2[object] or S3[object] or S4[object] or S5[object]
+}
+
+fact { all spec : Specialist | 	S1[spec]}
+
+ 
+
+run {} for exactly 5 EObject, exactly 1 Specialist
+run {} for exactly 6 EObject, exactly 1 Specialist
+run {} for exactly 7 EObject, exactly 1 Specialist
+run {} for exactly 8 EObject, exactly 1 Specialist
+run {} for exactly 9 EObject, exactly 1 Specialist
+run {} for exactly 10 EObject, exactly 1 Specialist
+run {} for exactly 11 EObject, exactly 1 Specialist
+run {} for exactly 12 EObject, exactly 1 Specialist
+run {} for exactly 13 EObject, exactly 1 Specialist
+run {} for exactly 14 EObject, exactly 1 Specialist
+run {} for exactly 15 EObject, exactly 1 Specialist
+run {} for exactly 16 EObject, exactly 1 Specialist
+run {} for exactly 17 EObject, exactly 1 Specialist
+run {} for exactly 18 EObject, exactly 1 Specialist
+run {} for exactly 19 EObject, exactly 1 Specialist
