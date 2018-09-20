@@ -143,96 +143,7 @@ fact {
 
 }
 }
-/*
-pred S1[spec: Specialist]{
-	spec in Specialist and
-	some comp1/*, comp2*//* : Composite, /*control1,*//* control2 : Control, signal : Signal {
---		comp1 in spec.visible and 
-		comp1 in spec.responsibility and
---		comp2 in spec.visible and 
---		control1 in spec.visible  and 
-		control2 in spec.modifiable and 
-		signal in spec.modifiable 
-		}
-}
 
-
-pred S2 [signal : EObject]{
-	signal in Signal and
-	some control : Control, comp : Composite, spec : Specialist{
-		signal in control.provides and
-		signal in comp.consumes and
-		signal in spec.modifiable
-	}
-}
-
-pred S3 [comp1 : EObject]{
-	comp1 in Composite and
-	comp1.protectedIP in False and
-	some comp2 : Composite, control : Control, spec : Specialist{
-		comp2 in comp1.submodules and 
-		control in comp1. submodules and 
-		comp1 in spec.responsibility 
-		}
-}
-//TODO: comp2.submodules emptiing
-pred S4 [comp2 : EObject]{
-	comp2 in Composite and
--------ez az a rész ami nem jó valamiért
-	comp2.submodules = none and 
-	(some comp1 : Composite, signal : Signal/*,  spec : Specialist*/ /* {
-		comp2 in comp1.submodules and
-		signal in comp2.consumes --and
---		comp2 in spec.visible
-		})
-
-}
-
-pred S5 [control1 : EObject] {
-	control1 in Control and
-	some comp : Composite  /*, spec : Specialist*//*{
---		control1 in spec.visible and
-		control1 in comp.submodules and 
-		control1.provides = none
-		}
-}
-
-pred S6 [control2 : EObject] {
-	control2 in Control and
-	some comp : Composite,  spec : Specialist, signal : Signal{
-		control2 in spec.modifiable and
-		control2 in comp.submodules and
-		signal in control2.provides
-		}
-}
-
-fact { all object : EObject |
-	 S2[object] or S3[object] or S4[object] or S5[object] or S6[object]
-}
-
-fact { some object2 : EObject |
-	 S2[object2]
-}
-fact { some object3 : EObject |
-	 S3[object3]
-}
-fact { some object4 : EObject |
-	 S4[object4]
-}
-fact { some object5 : EObject |
-	 S5[object5]
-}
-fact { some object6 : EObject |
-	 S6[object6]
-}
-
-fact { some object1 , object2 : EObject | S3[object1] and S5[object2] and (object2 in object1.submodules)}
-
-//fact { some o: EObject  | S4[o] }
-
-fact { all spec : Specialist | 	S1[spec]}
-
-*/
 
 pred S1[spec: Specialist]{
 	spec in Specialist and
@@ -277,14 +188,16 @@ pred S4 [control : EObject] {
 
 pred S5 [signal : EObject]{
 	signal in Signal and
-	some control : Control{
-		signal in control.provides and
-		signal.^consumes = none
-	}
+	(some control : Control{
+		signal in control.provides 
+	})and
+	(no modul : Module { 
+		signal in modul.consumes
+	 })
 }
 
-fact { all object : EObject |
-	 S2[object] or S3[object] or S4[object] or S5[object]
+fact { some object : EObject |
+	 !(S2[object]) and !(S3[object]) and !(S4[object]) and !(S5[object])
 }
 
 fact { all spec : Specialist | 	S1[spec]}
