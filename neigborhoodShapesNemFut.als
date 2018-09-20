@@ -126,12 +126,13 @@ fact{
 	} 
 }
 
-//shape constraints
+--shape megjelolo nyilacskak
 
 abstract sig NodeShape {
 	objects : set EObject
 }
-one sig S2,S3,S4,S5 extends NodeShape {
+--itt kell hozzáadni az uj shapet
+one sig S2,S3,S4,S5,S6,S7 extends NodeShape {
 
 }
 fact {
@@ -140,11 +141,14 @@ fact {
 	and (o in S3.objects <=> S3[o])
 	and (o in S4.objects <=> S4[o])
 	and (o in S5.objects <=> S5[o])
+	and (o in S6.objects <=> S6[o])
+	and (o in S7.objects <=> S7[o])
 
+--meg efolott kell hozzaadni az uj shapet
 }
 }
 
-
+--shape predikatumok!!!  
 pred S1[spec: Specialist]{
 	spec in Specialist and
 	some comp : Composite, control : Control, signal : Signal { 
@@ -157,23 +161,29 @@ pred S1[spec: Specialist]{
 pred S2 [comp : EObject]{
 	comp in Composite and
 	comp.protectedIP in True and
-	some comp2 : Composite {
+	(some comp2 : Composite {
 		comp2 in comp.submodules and 
 		comp.provides = none and
 		comp.consumes = none 
-		}
+		}) and
+	(no comp1 : Composite| comp in comp1.submodules) and
+	(no spec : Specialist {		
+		comp in spec.modifiable or 
+		comp in spec.responsibility
+	})
 }
 
 pred S3 [comp : EObject]{
 	comp in Composite and
 	comp.protectedIP in False and
-	some comp2 : Composite, spec : Specialist, control : Control {
+	(some comp2 : Composite, spec : Specialist, control : Control {
 		comp in comp2.submodules and 
 		comp in spec.responsibility and
 		control in comp.submodules and 
 		comp.provides = none and
 		comp.consumes = none 
-		}
+		}) and
+	(no spec2 : Specialist | comp in spec2.modifiable)
 }
 
 pred S4 [control : EObject] {
@@ -196,14 +206,61 @@ pred S5 [signal : EObject]{
 	 })
 }
 
-fact { some object : EObject |
-	 !(S2[object]) and !(S3[object]) and !(S4[object]) and !(S5[object])
+pred S6 [comp : EObject]{
+	comp in Composite and
+	comp.protectedIP in False and
+	(some comp1, comp2 : Composite {
+		comp in comp1.submodules and
+		comp2 in comp.submodules and 
+		comp.provides = none and
+		comp.consumes = none 
+		}) and
+	(no spec : Specialist {
+		comp in spec.modifiable or
+		comp in spec.responsibility})
 }
+
+pred S7 [comp : EObject]{
+	comp in Composite and
+	comp.protectedIP in True and
+	(some comp1, comp2 : Composite {
+		comp in comp1.submodules and
+		comp2 in comp.submodules and 
+		comp.provides = none and
+		comp.consumes = none 
+		}) and
+	(no spec : Specialist {
+		comp in spec.modifiable or 
+		comp in spec.responsibility})
+}
+
+--meg efolott kell hozzaadni a teljes shapet
+
+fact { some object : EObject |
+	!(S2[object]) and !(S3[object]) and !(S4[object]) and !(S5[object]) 
+ and 
+	!(S6[object]) and !(S7[object])
+
+--meg ebben a factben kell hozzaadni az uj shapet, hogy ne olyan is legyen
+}
+
+fact { some object : EObject | S2[object]}
+fact { some object : EObject | S3[object]}
+fact { some object : EObject | S4[object]}
+fact { some object : EObject | S5[object]}
+fact { some object : EObject | S6[object]}
+fact { some object : EObject | S7[object]}
+
+
+--meg itt kell uj factben hozzaadni az uj shapet, hogy legyen olyan 
+
+
 
 fact { all spec : Specialist | 	S1[spec]}
 
+--meg ebben a factben kell hozzaadni az uj specialist shapet
  
-
+/*
 run {} for exactly 5 EObject, exactly 1 Specialist
 run {} for exactly 6 EObject, exactly 1 Specialist
 run {} for exactly 7 EObject, exactly 1 Specialist
@@ -214,6 +271,7 @@ run {} for exactly 11 EObject, exactly 1 Specialist
 run {} for exactly 12 EObject, exactly 1 Specialist
 run {} for exactly 13 EObject, exactly 1 Specialist
 run {} for exactly 14 EObject, exactly 1 Specialist
+*/
 run {} for exactly 15 EObject, exactly 1 Specialist
 run {} for exactly 16 EObject, exactly 1 Specialist
 run {} for exactly 17 EObject, exactly 1 Specialist
