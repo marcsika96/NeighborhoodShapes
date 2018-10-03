@@ -13,10 +13,10 @@ VariableDeclaration, VariableDeclaration.name,
 MapLiteral, MapLiteral.entries,
 MapLiteralEntry, MapLiteralEntry.key, MapLiteralEntry.value,
 StringLiteral, StringLiteral.value, //itt tartok
-Return, Return.return, Return.distinct,
-ReturnBody,
-ReturnItems, ReturnItems.all,
-ReturnItem,
+Return, Return.return, Return.distinct, Return.body,
+ReturnBody,ReturnBody.returnItems,
+ReturnItems, ReturnItems.all,ReturnItems.items,
+ReturnItem,ReturnItem.alias, ReturnItem.expression,
 VariableRef, VariableRef.variableRef,
 SingleQuery,
 RegularQuery,
@@ -25,7 +25,6 @@ Statement,
 ReadingClause,
 Clause,
 AnonymousPatternPart,
-
 NodeLabels,
 Properties,
 Literal,
@@ -39,7 +38,7 @@ generate {
 	metamodel = target
 	//partial-model = { "platform:/resource/Generate/SinglePartQuery.xmi" }
 	number = 5
-	solver = AlloySolver
+	solver = ViatraSolver
 	config = {
 		log-level = normal
 		
