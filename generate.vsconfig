@@ -1,24 +1,36 @@
 import epackage "http://www.slizaa.org/neo4j/opencypher/OpenCypher"
 
 metamodel target  {
-	Cypher,	AllOptions,AllOptions.explain,AllOptions.profile, SinglePartQuery, Match, Match.optional,
-Pattern,
-PatternElement,
-NodePattern,
+Cypher, Cypher.statement, Cypher.statement,
+AllOptions,AllOptions.explain,AllOptions.profile,
+SinglePartQuery, SinglePartQuery.readingClauses, SinglePartQuery.return,
+Match, Match.optional, Match.pattern,
+Pattern, Pattern.patterns, 
+PatternPart,PatternPart.var,PatternPart.part,
+PatternElement,PatternElement.nodepattern,
+NodePattern, NodePattern.properties, NodePattern.variable,
 VariableDeclaration, VariableDeclaration.name,
-MapLiteral,
-MapLiteralEntry, MapLiteralEntry.key,
-StringLiteral, StringLiteral.value,
+MapLiteral, MapLiteral.entries,
+MapLiteralEntry, MapLiteralEntry.key, MapLiteralEntry.value,
+StringLiteral, StringLiteral.value, //itt tartok
 Return, Return.return, Return.distinct,
 ReturnBody,
 ReturnItems, ReturnItems.all,
 ReturnItem,
 VariableRef, VariableRef.variableRef,
-SingleQuery, RegularQuery,Query,Statement,
-ReadingClause, Clause,
-AnonymousPatternPart, PatternPart,
+SingleQuery,
+RegularQuery,
+Query,
+Statement,
+ReadingClause,
+Clause,
+AnonymousPatternPart,
+
 NodeLabels,
-Properties, Literal, Expression, PropertyExpression,
+Properties,
+Literal,
+Expression, 
+PropertyExpression,
 QueryOptions
 	
 }
@@ -27,7 +39,7 @@ generate {
 	metamodel = target
 	//partial-model = { "platform:/resource/Generate/SinglePartQuery.xmi" }
 	number = 5
-	solver = ViatraSolver
+	solver = AlloySolver
 	config = {
 		log-level = normal
 		
