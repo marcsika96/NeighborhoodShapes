@@ -1,0 +1,13 @@
+package validation
+
+//import epackage "http://www.slizaa.org/neo4j/opencypher/OpenCypher"
+import epackage "platform:/resource/GeneratorPlugin/model/OpenCypher.ecore"
+
+pattern hasReturn(q : SinglePartQuery, r : Return) {
+    SinglePartQuery.^return(q,r);
+}
+
+@Constraint(severity = "error", key ={q}, message ="error")
+pattern hasNoReturn(q : SinglePartQuery) {
+    neg find hasReturn(q,_);
+}
