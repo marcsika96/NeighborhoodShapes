@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExportRepresentationsAsImagesDialog">
+		<item value="SVG" key="ExportRepresentationsAsImagesDialog.imageFormat"/>
+		<list key="ExportRepresentationsAsImagesDialog.file">
+			<item value="C:\Users\user\Desktop"/>
+			<item value="C:\Users\user\Desktop\openCypher class diagram.svg"/>
+		</list>
+	</section>
+</section>

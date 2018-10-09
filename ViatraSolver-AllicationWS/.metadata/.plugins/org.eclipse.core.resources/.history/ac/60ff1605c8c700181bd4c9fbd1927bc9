@@ -1,0 +1,92 @@
+import epackage "http://www.slizaa.org/neo4j/opencypher/OpenCypher"
+
+metamodel target  {
+Cypher, Cypher.statement, Cypher.statement,
+AllOptions,AllOptions.explain,AllOptions.profile,
+SinglePartQuery, SinglePartQuery.readingClauses, SinglePartQuery.return,
+Match, Match.optional, Match.pattern,
+Pattern, Pattern.patterns, 
+PatternPart,PatternPart.var,PatternPart.part,
+PatternElement,PatternElement.nodepattern,
+NodePattern, NodePattern.properties, NodePattern.variable,
+VariableDeclaration, VariableDeclaration.name,
+MapLiteral, MapLiteral.entries,
+MapLiteralEntry, MapLiteralEntry.key, MapLiteralEntry.value,
+StringLiteral, StringLiteral.value, //itt tartok
+Return, Return.return, Return.distinct, Return.body,
+ReturnBody,ReturnBody.returnItems,
+ReturnItems, ReturnItems.all,ReturnItems.items,
+ReturnItem,ReturnItem.alias, ReturnItem.expression,
+VariableRef, VariableRef.variableRef,
+SingleQuery,
+RegularQuery,
+Query,
+Statement,
+ReadingClause,
+Clause,
+AnonymousPatternPart,
+NodeLabels,
+Properties,
+Literal,
+Expression, 
+PropertyExpression,
+QueryOptions
+	
+}
+
+metamodel target2  {
+Cypher, Cypher.statement, Cypher.statement,
+AllOptions,AllOptions.explain,AllOptions.profile,
+SinglePartQuery, SinglePartQuery.readingClauses, SinglePartQuery.return,
+Match, Match.optional, Match.pattern,
+Pattern, Pattern.patterns, 
+PatternPart,PatternPart.var,PatternPart.part,
+PatternElement,PatternElement.nodepattern,
+NodePattern, NodePattern.properties, NodePattern.variable,
+VariableDeclaration, VariableDeclaration.name,
+MapLiteral, MapLiteral.entries,
+MapLiteralEntry, MapLiteralEntry.key, MapLiteralEntry.value,
+StringLiteral, StringLiteral.value, //itt tartok
+Return, Return.return, Return.distinct, Return.body,
+ReturnBody,ReturnBody.returnItems,
+ReturnItems, ReturnItems.all,ReturnItems.items,
+ReturnItem,ReturnItem.alias, ReturnItem.expression,
+VariableRef, VariableRef.variableRef,
+SingleQuery,
+RegularQuery,
+Query,
+Statement,
+ReadingClause,
+Clause,
+AnonymousPatternPart,
+NodeLabel, NodeLabel.labelName,
+NodeLabels,
+Properties,
+Literal,
+Expression, 
+PropertyExpression,
+QueryOptions,
+Where, Where.expression,
+AndExpression,AndExpression.operator,AndExpression.left,AndExpression.right,
+ComparisonExpression,ComparisonExpression.operator,ComparisonExpression.left,ComparisonExpression.right,
+PropertyLookupExpression,
+PropertyLookup, PropertyLookup.propertyKeyName,PropertyLookup.propertyOperator,
+NumberLiteral,NumberLiteral.value
+
+
+	
+}
+
+generate {
+	metamodel = target
+	//partial-model = { "platform:/resource/Generate/SinglePartQuery.xmi" }
+	number = 5
+	solver = AlloySolver
+	config = {
+		log-level = normal
+		
+	}
+	scope = { # node += 5..10, # string += {"A"}, # int += { 1,2 } }
+	debug = "platform:/resource/Generate/debug"
+	output = "platform:/resource/Generate/models"
+}

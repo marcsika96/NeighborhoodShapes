@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openCypher:SinglePartQuery xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:openCypher="http://www.slizaa.org/neo4j/opencypher/OpenCypher" xsi:schemaLocation="http://www.slizaa.org/neo4j/opencypher/OpenCypher OpenCypher.ecore"/>

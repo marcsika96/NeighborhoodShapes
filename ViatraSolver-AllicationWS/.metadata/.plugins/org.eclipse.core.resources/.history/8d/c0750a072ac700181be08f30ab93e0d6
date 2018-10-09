@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<openCypher:Match xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:openCypher="http://www.slizaa.org/neo4j/opencypher/OpenCypher">
+  <pattern>
+    <patterns>
+      <var/>
+      <part xsi:type="openCypher:PatternElement">
+        <part>
+          <part>
+            <part>
+              <part xsi:type="openCypher:PatternElement"/>
+            </part>
+          </part>
+        </part>
+        <nodepattern/>
+      </part>
+    </patterns>
+  </pattern>
+</openCypher:Match>

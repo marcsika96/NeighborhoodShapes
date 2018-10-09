@@ -1,0 +1,8 @@
+package validation
+
+import epackage "platform:/resource/Generate/OpenCypher.ecore"
+
+pattern hasReturn(q : SinglePartQuery, r: Return) {
+    SinglePartQuery.return(q,r);
+}
+

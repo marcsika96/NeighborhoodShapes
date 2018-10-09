@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<openCypher:SinglePartQuery xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:openCypher="http://www.slizaa.org/neo4j/opencypher/OpenCypher">
+  <readingClauses xsi:type="openCypher:Match">
+    <pattern>
+      <patterns/>
+      <patterns xsi:type="openCypher:AnonymousPatternPart">
+        <var/>
+      </patterns>
+      <patterns/>
+    </pattern>
+  </readingClauses>
+  <readingClauses/>
+  <return/>
+</openCypher:SinglePartQuery>

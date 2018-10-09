@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<openCypher:Cypher xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:openCypher="http://www.slizaa.org/neo4j/opencypher/OpenCypher">
+  <statement xsi:type="openCypher:SinglePartQuery">
+    <readingClauses xsi:type="openCypher:Match"/>
+    <readingClauses xsi:type="openCypher:Match"/>
+    <readingClauses xsi:type="openCypher:Match"/>
+    <readingClauses xsi:type="openCypher:Match"/>
+    <return>
+      <body>
+        <returnItems>
+          <items/>
+        </returnItems>
+      </body>
+    </return>
+  </statement>
+</openCypher:Cypher>

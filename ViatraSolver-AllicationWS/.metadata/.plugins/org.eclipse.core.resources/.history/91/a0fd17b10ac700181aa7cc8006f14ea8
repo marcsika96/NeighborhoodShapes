@@ -1,0 +1,19 @@
+import epackage "http://www.slizaa.org/neo4j/opencypher/OpenCypher"
+
+metamodel target  {
+	SingleQuery,BooleanLiteral, BooleanLiteral.value
+}
+
+generate {
+	metamodel = target
+	partial-model = { "platform:/resource/Generate/SinglePartQuery.xmi" }
+	number = 5
+	solver = AlloySolver
+	config = {
+		log-level = normal
+		
+	}
+	scope = { # node += 5..10, # string += {"A"}, # int += { 1,2 } }
+	debug = "platform:/resource/Generate/debug"
+	output = "platform:/resource/Generate/models"
+}

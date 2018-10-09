@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<openCypher:ReturnItems xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:openCypher="http://www.slizaa.org/neo4j/opencypher/OpenCypher">
+  <items>
+    <expression xsi:type="openCypher:VariableRef" variableRef="//@items.1/@alias"/>
+    <alias/>
+  </items>
+  <items>
+    <expression/>
+    <alias/>
+  </items>
+</openCypher:ReturnItems>

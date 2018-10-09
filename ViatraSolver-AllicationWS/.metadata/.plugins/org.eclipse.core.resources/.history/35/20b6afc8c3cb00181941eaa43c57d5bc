@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<openCypher:PatternPart xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:openCypher="http://www.slizaa.org/neo4j/opencypher/OpenCypher">
+  <part xsi:type="openCypher:PatternElement">
+    <part>
+      <part xsi:type="openCypher:PatternElement">
+        <var/>
+      </part>
+    </part>
+    <nodepattern>
+      <variable/>
+    </nodepattern>
+  </part>
+</openCypher:PatternPart>

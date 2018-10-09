@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<openCypher:MapLiteral xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:openCypher="http://www.slizaa.org/neo4j/opencypher/OpenCypher">
+  <entries>
+    <value xsi:type="openCypher:MapLiteral"/>
+  </entries>
+  <entries>
+    <value xsi:type="openCypher:StringLiteral"/>
+  </entries>
+  <entries>
+    <value xsi:type="openCypher:VariableRef"/>
+  </entries>
+</openCypher:MapLiteral>

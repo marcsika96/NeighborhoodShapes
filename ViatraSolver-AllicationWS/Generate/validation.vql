@@ -1,0 +1,10 @@
+package validation
+
+import epackage "http://www.slizaa.org/neo4j/opencypher/OpenCypher"
+import epackage  
+
+pattern hasReturn(q : SinglePartQuery, r: Return) {
+    SinglePartQuery.return(q,r);
+}
+
+pa
