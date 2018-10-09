@@ -79,14 +79,17 @@ NumberLiteral,NumberLiteral.value
 
 generate {
 	metamodel = target
-	//partial-model = { "platform:/resource/Generate/SinglePartQuery.xmi" }
+	partial-model = { "platform:/resource/Generate/SinglePartQuery.xmi" }
 	number = 5
 	solver = ViatraSolver
 	config = {
 		log-level = normal
 		
 	}
-	scope = { # node += 5..10, # string += {"A"}, # int += { 1,2 } }
+	scope = {
+		# node += 5..10, # string += {"A"}, # int += { 1,2 },
+		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1 
+	}
 	debug = "platform:/resource/Generate/debug"
 	output = "platform:/resource/Generate/models"
 }
