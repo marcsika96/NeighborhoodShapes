@@ -11,3 +11,41 @@ pattern hasReturn(q : SinglePartQuery, r : Return) {
 pattern hasNoReturn(q : SinglePartQuery) {
     neg find hasReturn(q,_);
 }
+
+pattern hasMatch (q : SinglePartQuery, m: Match){
+	SinglePartQuery.readingClauses(q,m);
+}
+
+@Constraint(severity = "error", key ={q}, message ="error")
+pattern hasNoMatch(q : SinglePartQuery) {
+    neg find hasMatch(q,_);
+}
+
+pattern hasPattern(m : Match, p: Pattern){
+	Match.^pattern(m,p);
+}
+
+@Constraint(severity = "error", key ={m}, message ="error")
+pattern hasNoPattern(m : Match) {
+    neg find hasPattern(m,_);
+}
+
+pattern hasReturnItems(body: ReturnBody, items : ReturnItems){
+	ReturnBody.returnItems(body, items);
+}
+
+@Constraint(severity = "error", key ={body}, message ="error")
+pattern hasNoReturnItems(body : ReturnBody) {
+    neg find hasReturnItems(body,_);
+}
+
+pattern hasReturnItem(items : ReturnItems, item: ReturnItem){
+	ReturnItems.items(items, item);
+}
+
+@Constraint(severity = "error", key ={items}, message ="error")
+pattern hasNoReturnItem(items : ReturnItems) {
+    neg find hasReturnItem(items,_);
+}
+
+

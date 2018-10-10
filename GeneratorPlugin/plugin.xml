@@ -1,1 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><plugin/>
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="validation.Validation" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:validation.Validation" id="validation.Validation">
+      <query-specification fqn="validation.hasReturn"/>
+      <query-specification fqn="validation.hasNoReturn"/>
+      <query-specification fqn="validation.hasMatch"/>
+      <query-specification fqn="validation.hasNoMatch"/>
+      <query-specification fqn="validation.hasPattern"/>
+      <query-specification fqn="validation.hasNoPattern"/>
+    </group>
+  </extension>
+</plugin>
