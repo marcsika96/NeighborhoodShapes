@@ -10,6 +10,7 @@ import org.slizaa.neo4j.opencypher.openCypher.OpenCypherPackage
 import org.slizaa.neo4j.opencypher.openCypher.SinglePartQuery
 import org.slizaa.neo4j.opencypher.openCypher.OpenCypherFactory
 import org.slizaa.neo4j.opencypher.OpenCypherStandaloneSetup
+import org.slizaa.neo4j.opencypher.openCypher.Return
 
 class Translator {
 	def static void main(String[] args) {
@@ -59,6 +60,7 @@ class Translator {
 			val cypher = factory.createCypher
 			cypher.statement = model
 			cypher.queryOptions = factory.createAllOptions => [it.explain = false it.profile = false]
+			model.eAllContents.filter(Return).forEach[it.^return = "RETURN"]
 			resource.contents.add(cypher)
 			
 			try{

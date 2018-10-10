@@ -16,13 +16,17 @@
       </patterns>
     </pattern>
   </readingClauses>
-  <return return="A">
+  <return>
     <body>
       <returnItems>
         <items>
           <expression
-              xsi:type="openCypher:VariableRef"
-              variableRef="//@readingClauses.0/@pattern/@patterns.0/@nodepattern/@variable"/>
+              xsi:type="openCypher:VariableRef"/>
+          <alias/>
+        </items>
+        <items>
+          <expression/>
+          <alias/>
         </items>
       </returnItems>
     </body>

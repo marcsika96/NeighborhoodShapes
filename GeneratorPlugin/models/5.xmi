@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="ASCII"?>
 <openCypher:SinglePartQuery xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:openCypher="http://www.slizaa.org/neo4j/opencypher/OpenCypher" xsi:schemaLocation="http://www.slizaa.org/neo4j/opencypher/OpenCypher ../model/OpenCypher.ecore">
-  <readingClauses/>
   <readingClauses xsi:type="openCypher:Match">
-    <pattern/>
+    <pattern>
+      <patterns>
+        <var/>
+      </patterns>
+    </pattern>
   </readingClauses>
   <return>
     <body>
       <returnItems>
         <items>
-          <expression xsi:type="openCypher:VariableRef"/>
+          <expression xsi:type="openCypher:VariableRef" variableRef="//@readingClauses.0/@pattern/@patterns.0/@var"/>
+          <alias/>
+        </items>
+        <items>
+          <alias/>
+        </items>
+        <items>
+          <expression/>
+          <alias/>
         </items>
       </returnItems>
     </body>

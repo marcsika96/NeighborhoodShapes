@@ -59,7 +59,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Clause"/>
   <eClassifiers xsi:type="ecore:EClass" name="UpdatingClause" eSuperTypes="//Clause"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ReadingClause" eSuperTypes="//Clause"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadingClause" abstract="true" eSuperTypes="//Clause"/>
   <eClassifiers xsi:type="ecore:EClass" name="Command" eSuperTypes="//Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="CreateUniqueConstraint" eSuperTypes="//Command"/>
   <eClassifiers xsi:type="ecore:EClass" name="CreateNodePropertyExistenceConstraint" eSuperTypes="//Command"/>
@@ -125,7 +125,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="//Pattern" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1" eType="//Pattern" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hints" upperBound="-1" eType="//Hint" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="where" eType="//Where" containment="true"/>
   </eClassifiers>
@@ -199,16 +199,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="where" eType="//Where" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Return" eSuperTypes="//Clause">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="return">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="return" lowerBound="1" defaultValueLiteral="return">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="distinct">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="//ReturnBody" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" lowerBound="1" eType="//ReturnBody" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReturnBody">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="returnItems" eType="//ReturnItems" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnItems" lowerBound="1" eType="//ReturnItems" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="order" eType="//Order" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="skip" eType="//Skip" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="limit" eType="//Limit" containment="true"/>
@@ -217,11 +217,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="all">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1" eType="//ReturnItem" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" lowerBound="1" upperBound="-1" eType="//ReturnItem" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReturnItem">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="//Expression" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="alias" eType="//VariableDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alias" lowerBound="1" eType="//VariableDeclaration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Order">
     <eStructuralFeatures xsi:type="ecore:EReference" name="orderBy" upperBound="-1" eType="//SortItem" containment="true"/>
@@ -291,16 +291,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="var" lowerBound="1" eType="//VariableDeclaration" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="part" eType="//AnonymousPatternPart" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnonymousPatternPart" eSuperTypes="//PatternPart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AnonymousPatternPart" abstract="true" eSuperTypes="//PatternPart"/>
   <eClassifiers xsi:type="ecore:EClass" name="ShortestPathPattern" eSuperTypes="//AnonymousPatternPart //Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="patternElement" eType="//PatternElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PatternElement" eSuperTypes="//AnonymousPatternPart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nodepattern" eType="//NodePattern" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodepattern" lowerBound="1" eType="//NodePattern" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="chain" upperBound="-1" eType="//PatternElementChain" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NodePattern" eSuperTypes="//NodeLabels">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="//VariableDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1" eType="//VariableDeclaration" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" eType="//Properties" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PatternElementChain">
