@@ -48,30 +48,45 @@ pattern hasNoReturnItem(items : ReturnItems) {
     neg find hasReturnItem(items,_);
 }
 
+//patternPart validator 
 
 pattern hasPart (pp : PatternPart, app : AnonymousPatternPart){
 	PatternPart.part(pp , app);
+}
+
+pattern hasNoPart(pp : PatternPart) {
+    neg find hasPart(pp,_);
 }
 
 pattern hasVar (pp : PatternPart, varDec : VariableDeclaration){
 	PatternPart.^var(pp , varDec);
 }
 
-pattern isAnonimous (p : Pattern, app : AnonymousPatternPart){
-	Pattern.patterns(p, app);
-}
-
-
-pattern hasNoPart(pp : PatternPart) {
-    neg find hasPart(pp,_);
-}
-
 pattern hasNoVar(pp : PatternPart) {
     neg find hasVar(pp,_);
 }
 
-pattern isNotAnonimous(p : Pattern){
-	neg find isAnonimous(p, _);
+
+pattern notFilled(pp : PatternPart){
+	find hasNoVar(pp);
+}or{
+	find hasNoPart(pp);
 }
 
+pattern valid(pp : PatternPart){
+	AnonymousPatternPart(pp);
+	}or{
+	neg find notFilled(pp);	
+}
 
+@Constraint(severity = "error", key ={pp}, message ="error")
+pattern notValid(pp : PatternPart){
+	neg find valid(pp);
+}
+
+@Constraint(severity = "error", key ={pp}, message ="error")
+pattern anonimmegvar(pp : AnonymousPatternPart){
+	PatternPart.^var(pp, _);
+	AnonymousPatternPart(pp); 
+	
+}

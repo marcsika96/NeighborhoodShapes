@@ -7,6 +7,21 @@
       <query-specification fqn="validation.hasNoMatch"/>
       <query-specification fqn="validation.hasPattern"/>
       <query-specification fqn="validation.hasNoPattern"/>
+      <query-specification fqn="validation.hasReturnItems"/>
+      <query-specification fqn="validation.hasNoReturnItems"/>
+      <query-specification fqn="validation.hasReturnItem"/>
+      <query-specification fqn="validation.hasNoReturnItem"/>
+      <query-specification fqn="validation.hasPart"/>
+      <query-specification fqn="validation.hasVar"/>
+      <query-specification fqn="validation.isAnonimous"/>
+      <query-specification fqn="validation.hasNoPart"/>
+      <query-specification fqn="validation.hasNoVar"/>
+      <query-specification fqn="validation.isNotAnonimous"/>
+      <query-specification fqn="validation.notFilled"/>
+      <query-specification fqn="validation.notValid"/>
+      <query-specification fqn="validation.valid"/>
+      <query-specification fqn="validation.totallyValidPattern"/>
+      <query-specification fqn="validation.notValidPattern"/>
     </group>
   </extension>
 </plugin>

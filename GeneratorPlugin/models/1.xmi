@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="ASCII"?>
-<openCypher:SinglePartQuery xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:openCypher="http://www.slizaa.org/neo4j/opencypher/OpenCypher" xsi:schemaLocation="http://www.slizaa.org/neo4j/opencypher/OpenCypher ../model/OpenCypher.ecore">
-  <readingClauses xsi:type="openCypher:Match">
+<openCypher:SinglePartQuery
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:openCypher="http://www.slizaa.org/neo4j/opencypher/OpenCypher">
+  <readingClauses
+      xsi:type="openCypher:Match">
     <pattern>
-      <patterns>
-        <var/>
+      <patterns
+          xsi:type="openCypher:PatternElement">
+        <nodepattern>
+          <variable
+              name="A"/>
+        </nodepattern>
       </patterns>
     </pattern>
   </readingClauses>
@@ -11,12 +20,18 @@
     <body>
       <returnItems>
         <items>
-          <expression xsi:type="openCypher:VariableRef"/>
-          <alias/>
+          <expression
+              xsi:type="openCypher:BooleanLiteral"
+              value="TRUE"/>
+          <alias
+              name="A"/>
         </items>
         <items>
-          <expression/>
-          <alias/>
+          <expression
+              xsi:type="openCypher:StringLiteral"
+              value="&quot;hejho&quot;"/>
+          <alias
+              name="A"/>
         </items>
       </returnItems>
     </body>

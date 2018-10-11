@@ -1,7 +1,9 @@
 package translate;
 
+import com.google.common.collect.Iterators;
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
@@ -16,7 +18,9 @@ import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.eclipse.xtext.xbase.lib.IntegerRange;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.slizaa.neo4j.opencypher.OpenCypherStandaloneSetup;
@@ -24,7 +28,10 @@ import org.slizaa.neo4j.opencypher.openCypher.AllOptions;
 import org.slizaa.neo4j.opencypher.openCypher.Cypher;
 import org.slizaa.neo4j.opencypher.openCypher.OpenCypherFactory;
 import org.slizaa.neo4j.opencypher.openCypher.OpenCypherPackage;
+import org.slizaa.neo4j.opencypher.openCypher.Return;
 import org.slizaa.neo4j.opencypher.openCypher.SinglePartQuery;
+import org.slizaa.neo4j.opencypher.openCypher.StringLiteral;
+import org.slizaa.neo4j.opencypher.openCypher.VariableDeclaration;
 
 @SuppressWarnings("all")
 public class Translator {
@@ -87,37 +94,73 @@ public class Translator {
         _builder.append(".cypher");
         final URI uri = URI.createFileURI(_builder.toString());
         final Resource resource = rsi.createResource(uri);
-        final OpenCypherFactory factory = OpenCypherFactory.eINSTANCE;
-        final Cypher cypher = factory.createCypher();
-        cypher.setStatement(model);
-        AllOptions _createAllOptions = factory.createAllOptions();
-        final Procedure1<AllOptions> _function_1 = (AllOptions it) -> {
-          it.setExplain(false);
-          it.setProfile(false);
-        };
-        AllOptions _doubleArrow = ObjectExtensions.<AllOptions>operator_doubleArrow(_createAllOptions, _function_1);
-        cypher.setQueryOptions(_doubleArrow);
+        final Cypher cypher = this.postProcessModel(model);
         resource.getContents().add(cypher);
         try {
           resource.save(CollectionLiterals.<Object, Object>emptyMap());
+          StringConcatenation _builder_1 = new StringConcatenation();
+          _builder_1.append("Successfully saved file \"");
+          String _absolutePath_1 = original.getAbsolutePath();
+          _builder_1.append(_absolutePath_1);
+          _builder_1.append("\"");
+          InputOutput.<String>println(_builder_1.toString());
         } catch (final Throwable _t) {
           if (_t instanceof Exception) {
             final Exception e = (Exception)_t;
-            StringConcatenation _builder_1 = new StringConcatenation();
-            _builder_1.append("Unable to save file \"");
-            String _absolutePath_1 = original.getAbsolutePath();
-            _builder_1.append(_absolutePath_1);
-            _builder_1.append("\"");
-            _builder_1.newLineIfNotEmpty();
-            _builder_1.append("--------------------");
-            _builder_1.newLine();
-            InputOutput.<String>println(_builder_1.toString());
-            e.printStackTrace();
+            StringConcatenation _builder_2 = new StringConcatenation();
+            _builder_2.append("Unable to save file \"");
+            String _absolutePath_2 = original.getAbsolutePath();
+            _builder_2.append(_absolutePath_2);
+            _builder_2.append("\"");
+            _builder_2.newLineIfNotEmpty();
+            _builder_2.append("--------------------");
+            _builder_2.newLine();
+            InputOutput.<String>println(_builder_2.toString());
+            e.printStackTrace(System.out);
           } else {
             throw Exceptions.sneakyThrow(_t);
           }
         }
       }
     }
+  }
+  
+  protected Cypher postProcessModel(final SinglePartQuery model) {
+    final OpenCypherFactory factory = OpenCypherFactory.eINSTANCE;
+    final Cypher cypher = factory.createCypher();
+    cypher.setStatement(model);
+    AllOptions _createAllOptions = factory.createAllOptions();
+    final Procedure1<AllOptions> _function = (AllOptions it) -> {
+      it.setExplain(false);
+      it.setProfile(false);
+    };
+    AllOptions _doubleArrow = ObjectExtensions.<AllOptions>operator_doubleArrow(_createAllOptions, _function);
+    cypher.setQueryOptions(_doubleArrow);
+    final Procedure1<Return> _function_1 = (Return it) -> {
+      it.setReturn("RETURN");
+    };
+    IteratorExtensions.<Return>forEach(Iterators.<Return>filter(model.eAllContents(), Return.class), _function_1);
+    final List<VariableDeclaration> variables = IteratorExtensions.<VariableDeclaration>toList(Iterators.<VariableDeclaration>filter(model.eAllContents(), VariableDeclaration.class));
+    int _size = variables.size();
+    final IntegerRange variableIndexes = new IntegerRange(1, _size);
+    for (final Integer i : variableIndexes) {
+      VariableDeclaration _get = variables.get(((i).intValue() - 1));
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("V");
+      _builder.append(i);
+      _get.setName(_builder.toString());
+    }
+    final List<StringLiteral> stringliterals = IteratorExtensions.<StringLiteral>toList(Iterators.<StringLiteral>filter(model.eAllContents(), StringLiteral.class));
+    int _size_1 = stringliterals.size();
+    final IntegerRange stringLiteralIndexes = new IntegerRange(1, _size_1);
+    for (final Integer i_1 : stringLiteralIndexes) {
+      StringLiteral _get_1 = stringliterals.get(((i_1).intValue() - 1));
+      StringConcatenation _builder_1 = new StringConcatenation();
+      _builder_1.append("\"String");
+      _builder_1.append(i_1);
+      _builder_1.append("\"");
+      _get_1.setValue(_builder_1.toString());
+    }
+    return cypher;
   }
 }
