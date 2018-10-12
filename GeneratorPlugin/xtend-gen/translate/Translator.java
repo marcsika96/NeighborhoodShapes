@@ -16,9 +16,9 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.ExclusiveRange;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.InputOutput;
-import org.eclipse.xtext.xbase.lib.IntegerRange;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
@@ -26,6 +26,7 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.slizaa.neo4j.opencypher.OpenCypherStandaloneSetup;
 import org.slizaa.neo4j.opencypher.openCypher.AllOptions;
 import org.slizaa.neo4j.opencypher.openCypher.Cypher;
+import org.slizaa.neo4j.opencypher.openCypher.MapLiteralEntry;
 import org.slizaa.neo4j.opencypher.openCypher.OpenCypherFactory;
 import org.slizaa.neo4j.opencypher.openCypher.OpenCypherPackage;
 import org.slizaa.neo4j.opencypher.openCypher.Return;
@@ -142,24 +143,34 @@ public class Translator {
     IteratorExtensions.<Return>forEach(Iterators.<Return>filter(model.eAllContents(), Return.class), _function_1);
     final List<VariableDeclaration> variables = IteratorExtensions.<VariableDeclaration>toList(Iterators.<VariableDeclaration>filter(model.eAllContents(), VariableDeclaration.class));
     int _size = variables.size();
-    final IntegerRange variableIndexes = new IntegerRange(1, _size);
+    final ExclusiveRange variableIndexes = new ExclusiveRange(0, _size, true);
     for (final Integer i : variableIndexes) {
-      VariableDeclaration _get = variables.get(((i).intValue() - 1));
+      VariableDeclaration _get = variables.get((i).intValue());
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("V");
-      _builder.append(i);
+      _builder.append(((i).intValue() + 1));
       _get.setName(_builder.toString());
     }
     final List<StringLiteral> stringliterals = IteratorExtensions.<StringLiteral>toList(Iterators.<StringLiteral>filter(model.eAllContents(), StringLiteral.class));
     int _size_1 = stringliterals.size();
-    final IntegerRange stringLiteralIndexes = new IntegerRange(1, _size_1);
+    final ExclusiveRange stringLiteralIndexes = new ExclusiveRange(0, _size_1, true);
     for (final Integer i_1 : stringLiteralIndexes) {
-      StringLiteral _get_1 = stringliterals.get(((i_1).intValue() - 1));
+      StringLiteral _get_1 = stringliterals.get((i_1).intValue());
       StringConcatenation _builder_1 = new StringConcatenation();
       _builder_1.append("\"String");
-      _builder_1.append(i_1);
+      _builder_1.append(((i_1).intValue() + 1));
       _builder_1.append("\"");
       _get_1.setValue(_builder_1.toString());
+    }
+    final List<MapLiteralEntry> mapkeys = IteratorExtensions.<MapLiteralEntry>toList(Iterators.<MapLiteralEntry>filter(model.eAllContents(), MapLiteralEntry.class));
+    int _size_2 = mapkeys.size();
+    final ExclusiveRange mapKeyIndexes = new ExclusiveRange(0, _size_2, true);
+    for (final Integer i_2 : mapKeyIndexes) {
+      MapLiteralEntry _get_2 = mapkeys.get((i_2).intValue());
+      StringConcatenation _builder_2 = new StringConcatenation();
+      _builder_2.append("Key");
+      _builder_2.append(((i_2).intValue() + 1));
+      _get_2.setKey(_builder_2.toString());
     }
     return cypher;
   }

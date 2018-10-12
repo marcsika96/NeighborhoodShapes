@@ -7,12 +7,15 @@
   <readingClauses
       xsi:type="openCypher:Match">
     <pattern>
-      <patterns
-          xsi:type="openCypher:PatternElement">
-        <nodepattern>
-          <variable
-              name="A"/>
-        </nodepattern>
+      <patterns>
+        <var/>
+        <part
+            xsi:type="openCypher:PatternElement">
+          <nodepattern>
+            <variable
+                name="B"/>
+          </nodepattern>
+        </part>
       </patterns>
     </pattern>
   </readingClauses>
@@ -21,17 +24,8 @@
       <returnItems>
         <items>
           <expression
-              xsi:type="openCypher:BooleanLiteral"
-              value="TRUE"/>
-          <alias
-              name="A"/>
-        </items>
-        <items>
-          <expression
-              xsi:type="openCypher:StringLiteral"
-              value="&quot;hejho&quot;"/>
-          <alias
-              name="A"/>
+              xsi:type="openCypher:VariableRef"
+              variableRef="//@readingClauses.0/@pattern/@patterns.0/@part/@nodepattern/@variable"/>
         </items>
       </returnItems>
     </body>

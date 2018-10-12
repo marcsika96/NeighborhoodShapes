@@ -89,7 +89,7 @@ generate {
 		
 	}
 	scope = {
-		# node += 25..30, # string += {"A"}, # int += { 1 },
+		# node += 11..15, # string += {"A"}, # int += { 1 },
 		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1 
 	}
 	debug = "platform:/resource/GeneratorPlugin/debug"

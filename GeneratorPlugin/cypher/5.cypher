@@ -1,1 +1,0 @@
-MATCH ( V1 { } ) RETURN "String1" AS V2 , "String2" AS V3

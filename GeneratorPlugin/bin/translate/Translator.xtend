@@ -14,6 +14,7 @@ import org.slizaa.neo4j.opencypher.openCypher.Return
 import org.slizaa.neo4j.opencypher.openCypher.SinglePartQuery
 import org.slizaa.neo4j.opencypher.openCypher.VariableDeclaration
 import org.slizaa.neo4j.opencypher.openCypher.StringLiteral
+import org.slizaa.neo4j.opencypher.openCypher.MapLiteralEntry
 
 class Translator {
 	def static void main(String[] args) {
@@ -66,6 +67,7 @@ class Translator {
 			try{
 				resource.save(emptyMap)
 				println('''Successfully saved file "«original.absolutePath»"''')
+				
 			} catch(Exception e) {
 				println('''
 				Unable to save file "«original.absolutePath»"
@@ -85,15 +87,21 @@ class Translator {
 		model.eAllContents.filter(Return).forEach[it.^return = "RETURN"]
 		// variable name filling
 		val variables = model.eAllContents.filter(VariableDeclaration).toList
-		val variableIndexes = 1..variables.size
+		val variableIndexes = 0..<variables.size
 		for(i : variableIndexes) {
-			variables.get(i-1).name = '''V«i»'''
+			variables.get(i).name = '''V«i+1»'''
 		}
 		// string name literals
 		val stringliterals = model.eAllContents.filter(StringLiteral).toList
-		val stringLiteralIndexes = 1..stringliterals.size
+		val stringLiteralIndexes = 0..<stringliterals.size
 		for(i : stringLiteralIndexes) {
-			stringliterals.get(i-1).value ='''"String«i»"'''
+			stringliterals.get(i).value ='''"String«i+1»"'''
+		}
+		//MapliteralEntry keys
+		val mapkeys = model.eAllContents.filter(MapLiteralEntry).toList
+		val mapKeyIndexes = 0..<mapkeys.size
+		for(i : mapKeyIndexes){
+			mapkeys.get(i).key = '''Key«i+1»'''
 		}
 		
 		return cypher

@@ -90,3 +90,36 @@ pattern anonimmegvar(pp : AnonymousPatternPart){
 	AnonymousPatternPart(pp); 
 	
 }
+
+pattern hasEntry(map : MapLiteral, entry : MapLiteralEntry){
+	MapLiteral.entries(map, entry);
+}
+
+@Constraint(severity = "error", key ={map}, message ="error")
+pattern hasNoEntry(map : MapLiteral){
+	neg find hasEntry(map, _);
+}
+	
+pattern hasMapValue(entry : MapLiteralEntry, value : StringLiteral){
+	MapLiteralEntry.value(entry, value);
+}	
+
+@Constraint(severity = "error", key ={entry}, message ="error")
+pattern hasNoMapValue(entry : MapLiteralEntry){
+	neg find hasMapValue(entry, _);
+}
+	
+
+//pattern goodReferenceToVariable(q : SinglePartQuery, match : Match, vari : VariableDeclaration,  variRef : VariableRef ){
+//	SinglePartQuery.readingClauses(q ,match);
+//	Match.^pattern.patterns.^var(match, vari);
+//	SinglePartQuery.^return.body.returnItems.items.expression(q , variRef);
+//	VariableRef.variableRef(variRef, vari);
+//	}
+
+//@Constraint(severity = "error", key ={q}, message ="error")
+//pattern notGoodReferenceToVari(q : SinglePartQuery){
+//	neg find goodReferenceToVariable(q, _, _ ,_ );
+//}
+
+//vagy van saját variabledecje egy returnitemnek vagy csak referenciája van a matchbol
