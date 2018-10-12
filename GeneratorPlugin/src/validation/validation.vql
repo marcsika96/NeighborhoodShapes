@@ -100,7 +100,7 @@ pattern hasNoEntry(map : MapLiteral){
 	neg find hasEntry(map, _);
 }
 	
-pattern hasMapValue(entry : MapLiteralEntry, value : StringLiteral){
+pattern hasMapValue(entry : MapLiteralEntry, value : Expression){
 	MapLiteralEntry.value(entry, value);
 }	
 
@@ -110,16 +110,17 @@ pattern hasNoMapValue(entry : MapLiteralEntry){
 }
 	
 
-//pattern goodReferenceToVariable(q : SinglePartQuery, match : Match, vari : VariableDeclaration,  variRef : VariableRef ){
-//	SinglePartQuery.readingClauses(q ,match);
-//	Match.^pattern.patterns.^var(match, vari);
-//	SinglePartQuery.^return.body.returnItems.items.expression(q , variRef);
-//	VariableRef.variableRef(variRef, vari);
-//	}
+pattern goodReferenceToVariable(q : SinglePartQuery, match : Match, vari : VariableDeclaration,  variRef : VariableRef ){	
+	SinglePartQuery.readingClauses(q ,match);
+	Match.^pattern.patterns.^var(match, vari);
+	SinglePartQuery.^return.body.returnItems.items.expression(q , variRef);
+	VariableRef.variableRef(variRef, vari);
+}	
 
-//@Constraint(severity = "error", key ={q}, message ="error")
-//pattern notGoodReferenceToVari(q : SinglePartQuery){
-//	neg find goodReferenceToVariable(q, _, _ ,_ );
-//}
+@Constraint(severity = "error", key ={variRef}, message ="error")
+pattern notGoodReferenceToVari(variRef : VariableRef){
+	neg find goodReferenceToVariable(_, _, vari ,variRef );
+	VariableRef.variableRef(variRef,vari);
+}
 
 //vagy van saját variabledecje egy returnitemnek vagy csak referenciája van a matchbol

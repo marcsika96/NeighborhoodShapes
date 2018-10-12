@@ -987,7 +987,7 @@
       </expression>
     </value>
   </assertions>
-  <assertions name="errorpattern validation hasNoReturn" annotations="//@annotations.58">
+  <assertions name="errorpattern validation hasNoReturn" annotations="//@annotations.60">
     <value xsi:type="language_1:Forall">
       <quantifiedVariables name="p0">
         <range xsi:type="language_1:ComplexTypeReference" referred="//@types.2"/>
@@ -999,7 +999,7 @@
       </expression>
     </value>
   </assertions>
-  <assertions name="errorpattern validation hasNoMatch" annotations="//@annotations.59">
+  <assertions name="errorpattern validation hasNoMatch" annotations="//@annotations.61">
     <value xsi:type="language_1:Forall">
       <quantifiedVariables name="p0">
         <range xsi:type="language_1:ComplexTypeReference" referred="//@types.2"/>
@@ -1011,7 +1011,7 @@
       </expression>
     </value>
   </assertions>
-  <assertions name="errorpattern validation hasNoPattern" annotations="//@annotations.60">
+  <assertions name="errorpattern validation hasNoPattern" annotations="//@annotations.62">
     <value xsi:type="language_1:Forall">
       <quantifiedVariables name="p0">
         <range xsi:type="language_1:ComplexTypeReference" referred="//@types.3"/>
@@ -1023,7 +1023,7 @@
       </expression>
     </value>
   </assertions>
-  <assertions name="errorpattern validation hasNoReturnItems" annotations="//@annotations.61">
+  <assertions name="errorpattern validation hasNoReturnItems" annotations="//@annotations.63">
     <value xsi:type="language_1:Forall">
       <quantifiedVariables name="p0">
         <range xsi:type="language_1:ComplexTypeReference" referred="//@types.13"/>
@@ -1035,7 +1035,7 @@
       </expression>
     </value>
   </assertions>
-  <assertions name="errorpattern validation hasNoReturnItem" annotations="//@annotations.62">
+  <assertions name="errorpattern validation hasNoReturnItem" annotations="//@annotations.64">
     <value xsi:type="language_1:Forall">
       <quantifiedVariables name="p0">
         <range xsi:type="language_1:ComplexTypeReference" referred="//@types.14"/>
@@ -1047,7 +1047,7 @@
       </expression>
     </value>
   </assertions>
-  <assertions name="errorpattern validation notValid" annotations="//@annotations.63">
+  <assertions name="errorpattern validation notValid" annotations="//@annotations.65">
     <value xsi:type="language_1:Forall">
       <quantifiedVariables name="p0">
         <range xsi:type="language_1:ComplexTypeReference" referred="//@types.5"/>
@@ -1059,7 +1059,7 @@
       </expression>
     </value>
   </assertions>
-  <assertions name="errorpattern validation anonimmegvar" annotations="//@annotations.64">
+  <assertions name="errorpattern validation anonimmegvar" annotations="//@annotations.66">
     <value xsi:type="language_1:Forall">
       <quantifiedVariables name="p0">
         <range xsi:type="language_1:ComplexTypeReference" referred="//@types.23"/>
@@ -1071,7 +1071,7 @@
       </expression>
     </value>
   </assertions>
-  <assertions name="errorpattern validation hasNoEntry" annotations="//@annotations.65">
+  <assertions name="errorpattern validation hasNoEntry" annotations="//@annotations.67">
     <value xsi:type="language_1:Forall">
       <quantifiedVariables name="p0">
         <range xsi:type="language_1:ComplexTypeReference" referred="//@types.9"/>
@@ -1083,7 +1083,7 @@
       </expression>
     </value>
   </assertions>
-  <assertions name="errorpattern validation hasNoMapValue" annotations="//@annotations.66">
+  <assertions name="errorpattern validation hasNoMapValue" annotations="//@annotations.68">
     <value xsi:type="language_1:Forall">
       <quantifiedVariables name="p0">
         <range xsi:type="language_1:ComplexTypeReference" referred="//@types.10"/>
@@ -1091,6 +1091,18 @@
       <expression xsi:type="language_1:Not">
         <operand xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.48">
           <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@assertions.44/@value/@quantifiedVariables.0"/>
+        </operand>
+      </expression>
+    </value>
+  </assertions>
+  <assertions name="errorpattern validation notGoodReferenceToVari" annotations="//@annotations.69">
+    <value xsi:type="language_1:Forall">
+      <quantifiedVariables name="p0">
+        <range xsi:type="language_1:ComplexTypeReference" referred="//@types.16"/>
+      </quantifiedVariables>
+      <expression xsi:type="language_1:Not">
+        <operand xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.50">
+          <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@assertions.45/@value/@quantifiedVariables.0"/>
         </operand>
       </expression>
     </value>
@@ -1670,22 +1682,22 @@
   </relations>
   <relations xsi:type="language_1:RelationDefinition" name="pattern validation hasMapValue" annotations="//@annotations.56">
     <parameters xsi:type="language_1:ComplexTypeReference" referred="//@types.10"/>
-    <parameters xsi:type="language_1:ComplexTypeReference" referred="//@types.11"/>
+    <parameters xsi:type="language_1:ComplexTypeReference" referred="//@types.27"/>
     <variables name="parameter entry">
       <range xsi:type="language_1:ComplexTypeReference" referred="//@types.10"/>
     </variables>
     <variables name="parameter value">
-      <range xsi:type="language_1:ComplexTypeReference" referred="//@types.11"/>
+      <range xsi:type="language_1:ComplexTypeReference" referred="//@types.27"/>
     </variables>
     <value xsi:type="language_1:Or">
       <operands xsi:type="language_1:And">
-        <operands xsi:type="language_1:InstanceOf">
-          <value xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.47/@variables.1"/>
-          <range xsi:type="language_1:ComplexTypeReference" referred="//@types.11"/>
-        </operands>
         <operands xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.11">
           <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.47/@variables.0"/>
           <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.47/@variables.1"/>
+        </operands>
+        <operands xsi:type="language_1:InstanceOf">
+          <value xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.47/@variables.1"/>
+          <range xsi:type="language_1:ComplexTypeReference" referred="//@types.27"/>
         </operands>
       </operands>
     </value>
@@ -1698,7 +1710,7 @@
     <value xsi:type="language_1:Or">
       <operands xsi:type="language_1:Forall">
         <quantifiedVariables name="variable 0">
-          <range xsi:type="language_1:ComplexTypeReference" referred="//@types.11"/>
+          <range xsi:type="language_1:ComplexTypeReference" referred="//@types.27"/>
         </quantifiedVariables>
         <expression xsi:type="language_1:And">
           <operands xsi:type="language_1:InstanceOf">
@@ -1715,8 +1727,133 @@
       </operands>
     </value>
   </relations>
+  <relations xsi:type="language_1:RelationDefinition" name="pattern validation goodReferenceToVariable" annotations="//@annotations.58">
+    <parameters xsi:type="language_1:ComplexTypeReference" referred="//@types.2"/>
+    <parameters xsi:type="language_1:ComplexTypeReference" referred="//@types.3"/>
+    <parameters xsi:type="language_1:ComplexTypeReference" referred="//@types.8"/>
+    <parameters xsi:type="language_1:ComplexTypeReference" referred="//@types.16"/>
+    <variables name="parameter q">
+      <range xsi:type="language_1:ComplexTypeReference" referred="//@types.2"/>
+    </variables>
+    <variables name="parameter match">
+      <range xsi:type="language_1:ComplexTypeReference" referred="//@types.3"/>
+    </variables>
+    <variables name="parameter vari">
+      <range xsi:type="language_1:ComplexTypeReference" referred="//@types.8"/>
+    </variables>
+    <variables name="parameter variRef">
+      <range xsi:type="language_1:ComplexTypeReference" referred="//@types.16"/>
+    </variables>
+    <value xsi:type="language_1:Or">
+      <operands xsi:type="language_1:Exists">
+        <quantifiedVariables name="variable virtual1">
+          <range xsi:type="language_1:ComplexTypeReference" referred="//@types.4"/>
+        </quantifiedVariables>
+        <quantifiedVariables name="variable virtual2">
+          <range xsi:type="language_1:ComplexTypeReference" referred="//@types.5"/>
+        </quantifiedVariables>
+        <quantifiedVariables name="variable virtual4">
+          <range xsi:type="language_1:ComplexTypeReference" referred="//@types.12"/>
+        </quantifiedVariables>
+        <quantifiedVariables name="variable virtual5">
+          <range xsi:type="language_1:ComplexTypeReference" referred="//@types.13"/>
+        </quantifiedVariables>
+        <quantifiedVariables name="variable virtual6">
+          <range xsi:type="language_1:ComplexTypeReference" referred="//@types.14"/>
+        </quantifiedVariables>
+        <quantifiedVariables name="variable virtual7">
+          <range xsi:type="language_1:ComplexTypeReference" referred="//@types.15"/>
+        </quantifiedVariables>
+        <expression xsi:type="language_1:And">
+          <operands xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.1">
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@variables.0"/>
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@variables.1"/>
+          </operands>
+          <operands xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.3">
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@variables.1"/>
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@value/@operands.0/@quantifiedVariables.0"/>
+          </operands>
+          <operands xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.4">
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@value/@operands.0/@quantifiedVariables.0"/>
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@value/@operands.0/@quantifiedVariables.1"/>
+          </operands>
+          <operands xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.5">
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@value/@operands.0/@quantifiedVariables.1"/>
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@variables.2"/>
+          </operands>
+          <operands xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.2">
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@variables.0"/>
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@value/@operands.0/@quantifiedVariables.2"/>
+          </operands>
+          <operands xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.12">
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@value/@operands.0/@quantifiedVariables.2"/>
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@value/@operands.0/@quantifiedVariables.3"/>
+          </operands>
+          <operands xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.13">
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@value/@operands.0/@quantifiedVariables.3"/>
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@value/@operands.0/@quantifiedVariables.4"/>
+          </operands>
+          <operands xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.14">
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@value/@operands.0/@quantifiedVariables.4"/>
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@value/@operands.0/@quantifiedVariables.5"/>
+          </operands>
+          <operands xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.16">
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@value/@operands.0/@quantifiedVariables.5"/>
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@variables.3"/>
+          </operands>
+          <operands xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.17">
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@variables.3"/>
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@variables.2"/>
+          </operands>
+          <operands xsi:type="language_1:InstanceOf">
+            <value xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49/@variables.2"/>
+            <range xsi:type="language_1:ComplexTypeReference" referred="//@types.8"/>
+          </operands>
+        </expression>
+      </operands>
+    </value>
+  </relations>
+  <relations xsi:type="language_1:RelationDefinition" name="pattern validation notGoodReferenceToVari" annotations="//@annotations.59">
+    <parameters xsi:type="language_1:ComplexTypeReference" referred="//@types.16"/>
+    <variables name="parameter variRef">
+      <range xsi:type="language_1:ComplexTypeReference" referred="//@types.16"/>
+    </variables>
+    <value xsi:type="language_1:Or">
+      <operands xsi:type="language_1:Exists">
+        <quantifiedVariables name="variable vari">
+          <range xsi:type="language_1:ComplexTypeReference" referred="//@types.8"/>
+        </quantifiedVariables>
+        <expression xsi:type="language_1:Forall">
+          <quantifiedVariables name="variable 0">
+            <range xsi:type="language_1:ComplexTypeReference" referred="//@types.2"/>
+          </quantifiedVariables>
+          <quantifiedVariables name="variable 1">
+            <range xsi:type="language_1:ComplexTypeReference" referred="//@types.3"/>
+          </quantifiedVariables>
+          <expression xsi:type="language_1:And">
+            <operands xsi:type="language_1:Not">
+              <operand xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.49">
+                <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.50/@value/@operands.0/@expression/@quantifiedVariables.0"/>
+                <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.50/@value/@operands.0/@expression/@quantifiedVariables.1"/>
+                <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.50/@value/@operands.0/@quantifiedVariables.0"/>
+                <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.50/@variables.0"/>
+              </operand>
+            </operands>
+            <operands xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.17">
+              <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.50/@variables.0"/>
+              <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.50/@value/@operands.0/@quantifiedVariables.0"/>
+            </operands>
+            <operands xsi:type="language_1:InstanceOf">
+              <value xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.50/@value/@operands.0/@quantifiedVariables.0"/>
+              <range xsi:type="language_1:ComplexTypeReference" referred="//@types.8"/>
+            </operands>
+          </expression>
+        </expression>
+      </operands>
+    </value>
+  </relations>
   <elements name="o 1" definedInType="//@types.30 //@types.32 //@types.34 //@types.36 //@types.38"/>
-  <containmentHierarchies typesOrderedInHierarchy="//@types.4 //@types.25 //@types.19 //@types.20 //@types.26 //@types.0 //@types.13 //@types.15 //@types.23 //@types.3 //@types.27 //@types.7 //@types.10 //@types.5 //@types.17 //@types.8 //@types.18 //@types.9 //@types.2 //@types.21 //@types.11 //@types.6 //@types.1 //@types.29 //@types.28 //@types.22 //@types.24 //@types.12 //@types.14 //@types.16 //@types.30 //@types.31 //@types.32 //@types.33 //@types.34 //@types.35 //@types.36 //@types.37 //@types.38 //@types.39" containmentRelations="//@relations.0 //@relations.1 //@relations.2 //@relations.3 //@relations.4 //@relations.5 //@relations.6 //@relations.7 //@relations.8 //@relations.9 //@relations.10 //@relations.11 //@relations.12 //@relations.13 //@relations.14 //@relations.15 //@relations.16"/>
+  <containmentHierarchies typesOrderedInHierarchy="//@types.7 //@types.18 //@types.12 //@types.14 //@types.11 //@types.26 //@types.8 //@types.6 //@types.21 //@types.13 //@types.5 //@types.2 //@types.23 //@types.15 //@types.29 //@types.25 //@types.20 //@types.24 //@types.1 //@types.4 //@types.0 //@types.3 //@types.10 //@types.22 //@types.27 //@types.16 //@types.17 //@types.19 //@types.28 //@types.9 //@types.30 //@types.31 //@types.32 //@types.33 //@types.34 //@types.35 //@types.36 //@types.37 //@types.38 //@types.39" containmentRelations="//@relations.0 //@relations.1 //@relations.2 //@relations.3 //@relations.4 //@relations.5 //@relations.6 //@relations.7 //@relations.8 //@relations.9 //@relations.10 //@relations.11 //@relations.12 //@relations.13 //@relations.14 //@relations.15 //@relations.16"/>
   <annotations xsi:type="ecore2logicannotations:UpperMultiplicityAssertion" target="//@assertions.0" relation="//@relations.0" upper="1"/>
   <annotations xsi:type="ecore2logicannotations:LowerMultiplicityAssertion" target="//@assertions.1" relation="//@relations.1" lower="1"/>
   <annotations xsi:type="ecore2logicannotations:LowerMultiplicityAssertion" target="//@assertions.2" relation="//@relations.2" lower="1"/>
@@ -1775,6 +1912,8 @@
   <annotations xsi:type="viatra2logicannotations:TransfomedViatraQuery" target="//@relations.46" patternFullyQualifiedName="validation.hasNoEntry"/>
   <annotations xsi:type="viatra2logicannotations:TransfomedViatraQuery" target="//@relations.47" patternFullyQualifiedName="validation.hasMapValue"/>
   <annotations xsi:type="viatra2logicannotations:TransfomedViatraQuery" target="//@relations.48" patternFullyQualifiedName="validation.hasNoMapValue"/>
+  <annotations xsi:type="viatra2logicannotations:TransfomedViatraQuery" target="//@relations.49" patternFullyQualifiedName="validation.goodReferenceToVariable"/>
+  <annotations xsi:type="viatra2logicannotations:TransfomedViatraQuery" target="//@relations.50" patternFullyQualifiedName="validation.notGoodReferenceToVari"/>
   <annotations xsi:type="viatra2logicannotations:TransformedViatraWellformednessConstraint" target="//@assertions.36" query="//@annotations.37"/>
   <annotations xsi:type="viatra2logicannotations:TransformedViatraWellformednessConstraint" target="//@assertions.37" query="//@annotations.39"/>
   <annotations xsi:type="viatra2logicannotations:TransformedViatraWellformednessConstraint" target="//@assertions.38" query="//@annotations.41"/>
@@ -1784,4 +1923,5 @@
   <annotations xsi:type="viatra2logicannotations:TransformedViatraWellformednessConstraint" target="//@assertions.42" query="//@annotations.53"/>
   <annotations xsi:type="viatra2logicannotations:TransformedViatraWellformednessConstraint" target="//@assertions.43" query="//@annotations.55"/>
   <annotations xsi:type="viatra2logicannotations:TransformedViatraWellformednessConstraint" target="//@assertions.44" query="//@annotations.57"/>
+  <annotations xsi:type="viatra2logicannotations:TransformedViatraWellformednessConstraint" target="//@assertions.45" query="//@annotations.59"/>
 </language:LogicProblem>

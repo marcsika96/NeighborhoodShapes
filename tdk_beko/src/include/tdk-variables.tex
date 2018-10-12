@@ -9,3 +9,48 @@
 \newcommand{\tdkevfolyamB}{} % Második szerző évfolyama, római számmal (pl. III).
 \newcommand{\tdkkonzulensbeosztasA}{doktorandusz} % Első konzulens beosztása (pl. egyetemi docens)
 \newcommand{\tdkkonzulensbeosztasB}{} % Második konzulens beosztása (pl. egyetemi docens)
+
+\definecolor{backgroundColor}{rgb}{0.89,0.92,0.95}
+\definecolor{darkerbackgroundColor}{rgb}{0.623,0.644,0.664}
+
+\definecolor{keywordcolor}{rgb}{0.5,0,0.1}
+\definecolor{commentcolor}{rgb}{0,0.3,0.1}
+\definecolor{stringcolor}{rgb}{0,0,1}
+\definecolor{emphColor}{rgb}{0,0.1,0.49}
+
+\lstdefinelanguage{viatra}
+{morekeywords={@QueryBasedFeature,@Constraint,count,pattern,package,
+		neg,find,import,true,false,or,check,job,action,state,severity,location,message,
+		oclIsKindOf,self,exists,includes,invariant,class,private},
+	emph={Function,FunctionType,FunctionalElement,FunctionalArchitectureModel,FAMTerminator,InformationLink,data,Root,Intermediate,Leaf,incomingLinks,outgoingLinks,subElements,minimumFrequency,parent,Pseudostate,Vertex,Region,Transition,Entry,Synchronization,State,RegularState,CompositeElement,Trigger,Guard,Action,Statechart,vertices,regions,source,target,incomingTransitions,trigger,guard,action,elements,newElements,PartialModel,open,must,may,var,element,C,R,A},
+	emphstyle={\color{emphColor}},
+	sensitive=true, morecomment=[l]{//}, morecomment=[s]{/*}{*/},
+	morestring=[b]{"}
+}
+\lstdefinestyle{viatrasmall}{
+	basicstyle=\scriptsize\ttfamily,
+	commentstyle=\color{commentcolor}\ttfamily,
+	stringstyle=\color{stringcolor}\ttfamily,
+	%frameround=tttt,
+	captionpos=b,
+	keywordstyle=\color{keywordcolor}\bfseries\ttfamily,
+	showstringspaces=false,
+	tabsize=2,
+	language=viatra,
+	escapeinside={(*@}{@*)},
+	breaklines=false
+}
+\lstdefinestyle{viatrabig}{
+	basicstyle=\ttfamily,
+	commentstyle=\color{commentcolor}\ttfamily,
+	stringstyle=\color{stringcolor}\ttfamily,
+	%frameround=tttt,
+	captionpos=b,
+	keywordstyle=\color{keywordcolor}\bfseries\ttfamily,
+	showstringspaces=false,
+	tabsize=2,
+	language=viatra,
+	escapeinside={(*@}{@*)},
+	breaklines=false
+}
+\newcommand{\viatraStyle}[1]{\lstinline[style=viatrabig]@#1@}
