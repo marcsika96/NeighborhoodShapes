@@ -7,9 +7,13 @@
         <part xsi:type="openCypher:PatternElement">
           <nodepattern>
             <variable/>
-            <properties/>
           </nodepattern>
         </part>
+      </patterns>
+      <patterns xsi:type="openCypher:PatternElement">
+        <nodepattern>
+          <variable/>
+        </nodepattern>
       </patterns>
     </pattern>
   </readingClauses>
@@ -17,8 +21,14 @@
     <body>
       <returnItems>
         <items>
+          <expression xsi:type="openCypher:MapLiteral">
+            <entries>
+              <value xsi:type="openCypher:StringLiteral"/>
+            </entries>
+          </expression>
+        </items>
+        <items>
           <expression xsi:type="openCypher:VariableRef" variableRef="//@readingClauses.0/@pattern/@patterns.0/@var"/>
-          <alias/>
         </items>
       </returnItems>
     </body>

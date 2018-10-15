@@ -1,1 +1,1 @@
-MATCH V1 = ( V2 ) RETURN V1 AS V3
+MATCH V1 = ( V2 ) , ( V3 ) RETURN "String1" , { Key1 : "String2" } , V1

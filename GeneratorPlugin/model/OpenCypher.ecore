@@ -22,7 +22,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Query" eSuperTypes="#//Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="RegularQuery" eSuperTypes="#//Query"/>
   <eClassifiers xsi:type="ecore:EClass" name="BulkImportQuery" eSuperTypes="#//Query">
@@ -368,7 +368,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" eType="#//Properties"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Properties"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Properties" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="RelationshipTypes">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="relTypeNames" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
