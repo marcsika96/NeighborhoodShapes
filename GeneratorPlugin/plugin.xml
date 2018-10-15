@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><plugin>
   <extension id="validation.Validation" point="org.eclipse.viatra.query.runtime.queryspecification">
     <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:validation.Validation" id="validation.Validation">
-      <query-specification fqn="validation.hasReturn"/>
-      <query-specification fqn="validation.hasNoReturn"/>
-      <query-specification fqn="validation.hasMatch"/>
-      <query-specification fqn="validation.hasNoMatch"/>
-      <query-specification fqn="validation.hasPattern"/>
-      <query-specification fqn="validation.hasNoPattern"/>
-      <query-specification fqn="validation.hasReturnItems"/>
-      <query-specification fqn="validation.hasNoReturnItems"/>
-      <query-specification fqn="validation.hasReturnItem"/>
-      <query-specification fqn="validation.hasNoReturnItem"/>
       <query-specification fqn="validation.hasPart"/>
-      <query-specification fqn="validation.hasVar"/>
-      <query-specification fqn="validation.isAnonimous"/>
       <query-specification fqn="validation.hasNoPart"/>
+      <query-specification fqn="validation.hasVar"/>
       <query-specification fqn="validation.hasNoVar"/>
-      <query-specification fqn="validation.isNotAnonimous"/>
       <query-specification fqn="validation.notFilled"/>
-      <query-specification fqn="validation.notValid"/>
       <query-specification fqn="validation.valid"/>
-      <query-specification fqn="validation.totallyValidPattern"/>
-      <query-specification fqn="validation.notValidPattern"/>
+      <query-specification fqn="validation.notValid"/>
+      <query-specification fqn="validation.anonimAndVar"/>
+      <query-specification fqn="validation.hasEntry"/>
+      <query-specification fqn="validation.hasNoEntry"/>
+      <query-specification fqn="validation.hasMapValue"/>
+      <query-specification fqn="validation.hasNoMapValue"/>
+      <query-specification fqn="validation.goodReferenceToVariable"/>
+      <query-specification fqn="validation.notGoodReferenceToVari"/>
     </group>
   </extension>
 </plugin>

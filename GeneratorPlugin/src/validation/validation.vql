@@ -3,50 +3,50 @@ package validation
 //import epackage "http://www.slizaa.org/neo4j/opencypher/OpenCypher"
 import epackage "platform:/resource/GeneratorPlugin/model/OpenCypher.ecore"
 
-pattern hasReturn(q : SinglePartQuery, r : Return) {
-    SinglePartQuery.^return(q,r);
-}
+//pattern hasReturn(q : SinglePartQuery, r : Return) {
+//    SinglePartQuery.^return(q,r);
+//}
+//
+//@Constraint(severity = "error", key ={q}, message ="error")
+//pattern hasNoReturn(q : SinglePartQuery) {
+//    neg find hasReturn(q,_);
+//}
 
-@Constraint(severity = "error", key ={q}, message ="error")
-pattern hasNoReturn(q : SinglePartQuery) {
-    neg find hasReturn(q,_);
-}
+//pattern hasMatch (q : SinglePartQuery, m: Match){
+//	SinglePartQuery.readingClauses(q,m);
+//}
+//
+//@Constraint(severity = "error", key ={q}, message ="error")
+//pattern hasNoMatch(q : SinglePartQuery) {
+//    neg find hasMatch(q,_);
+//}
 
-pattern hasMatch (q : SinglePartQuery, m: Match){
-	SinglePartQuery.readingClauses(q,m);
-}
+//pattern hasPattern(m : Match, p: Pattern){
+//	Match.^pattern(m,p);
+//}
+//
+//@Constraint(severity = "error", key ={m}, message ="error")
+//pattern hasNoPattern(m : Match) {
+//    neg find hasPattern(m,_);
+//}
 
-@Constraint(severity = "error", key ={q}, message ="error")
-pattern hasNoMatch(q : SinglePartQuery) {
-    neg find hasMatch(q,_);
-}
-
-pattern hasPattern(m : Match, p: Pattern){
-	Match.^pattern(m,p);
-}
-
-@Constraint(severity = "error", key ={m}, message ="error")
-pattern hasNoPattern(m : Match) {
-    neg find hasPattern(m,_);
-}
-
-pattern hasReturnItems(body: ReturnBody, items : ReturnItems){
-	ReturnBody.returnItems(body, items);
-}
-
-@Constraint(severity = "error", key ={body}, message ="error")
-pattern hasNoReturnItems(body : ReturnBody) {
-    neg find hasReturnItems(body,_);
-}
-
-pattern hasReturnItem(items : ReturnItems, item: ReturnItem){
-	ReturnItems.items(items, item);
-}
-
-@Constraint(severity = "error", key ={items}, message ="error")
-pattern hasNoReturnItem(items : ReturnItems) {
-    neg find hasReturnItem(items,_);
-}
+//pattern hasReturnItems(body: ReturnBody, items : ReturnItems){
+//	ReturnBody.returnItems(body, items);
+//}
+//
+//@Constraint(severity = "error", key ={body}, message ="error")
+//pattern hasNoReturnItems(body : ReturnBody) {
+//    neg find hasReturnItems(body,_);
+//}
+//
+//pattern hasReturnItem(items : ReturnItems, item: ReturnItem){
+//	ReturnItems.items(items, item);
+//}
+//
+//@Constraint(severity = "error", key ={items}, message ="error")
+//pattern hasNoReturnItem(items : ReturnItems) {
+//    neg find hasReturnItem(items,_);
+//}
 
 //patternPart validator 
 
@@ -85,29 +85,29 @@ pattern notValid(pp : PatternPart){
 }
 
 @Constraint(severity = "error", key ={pp}, message ="error")
-pattern anonimmegvar(pp : AnonymousPatternPart){
+pattern anonimAndVar(pp : AnonymousPatternPart){
 	PatternPart.^var(pp, _);
 	AnonymousPatternPart(pp); 
 	
 }
 
-pattern hasEntry(map : MapLiteral, entry : MapLiteralEntry){
-	MapLiteral.entries(map, entry);
-}
-
-@Constraint(severity = "error", key ={map}, message ="error")
-pattern hasNoEntry(map : MapLiteral){
-	neg find hasEntry(map, _);
-}
-	
-pattern hasMapValue(entry : MapLiteralEntry, value : Expression){
-	MapLiteralEntry.value(entry, value);
-}	
-
-@Constraint(severity = "error", key ={entry}, message ="error")
-pattern hasNoMapValue(entry : MapLiteralEntry){
-	neg find hasMapValue(entry, _);
-}
+//pattern hasEntry(map : MapLiteral, entry : MapLiteralEntry){
+//	MapLiteral.entries(map, entry);
+//}
+//
+//@Constraint(severity = "error", key ={map}, message ="error")
+//pattern hasNoEntry(map : MapLiteral){
+//	neg find hasEntry(map, _);
+//}
+//	
+//pattern hasMapValue(entry : MapLiteralEntry, value : Expression){
+//	MapLiteralEntry.value(entry, value);
+//}	
+//
+//@Constraint(severity = "error", key ={entry}, message ="error")
+//pattern hasNoMapValue(entry : MapLiteralEntry){
+//	neg find hasMapValue(entry, _);
+//}
 	
 
 pattern goodReferenceToVariable(q : SinglePartQuery, match : Match, vari : VariableDeclaration,  variRef : VariableRef ){	
