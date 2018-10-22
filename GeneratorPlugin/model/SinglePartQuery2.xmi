@@ -26,6 +26,10 @@
           </relationshipPattern>
           <nodePattern/>
         </chain>
+        <chain>
+          <relationshipPattern/>
+          <nodePattern/>
+        </chain>
       </patterns>
     </pattern>
   </readingClauses>

@@ -376,8 +376,8 @@
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NodeLabels">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nodeLabels" upperBound="2"
-        eType="#//NodeLabel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodeLabels" eType="#//NodeLabel"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NodeLabel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

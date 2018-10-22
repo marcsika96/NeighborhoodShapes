@@ -5,18 +5,15 @@
       <patterns xsi:type="openCypher:PatternElement">
         <nodepattern>
           <nodeLabels/>
-          <nodeLabels/>
           <variable/>
           <properties xsi:type="openCypher:MapLiteral">
             <entries>
               <value xsi:type="openCypher:StringLiteral">
                 <nodeLabels/>
-                <nodeLabels/>
               </value>
             </entries>
             <entries>
               <value xsi:type="openCypher:StringLiteral">
-                <nodeLabels/>
                 <nodeLabels/>
               </value>
             </entries>
@@ -32,20 +29,133 @@
                     <nodeLabels/>
                   </value>
                 </entries>
+                <entries>
+                  <value xsi:type="openCypher:StringLiteral">
+                    <nodeLabels/>
+                  </value>
+                </entries>
               </properties>
             </detail>
           </relationshipPattern>
           <nodePattern>
             <nodeLabels/>
-            <nodeLabels/>
             <variable/>
             <properties xsi:type="openCypher:MapLiteral">
               <entries>
-                <value xsi:type="openCypher:StringLiteral"/>
+                <value xsi:type="openCypher:StringLiteral">
+                  <nodeLabels/>
+                </value>
+              </entries>
+              <entries>
+                <value xsi:type="openCypher:StringLiteral">
+                  <nodeLabels/>
+                </value>
               </entries>
             </properties>
           </nodePattern>
         </chain>
+        <chain>
+          <relationshipPattern>
+            <detail>
+              <variable/>
+              <properties xsi:type="openCypher:MapLiteral">
+                <entries>
+                  <value xsi:type="openCypher:StringLiteral">
+                    <nodeLabels/>
+                  </value>
+                </entries>
+                <entries>
+                  <value xsi:type="openCypher:StringLiteral">
+                    <nodeLabels/>
+                  </value>
+                </entries>
+              </properties>
+            </detail>
+          </relationshipPattern>
+          <nodePattern>
+            <nodeLabels/>
+            <variable/>
+            <properties xsi:type="openCypher:MapLiteral">
+              <entries>
+                <value xsi:type="openCypher:StringLiteral">
+                  <nodeLabels/>
+                </value>
+              </entries>
+              <entries>
+                <value xsi:type="openCypher:StringLiteral">
+                  <nodeLabels/>
+                </value>
+              </entries>
+            </properties>
+          </nodePattern>
+        </chain>
+      </patterns>
+      <patterns xsi:type="openCypher:PatternElement">
+        <nodepattern>
+          <nodeLabels/>
+          <variable/>
+          <properties xsi:type="openCypher:MapLiteral">
+            <entries>
+              <value xsi:type="openCypher:StringLiteral">
+                <nodeLabels/>
+              </value>
+            </entries>
+            <entries>
+              <value xsi:type="openCypher:StringLiteral">
+                <nodeLabels/>
+              </value>
+            </entries>
+          </properties>
+        </nodepattern>
+      </patterns>
+      <patterns xsi:type="openCypher:PatternElement">
+        <nodepattern>
+          <nodeLabels/>
+          <variable/>
+          <properties xsi:type="openCypher:MapLiteral">
+            <entries>
+              <value xsi:type="openCypher:StringLiteral">
+                <nodeLabels/>
+              </value>
+            </entries>
+            <entries>
+              <value xsi:type="openCypher:StringLiteral">
+                <nodeLabels/>
+              </value>
+            </entries>
+          </properties>
+        </nodepattern>
+      </patterns>
+      <patterns xsi:type="openCypher:PatternElement">
+        <nodepattern>
+          <nodeLabels/>
+          <variable/>
+          <properties xsi:type="openCypher:MapLiteral">
+            <entries>
+              <value xsi:type="openCypher:StringLiteral">
+                <nodeLabels/>
+              </value>
+            </entries>
+            <entries>
+              <value xsi:type="openCypher:StringLiteral">
+                <nodeLabels/>
+              </value>
+            </entries>
+          </properties>
+        </nodepattern>
+      </patterns>
+      <patterns xsi:type="openCypher:PatternElement">
+        <nodepattern>
+          <nodeLabels/>
+          <variable/>
+          <properties xsi:type="openCypher:MapLiteral">
+            <entries>
+              <value xsi:type="openCypher:StringLiteral">
+                <nodeLabels/>
+              </value>
+            </entries>
+          </properties>
+        </nodepattern>
       </patterns>
     </pattern>
   </readingClauses>
@@ -53,10 +163,42 @@
     <body>
       <returnItems>
         <items>
-          <expression xsi:type="openCypher:VariableRef" variableRef="//@readingClauses.0/@pattern/@patterns.0/@nodepattern/@variable">
-            <nodeLabels/>
+          <expression xsi:type="openCypher:VariableRef" variableRef="//@readingClauses.0/@pattern/@patterns.2/@nodepattern/@variable">
             <nodeLabels/>
           </expression>
+        </items>
+        <items>
+          <expression xsi:type="openCypher:VariableRef" variableRef="//@readingClauses.0/@pattern/@patterns.1/@nodepattern/@variable">
+            <nodeLabels/>
+          </expression>
+        </items>
+        <items>
+          <expression xsi:type="openCypher:VariableRef" variableRef="//@readingClauses.0/@pattern/@patterns.0/@chain.1/@relationshipPattern/@detail/@variable">
+            <nodeLabels/>
+          </expression>
+        </items>
+        <items>
+          <expression xsi:type="openCypher:VariableRef" variableRef="//@readingClauses.0/@pattern/@patterns.0/@nodepattern/@variable">
+            <nodeLabels/>
+          </expression>
+        </items>
+        <items>
+          <expression xsi:type="openCypher:VariableRef" variableRef="//@readingClauses.0/@pattern/@patterns.2/@nodepattern/@variable">
+            <nodeLabels/>
+          </expression>
+        </items>
+        <items>
+          <expression xsi:type="openCypher:VariableRef" variableRef="//@readingClauses.0/@pattern/@patterns.0/@nodepattern/@variable">
+            <nodeLabels/>
+          </expression>
+        </items>
+        <items>
+          <expression xsi:type="openCypher:VariableRef" variableRef="//@readingClauses.0/@pattern/@patterns.0/@chain.0/@nodePattern/@variable">
+            <nodeLabels/>
+          </expression>
+        </items>
+        <items>
+          <expression xsi:type="openCypher:VariableRef" variableRef="//@readingClauses.0/@pattern/@patterns.2/@nodepattern/@variable"/>
         </items>
       </returnItems>
     </body>

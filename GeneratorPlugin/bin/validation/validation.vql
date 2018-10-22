@@ -60,6 +60,17 @@ pattern notWellLookingMapliteral(mapLiteral : MapLiteral, nodeLabel: NodeLabel){
 }
 
 
+//ahhoz kell hogy ne ott legyene különböző 2 lekédrezés hogy milyen méllyen cíkmkézett
+pattern wellDeepMap(mapLiteralEnrty: MapLiteralEntry, string : StringLiteral){
+	MapLiteralEntry.value(mapLiteralEnrty,string);
+}
+
+@Constraint(severity ="error", key={mapLiteralEnrty}, message = "error")
+pattern notWellDeepMap(mapLiteralEnrty : MapLiteralEntry){
+	neg find wellDeepMap(mapLiteralEnrty, _);
+}
+
+
 
 
 

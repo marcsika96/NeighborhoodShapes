@@ -72,7 +72,7 @@ QueryOptions,
 PatternElementChain,PatternElementChain.nodePattern,PatternElementChain.relationshipPattern,
 RelationshipPattern,RelationshipPattern.incoming,RelationshipPattern.outgoing,RelationshipPattern.detail,
 RelationshipDetail,RelationshipDetail.optional, RelationshipDetail.variable,RelationshipDetail.properties,
-//TODO kitölteni ezeket:RelationshipDetail.relTypeNames
+
 RelationshipTypes,
 PatternElement.chain
 	
@@ -88,17 +88,19 @@ generate {
 	solver = ViatraSolver
 	constraints = { package validation }
 	config = {
-		log-level = normal
+		log-level = none,
+		"diversity-range" = "1"
 	}
 	scope = {
-		# node += 10..*, # string += {"A"}, # int += { 1 },
+		# node += 100..*, # string += {"A"}, # int += { 1 },
 		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
-//#<VariableDeclaration> += 0..3
+		//#<VariableDeclaration> += 0..3
 		//#<NodePattern> +=0
 		//,  #<PatternElement> += 0,  #<VariableRef> += 0
 	}
 	debug = "platform:/resource/GeneratorPlugin/debug"
 	output = "platform:/resource/GeneratorPlugin/models"
+	statistics = "platform:/resource/GeneratorPlugin/statistics.csv"
 }
 
 
