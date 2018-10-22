@@ -993,7 +993,7 @@
       <parameterSubstitutions xsi:type="language_1:BoolLiteral"/>
     </value>
   </assertions>
-  <assertions name="errorpattern validation hasNoReference" annotations="//@annotations.56">
+  <assertions name="errorpattern validation hasNoReference" annotations="//@annotations.59">
     <value xsi:type="language_1:Forall">
       <quantifiedVariables name="p0">
         <range xsi:type="language_1:ComplexTypeReference" referred="//@types.15"/>
@@ -1005,7 +1005,7 @@
       </expression>
     </value>
   </assertions>
-  <assertions name="errorpattern validation notWellLookingPatter" annotations="//@annotations.57">
+  <assertions name="errorpattern validation notWellLookingPatter" annotations="//@annotations.60">
     <value xsi:type="language_1:Forall">
       <quantifiedVariables name="p0">
         <range xsi:type="language_1:ComplexTypeReference" referred="//@types.4"/>
@@ -1017,7 +1017,7 @@
       </expression>
     </value>
   </assertions>
-  <assertions name="errorpattern validation notWellLookingPatternElement" annotations="//@annotations.58">
+  <assertions name="errorpattern validation notWellLookingPatternElement" annotations="//@annotations.61">
     <value xsi:type="language_1:Forall">
       <quantifiedVariables name="p0">
         <range xsi:type="language_1:ComplexTypeReference" referred="//@types.6"/>
@@ -1029,7 +1029,7 @@
       </expression>
     </value>
   </assertions>
-  <assertions name="errorpattern validation patternElementHasVar" annotations="//@annotations.59">
+  <assertions name="errorpattern validation patternElementHasVar" annotations="//@annotations.62">
     <value xsi:type="language_1:Forall">
       <quantifiedVariables name="p0">
         <range xsi:type="language_1:ComplexTypeReference" referred="//@types.6"/>
@@ -1045,7 +1045,7 @@
       </expression>
     </value>
   </assertions>
-  <assertions name="errorpattern validation patternElementHasPart" annotations="//@annotations.60">
+  <assertions name="errorpattern validation patternElementHasPart" annotations="//@annotations.63">
     <value xsi:type="language_1:Forall">
       <quantifiedVariables name="p0">
         <range xsi:type="language_1:ComplexTypeReference" referred="//@types.6"/>
@@ -1057,6 +1057,34 @@
         <operand xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.30">
           <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@assertions.52/@value/@quantifiedVariables.0"/>
           <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@assertions.52/@value/@quantifiedVariables.1"/>
+        </operand>
+      </expression>
+    </value>
+  </assertions>
+  <assertions name="errorpattern validation notPatternElement" annotations="//@annotations.64">
+    <value xsi:type="language_1:Forall">
+      <quantifiedVariables name="p0">
+        <range xsi:type="language_1:ComplexTypeReference" referred="//@types.5"/>
+      </quantifiedVariables>
+      <expression xsi:type="language_1:Not">
+        <operand xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.32">
+          <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@assertions.53/@value/@quantifiedVariables.0"/>
+        </operand>
+      </expression>
+    </value>
+  </assertions>
+  <assertions name="errorpattern validation notWellLookingMapliteral" annotations="//@annotations.65">
+    <value xsi:type="language_1:Forall">
+      <quantifiedVariables name="p0">
+        <range xsi:type="language_1:ComplexTypeReference" referred="//@types.9"/>
+      </quantifiedVariables>
+      <quantifiedVariables name="p1">
+        <range xsi:type="language_1:ComplexTypeReference" referred="//@types.25"/>
+      </quantifiedVariables>
+      <expression xsi:type="language_1:Not">
+        <operand xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.33">
+          <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@assertions.54/@value/@quantifiedVariables.0"/>
+          <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@assertions.54/@value/@quantifiedVariables.1"/>
         </operand>
       </expression>
     </value>
@@ -1346,6 +1374,65 @@
       </operands>
     </value>
   </relations>
+  <relations xsi:type="language_1:RelationDefinition" name="pattern validation pe" annotations="//@annotations.56">
+    <parameters xsi:type="language_1:ComplexTypeReference" referred="//@types.6"/>
+    <variables name="parameter pe">
+      <range xsi:type="language_1:ComplexTypeReference" referred="//@types.6"/>
+    </variables>
+    <value xsi:type="language_1:Or">
+      <operands xsi:type="language_1:And">
+        <operands xsi:type="language_1:InstanceOf">
+          <value xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.31/@variables.0"/>
+          <range xsi:type="language_1:ComplexTypeReference" referred="//@types.6"/>
+        </operands>
+      </operands>
+    </value>
+  </relations>
+  <relations xsi:type="language_1:RelationDefinition" name="pattern validation notPatternElement" annotations="//@annotations.57">
+    <parameters xsi:type="language_1:ComplexTypeReference" referred="//@types.5"/>
+    <variables name="parameter patternPart">
+      <range xsi:type="language_1:ComplexTypeReference" referred="//@types.5"/>
+    </variables>
+    <value xsi:type="language_1:Or">
+      <operands xsi:type="language_1:And">
+        <operands xsi:type="language_1:InstanceOf">
+          <value xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.32/@variables.0"/>
+          <range xsi:type="language_1:ComplexTypeReference" referred="//@types.5"/>
+        </operands>
+        <operands xsi:type="language_1:Not">
+          <operand xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.31">
+            <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.32/@variables.0"/>
+          </operand>
+        </operands>
+      </operands>
+    </value>
+  </relations>
+  <relations xsi:type="language_1:RelationDefinition" name="pattern validation notWellLookingMapliteral" annotations="//@annotations.58">
+    <parameters xsi:type="language_1:ComplexTypeReference" referred="//@types.9"/>
+    <parameters xsi:type="language_1:ComplexTypeReference" referred="//@types.25"/>
+    <variables name="parameter mapLiteral">
+      <range xsi:type="language_1:ComplexTypeReference" referred="//@types.9"/>
+    </variables>
+    <variables name="parameter nodeLabel">
+      <range xsi:type="language_1:ComplexTypeReference" referred="//@types.25"/>
+    </variables>
+    <value xsi:type="language_1:Or">
+      <operands xsi:type="language_1:And">
+        <operands xsi:type="language_1:InstanceOf">
+          <value xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.33/@variables.0"/>
+          <range xsi:type="language_1:ComplexTypeReference" referred="//@types.9"/>
+        </operands>
+        <operands xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.17">
+          <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.33/@variables.0"/>
+          <parameterSubstitutions xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.33/@variables.1"/>
+        </operands>
+        <operands xsi:type="language_1:InstanceOf">
+          <value xsi:type="language_1:SymbolicValue" symbolicReference="//@relations.33/@variables.1"/>
+          <range xsi:type="language_1:ComplexTypeReference" referred="//@types.25"/>
+        </operands>
+      </operands>
+    </value>
+  </relations>
   <elements name="o 1" definedInType="//@types.31 //@types.61 //@types.63 //@types.65 //@types.67"/>
   <elements name="o 2" definedInType="//@types.33 //@types.69 //@types.71"/>
   <elements name="o 3" definedInType="//@types.35"/>
@@ -1361,7 +1448,7 @@
   <elements name="o 14" definedInType="//@types.57"/>
   <elements name="o 15" definedInType="//@types.59 //@types.75 //@types.83 //@types.85"/>
   <elements name="o 6" definedInType="//@types.77"/>
-  <containmentHierarchies typesOrderedInHierarchy="//@types.7 //@types.16 //@types.30 //@types.25 //@types.0 //@types.22 //@types.23 //@types.15 //@types.20 //@types.2 //@types.5 //@types.24 //@types.9 //@types.11 //@types.14 //@types.27 //@types.17 //@types.6 //@types.18 //@types.3 //@types.12 //@types.10 //@types.21 //@types.4 //@types.29 //@types.19 //@types.28 //@types.26 //@types.13 //@types.1 //@types.8 //@types.31 //@types.32 //@types.33 //@types.34 //@types.35 //@types.36 //@types.37 //@types.38 //@types.39 //@types.40 //@types.41 //@types.42 //@types.43 //@types.44 //@types.45 //@types.46 //@types.47 //@types.48 //@types.49 //@types.50 //@types.51 //@types.52 //@types.53 //@types.54 //@types.55 //@types.56 //@types.57 //@types.58 //@types.59 //@types.60 //@types.61 //@types.62 //@types.63 //@types.64 //@types.65 //@types.66 //@types.67 //@types.68 //@types.69 //@types.70 //@types.71 //@types.72 //@types.73 //@types.74 //@types.75 //@types.76 //@types.77 //@types.78 //@types.79 //@types.80 //@types.81 //@types.82 //@types.83 //@types.84 //@types.85 //@types.86" containmentRelations="//@relations.0 //@relations.1 //@relations.2 //@relations.3 //@relations.4 //@relations.5 //@relations.6 //@relations.7 //@relations.8 //@relations.9 //@relations.10 //@relations.11 //@relations.12 //@relations.13 //@relations.14 //@relations.15 //@relations.17"/>
+  <containmentHierarchies typesOrderedInHierarchy="//@types.0 //@types.17 //@types.6 //@types.8 //@types.20 //@types.9 //@types.30 //@types.7 //@types.26 //@types.27 //@types.19 //@types.12 //@types.16 //@types.10 //@types.18 //@types.5 //@types.11 //@types.23 //@types.29 //@types.28 //@types.14 //@types.24 //@types.2 //@types.3 //@types.13 //@types.1 //@types.25 //@types.21 //@types.15 //@types.4 //@types.22 //@types.31 //@types.32 //@types.33 //@types.34 //@types.35 //@types.36 //@types.37 //@types.38 //@types.39 //@types.40 //@types.41 //@types.42 //@types.43 //@types.44 //@types.45 //@types.46 //@types.47 //@types.48 //@types.49 //@types.50 //@types.51 //@types.52 //@types.53 //@types.54 //@types.55 //@types.56 //@types.57 //@types.58 //@types.59 //@types.60 //@types.61 //@types.62 //@types.63 //@types.64 //@types.65 //@types.66 //@types.67 //@types.68 //@types.69 //@types.70 //@types.71 //@types.72 //@types.73 //@types.74 //@types.75 //@types.76 //@types.77 //@types.78 //@types.79 //@types.80 //@types.81 //@types.82 //@types.83 //@types.84 //@types.85 //@types.86" containmentRelations="//@relations.0 //@relations.1 //@relations.2 //@relations.3 //@relations.4 //@relations.5 //@relations.6 //@relations.7 //@relations.8 //@relations.9 //@relations.10 //@relations.11 //@relations.12 //@relations.13 //@relations.14 //@relations.15 //@relations.17"/>
   <annotations xsi:type="ecore2logicannotations:UpperMultiplicityAssertion" target="//@assertions.0" relation="//@relations.0" upper="1"/>
   <annotations xsi:type="ecore2logicannotations:LowerMultiplicityAssertion" target="//@assertions.1" relation="//@relations.1" lower="1"/>
   <annotations xsi:type="ecore2logicannotations:LowerMultiplicityAssertion" target="//@assertions.2" relation="//@relations.2" lower="1"/>
@@ -1418,9 +1505,14 @@
   <annotations xsi:type="viatra2logicannotations:TransfomedViatraQuery" target="//@relations.28" patternFullyQualifiedName="validation.notWellLookingPatternElement"/>
   <annotations xsi:type="viatra2logicannotations:TransfomedViatraQuery" target="//@relations.29" patternFullyQualifiedName="validation.patternElementHasVar"/>
   <annotations xsi:type="viatra2logicannotations:TransfomedViatraQuery" target="//@relations.30" patternFullyQualifiedName="validation.patternElementHasPart"/>
+  <annotations xsi:type="viatra2logicannotations:TransfomedViatraQuery" target="//@relations.31" patternFullyQualifiedName="validation.pe"/>
+  <annotations xsi:type="viatra2logicannotations:TransfomedViatraQuery" target="//@relations.32" patternFullyQualifiedName="validation.notPatternElement"/>
+  <annotations xsi:type="viatra2logicannotations:TransfomedViatraQuery" target="//@relations.33" patternFullyQualifiedName="validation.notWellLookingMapliteral"/>
   <annotations xsi:type="viatra2logicannotations:TransformedViatraWellformednessConstraint" target="//@assertions.48" query="//@annotations.49"/>
   <annotations xsi:type="viatra2logicannotations:TransformedViatraWellformednessConstraint" target="//@assertions.49" query="//@annotations.52"/>
   <annotations xsi:type="viatra2logicannotations:TransformedViatraWellformednessConstraint" target="//@assertions.50" query="//@annotations.53"/>
   <annotations xsi:type="viatra2logicannotations:TransformedViatraWellformednessConstraint" target="//@assertions.51" query="//@annotations.54"/>
   <annotations xsi:type="viatra2logicannotations:TransformedViatraWellformednessConstraint" target="//@assertions.52" query="//@annotations.55"/>
+  <annotations xsi:type="viatra2logicannotations:TransformedViatraWellformednessConstraint" target="//@assertions.53" query="//@annotations.57"/>
+  <annotations xsi:type="viatra2logicannotations:TransformedViatraWellformednessConstraint" target="//@assertions.54" query="//@annotations.58"/>
 </language:LogicProblem>

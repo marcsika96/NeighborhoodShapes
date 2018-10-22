@@ -67,6 +67,7 @@ public class Translator {
         final URI uri = URI.createFileURI(file.getAbsolutePath());
         final ResourceSetImpl rs = new ResourceSetImpl();
         final Resource resource = rs.getResource(uri, true);
+        IteratorExtensions.<EObject>toList(resource.getAllContents());
         EObject _head = IterableExtensions.<EObject>head(resource.getContents());
         final SinglePartQuery query = ((SinglePartQuery) _head);
         res.put(file, query);
@@ -174,7 +175,7 @@ public class Translator {
       _get_2.setKey(_builder_2.toString());
     }
     final List<NodeLabel> labels = IteratorExtensions.<NodeLabel>toList(Iterators.<NodeLabel>filter(model.eAllContents(), NodeLabel.class));
-    int _size_3 = mapkeys.size();
+    int _size_3 = labels.size();
     final ExclusiveRange labelIndexes = new ExclusiveRange(0, _size_3, true);
     for (final Integer i_3 : labelIndexes) {
       NodeLabel _get_3 = labels.get((i_3).intValue());

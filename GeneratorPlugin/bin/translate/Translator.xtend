@@ -41,6 +41,7 @@ class Translator {
 			val uri = URI.createFileURI(file.absolutePath)
 			val rs = new ResourceSetImpl
 			val resource = rs.getResource(uri,true);
+			resource.allContents.toList
 			val SinglePartQuery query = resource.contents.head as SinglePartQuery
 			res.put(file,query)
 		}
@@ -106,7 +107,7 @@ class Translator {
 		}
 		//NodeLabelNames keys
 		val labels = model.eAllContents.filter(NodeLabel).toList
-		val labelIndexes = 0..<mapkeys.size
+		val labelIndexes = 0..<labels.size
 		for(i : labelIndexes){
 			labels.get(i).labelName = '''Label«i+1»'''
 		}

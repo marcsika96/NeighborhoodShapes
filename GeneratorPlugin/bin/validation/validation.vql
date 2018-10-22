@@ -44,7 +44,20 @@ pattern  patternElementHasPart(patternElement : PatternElement, part : PatternPa
 	PatternElement.part(patternElement,part);
 }
 
+pattern pe(pe:PatternElement) {
+	PatternElement(pe);
+}
 
+
+@Constraint(severity ="error", key={patternPart}, message = "error")
+pattern notPatternElement( patternPart : PatternPart){
+	neg find pe(patternPart);
+}
+
+@Constraint(severity ="error", key={mapLiteral}, message = "error")
+pattern notWellLookingMapliteral(mapLiteral : MapLiteral, nodeLabel: NodeLabel){
+	MapLiteral.nodeLabels(mapLiteral,nodeLabel);
+}
 
 
 

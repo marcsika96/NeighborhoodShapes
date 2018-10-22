@@ -273,8 +273,8 @@
     <interpretationOf href="generation.logicproblem#//@types.21"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.22">
-    <elements href="generation.logicproblem#//@elements.1"/>
     <elements href="generation.logicproblem#//@elements.9"/>
+    <elements href="generation.logicproblem#//@elements.1"/>
     <interpretationOf href="generation.logicproblem#//@types.22"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.23" supertypeInterpretation="//@partialtypeinterpratation.9">
@@ -282,10 +282,10 @@
     <interpretationOf href="generation.logicproblem#//@types.23"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.24">
-    <elements href="generation.logicproblem#//@elements.13"/>
     <elements href="generation.logicproblem#//@elements.6"/>
-    <elements href="generation.logicproblem#//@elements.8"/>
     <elements href="generation.logicproblem#//@elements.4"/>
+    <elements href="generation.logicproblem#//@elements.8"/>
+    <elements href="generation.logicproblem#//@elements.13"/>
     <interpretationOf href="generation.logicproblem#//@types.24"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.25">
@@ -302,15 +302,15 @@
     <interpretationOf href="generation.logicproblem#//@types.27"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.28" supertypeInterpretation="//@partialtypeinterpratation.28 //@partialtypeinterpratation.33">
-    <elements href="generation.logicproblem#//@elements.13"/>
     <elements href="generation.logicproblem#//@elements.6"/>
     <elements href="generation.logicproblem#//@elements.8"/>
+    <elements href="generation.logicproblem#//@elements.13"/>
     <interpretationOf href="generation.logicproblem#//@types.28"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.29">
-    <elements href="generation.logicproblem#//@elements.13"/>
     <elements href="generation.logicproblem#//@elements.6"/>
     <elements href="generation.logicproblem#//@elements.8"/>
+    <elements href="generation.logicproblem#//@elements.13"/>
     <interpretationOf href="generation.logicproblem#//@types.29"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.30">
