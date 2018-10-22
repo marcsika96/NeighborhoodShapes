@@ -6,22 +6,48 @@
         <nodepattern>
           <nodeLabels/>
           <nodeLabels/>
-          <nodeLabels/>
-          <nodeLabels/>
-          <nodeLabels/>
           <variable/>
           <properties xsi:type="openCypher:MapLiteral">
             <entries>
               <value xsi:type="openCypher:StringLiteral">
                 <nodeLabels/>
                 <nodeLabels/>
-                <nodeLabels/>
-                <nodeLabels/>
+              </value>
+            </entries>
+            <entries>
+              <value xsi:type="openCypher:StringLiteral">
                 <nodeLabels/>
               </value>
             </entries>
           </properties>
         </nodepattern>
+        <chain>
+          <relationshipPattern>
+            <detail>
+              <variable/>
+              <properties xsi:type="openCypher:MapLiteral">
+                <entries>
+                  <value xsi:type="openCypher:StringLiteral">
+                    <nodeLabels/>
+                    <nodeLabels/>
+                  </value>
+                </entries>
+              </properties>
+            </detail>
+          </relationshipPattern>
+          <nodePattern>
+            <nodeLabels/>
+            <nodeLabels/>
+            <variable/>
+            <properties xsi:type="openCypher:MapLiteral">
+              <entries>
+                <value xsi:type="openCypher:StringLiteral">
+                  <nodeLabels/>
+                </value>
+              </entries>
+            </properties>
+          </nodePattern>
+        </chain>
       </patterns>
     </pattern>
   </readingClauses>
@@ -30,13 +56,6 @@
       <returnItems>
         <items>
           <expression xsi:type="openCypher:VariableRef" variableRef="//@readingClauses.0/@pattern/@patterns.0/@nodepattern/@variable">
-            <nodeLabels/>
-            <nodeLabels/>
-            <nodeLabels/>
-            <nodeLabels/>
-            <nodeLabels/>
-            <nodeLabels/>
-            <nodeLabels/>
             <nodeLabels/>
             <nodeLabels/>
           </expression>

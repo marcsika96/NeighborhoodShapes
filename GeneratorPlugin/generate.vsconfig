@@ -1,6 +1,7 @@
 import epackage "platform:/resource/GeneratorPlugin/model/OpenCypher%20másolata.ecore"
 import viatra "platform:/resource/GeneratorPlugin/src/validation/validation.vql"
 
+//ez működőképes van benne már label is
 metamodel target  {
 Cypher, Cypher.statement, Cypher.statement,
 AllOptions,AllOptions.explain,AllOptions.profile,
@@ -36,9 +37,52 @@ QueryOptions
 }
 
 
+metamodel targetChainnel  {
+Cypher, Cypher.statement, Cypher.statement,
+AllOptions,AllOptions.explain,AllOptions.profile,
+SinglePartQuery, SinglePartQuery.readingClauses, SinglePartQuery.return,
+Match, Match.optional, Match.pattern,
+Pattern, Pattern.patterns, 
+PatternPart,PatternPart.var,PatternPart.part,
+PatternElement,PatternElement.nodepattern,
+NodePattern, NodePattern.properties, NodePattern.variable,
+VariableDeclaration,
+MapLiteral, MapLiteral.entries,
+MapLiteralEntry, MapLiteralEntry.value,
+StringLiteral, 
+Return, Return.distinct, Return.body,
+ReturnBody,ReturnBody.returnItems,
+ReturnItems, ReturnItems.all,ReturnItems.items,
+ReturnItem, ReturnItem.expression,
+VariableRef, VariableRef.variableRef,
+SingleQuery,
+RegularQuery,
+Query,
+Statement,
+ReadingClause,
+Clause,
+AnonymousPatternPart,
+NodeLabels,NodeLabels.nodeLabels, NodeLabel,
+Properties,
+Literal,
+Expression, 
+PropertyExpression,
+QueryOptions,
+//chainhez kellő eddig nem levő dolgok
+PatternElementChain,PatternElementChain.nodePattern,PatternElementChain.relationshipPattern,
+RelationshipPattern,RelationshipPattern.incoming,RelationshipPattern.outgoing,RelationshipPattern.detail,
+RelationshipDetail,RelationshipDetail.optional, RelationshipDetail.variable,RelationshipDetail.properties,
+//TODO kitölteni ezeket:RelationshipDetail.relTypeNames
+RelationshipTypes,
+PatternElement.chain
+	
+}
+
+
+
 
 generate {
-	metamodel = target
+	metamodel = targetChainnel
 	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
 	number = 5
 	solver = ViatraSolver
@@ -47,8 +91,11 @@ generate {
 		log-level = normal
 	}
 	scope = {
-		# node += 17..20, # string += {"A"}, # int += { 1 },
-		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1 ,  #<VariableDeclaration> += 0..3, #<NodePattern> +=0,  #<PatternElement> += 0,  #<VariableRef> += 0
+		# node += 10..*, # string += {"A"}, # int += { 1 },
+		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
+//#<VariableDeclaration> += 0..3
+		//#<NodePattern> +=0
+		//,  #<PatternElement> += 0,  #<VariableRef> += 0
 	}
 	debug = "platform:/resource/GeneratorPlugin/debug"
 	output = "platform:/resource/GeneratorPlugin/models"

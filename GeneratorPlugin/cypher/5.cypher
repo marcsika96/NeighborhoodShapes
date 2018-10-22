@@ -1,1 +1,1 @@
-MATCH ( V1 : Label1 : Label2 : Label3 : Label4 : Label5 { Key1 : "String1" } ) RETURN V1
+MATCH ( V1 : Label1 : Label2 { Key1 : "String1" , Key2 : "String2" } ) - [ V2 : RelTypeName1 { Key3 : "String3" } ] - ( V3 : Label8 : Label9 { Key4 : "String4" } ) RETURN V1

@@ -20,6 +20,12 @@
             </entries>
           </properties>
         </nodepattern>
+        <chain>
+          <relationshipPattern>
+            <detail/>
+          </relationshipPattern>
+          <nodePattern/>
+        </chain>
       </patterns>
     </pattern>
   </readingClauses>

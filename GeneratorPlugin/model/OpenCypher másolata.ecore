@@ -348,16 +348,18 @@
         eType="#//Properties" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PatternElementChain">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relationshipPattern" eType="#//RelationshipPattern"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nodePattern" eType="#//NodePattern"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationshipPattern" lowerBound="1"
+        eType="#//RelationshipPattern" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodePattern" lowerBound="1"
+        eType="#//NodePattern" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RelationshipPattern">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incoming" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="detail" eType="#//RelationshipDetail"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="outgoing" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incoming" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="detail" lowerBound="1"
+        eType="#//RelationshipDetail" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="outgoing" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RelationshipDetail" eSuperTypes="#//RelationshipTypes">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//VariableDeclaration"
@@ -374,7 +376,7 @@
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NodeLabels">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nodeLabels" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodeLabels" upperBound="2"
         eType="#//NodeLabel" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NodeLabel">
@@ -494,7 +496,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MapLiteral" eSuperTypes="#//Properties #//Literal">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entries" lowerBound="1"
-        upperBound="-1" eType="#//MapLiteralEntry" containment="true"/>
+        upperBound="2" eType="#//MapLiteralEntry" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MapLiteralEntry">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

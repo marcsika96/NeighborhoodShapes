@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<partialinterpretation:PartialInterpretation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:language="http://www.bme.hu/mit/inf/dslreasoner/logic/model/language" xmlns:partialinterpretation="http://www.bme.hu/mit/inf/dslreasoner/viatrasolver/partialinterpretationlanguage" minNewElements="17" maxNewElements="20">
+<partialinterpretation:PartialInterpretation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:language="http://www.bme.hu/mit/inf/dslreasoner/logic/model/language" xmlns:partialinterpretation="http://www.bme.hu/mit/inf/dslreasoner/viatrasolver/partialinterpretationlanguage" minNewElements="10" maxNewElements="2147483647">
   <problem href="generation.logicproblem#/"/>
   <partialrelationinterpretation>
     <interpretationOf href="generation.logicproblem#//@relations.0"/>
@@ -19,7 +19,7 @@
     <interpretationOf href="generation.logicproblem#//@relations.2"/>
     <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink">
       <param1 href="generation.logicproblem#//@elements.0"/>
-      <param2 href="generation.logicproblem#//@elements.9"/>
+      <param2 href="generation.logicproblem#//@elements.10"/>
     </relationlinks>
     <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.2/@parameters.0"/>
     <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.2/@parameters.1"/>
@@ -65,7 +65,7 @@
     <interpretationOf href="generation.logicproblem#//@relations.8"/>
     <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink">
       <param1 href="generation.logicproblem#//@elements.4"/>
-      <param2 href="generation.logicproblem#//@elements.6"/>
+      <param2 href="generation.logicproblem#//@elements.7"/>
     </relationlinks>
     <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.8/@parameters.0"/>
     <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.8/@parameters.1"/>
@@ -74,7 +74,7 @@
     <interpretationOf href="generation.logicproblem#//@relations.9"/>
     <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink">
       <param1 href="generation.logicproblem#//@elements.4"/>
-      <param2 href="generation.logicproblem#//@elements.5"/>
+      <param2 href="generation.logicproblem#//@elements.6"/>
     </relationlinks>
     <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.9/@parameters.0"/>
     <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.9/@parameters.1"/>
@@ -82,8 +82,8 @@
   <partialrelationinterpretation>
     <interpretationOf href="generation.logicproblem#//@relations.10"/>
     <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink">
-      <param1 href="generation.logicproblem#//@elements.6"/>
-      <param2 href="generation.logicproblem#//@elements.7"/>
+      <param1 href="generation.logicproblem#//@elements.7"/>
+      <param2 href="generation.logicproblem#//@elements.8"/>
     </relationlinks>
     <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.10/@parameters.0"/>
     <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.10/@parameters.1"/>
@@ -91,8 +91,8 @@
   <partialrelationinterpretation>
     <interpretationOf href="generation.logicproblem#//@relations.11"/>
     <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink">
-      <param1 href="generation.logicproblem#//@elements.7"/>
-      <param2 href="generation.logicproblem#//@elements.8"/>
+      <param1 href="generation.logicproblem#//@elements.8"/>
+      <param2 href="generation.logicproblem#//@elements.9"/>
     </relationlinks>
     <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.11/@parameters.0"/>
     <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.11/@parameters.1"/>
@@ -100,8 +100,8 @@
   <partialrelationinterpretation>
     <interpretationOf href="generation.logicproblem#//@relations.12"/>
     <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink">
-      <param1 href="generation.logicproblem#//@elements.9"/>
-      <param2 href="generation.logicproblem#//@elements.10"/>
+      <param1 href="generation.logicproblem#//@elements.10"/>
+      <param2 href="generation.logicproblem#//@elements.11"/>
     </relationlinks>
     <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.12/@parameters.0"/>
     <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.12/@parameters.1"/>
@@ -109,8 +109,8 @@
   <partialrelationinterpretation>
     <interpretationOf href="generation.logicproblem#//@relations.13"/>
     <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink">
-      <param1 href="generation.logicproblem#//@elements.10"/>
-      <param2 href="generation.logicproblem#//@elements.11"/>
+      <param1 href="generation.logicproblem#//@elements.11"/>
+      <param2 href="generation.logicproblem#//@elements.12"/>
     </relationlinks>
     <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.13/@parameters.0"/>
     <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.13/@parameters.1"/>
@@ -118,8 +118,8 @@
   <partialrelationinterpretation>
     <interpretationOf href="generation.logicproblem#//@relations.14"/>
     <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink">
-      <param1 href="generation.logicproblem#//@elements.11"/>
-      <param2 href="generation.logicproblem#//@elements.12"/>
+      <param1 href="generation.logicproblem#//@elements.12"/>
+      <param2 href="generation.logicproblem#//@elements.13"/>
     </relationlinks>
     <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.14/@parameters.0"/>
     <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.14/@parameters.1"/>
@@ -127,8 +127,8 @@
   <partialrelationinterpretation>
     <interpretationOf href="generation.logicproblem#//@relations.15"/>
     <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink">
-      <param1 href="generation.logicproblem#//@elements.12"/>
-      <param2 href="generation.logicproblem#//@elements.13"/>
+      <param1 href="generation.logicproblem#//@elements.13"/>
+      <param2 href="generation.logicproblem#//@elements.14"/>
     </relationlinks>
     <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.15/@parameters.0"/>
     <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.15/@parameters.1"/>
@@ -142,41 +142,111 @@
     <interpretationOf href="generation.logicproblem#//@relations.17"/>
     <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink">
       <param1 href="generation.logicproblem#//@elements.4"/>
-      <param2 href="generation.logicproblem#//@elements.14"/>
+      <param2 href="generation.logicproblem#//@elements.15"/>
     </relationlinks>
     <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.17/@parameters.0"/>
     <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.17/@parameters.1"/>
   </partialrelationinterpretation>
   <partialrelationinterpretation>
     <interpretationOf href="generation.logicproblem#//@relations.18"/>
+    <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink">
+      <param1 href="generation.logicproblem#//@elements.16"/>
+      <param2 href="generation.logicproblem#//@elements.5"/>
+    </relationlinks>
     <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.18/@parameters.0"/>
-    <param2 xsi:type="language:BoolTypeReference" href="generation.logicproblem#//@relations.18/@parameters.1"/>
+    <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.18/@parameters.1"/>
   </partialrelationinterpretation>
   <partialrelationinterpretation>
     <interpretationOf href="generation.logicproblem#//@relations.19"/>
+    <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink">
+      <param1 href="generation.logicproblem#//@elements.16"/>
+      <param2 href="generation.logicproblem#//@elements.17"/>
+    </relationlinks>
     <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.19/@parameters.0"/>
-    <param2 xsi:type="language:BoolTypeReference" href="generation.logicproblem#//@relations.19/@parameters.1"/>
+    <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.19/@parameters.1"/>
   </partialrelationinterpretation>
   <partialrelationinterpretation>
     <interpretationOf href="generation.logicproblem#//@relations.20"/>
-    <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink" param2="//@newElements.1">
-      <param1 href="generation.logicproblem#//@elements.1"/>
+    <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink">
+      <param1 href="generation.logicproblem#//@elements.17"/>
+      <param2 href="generation.logicproblem#//@elements.18"/>
     </relationlinks>
     <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.20/@parameters.0"/>
-    <param2 xsi:type="language:BoolTypeReference" href="generation.logicproblem#//@relations.20/@parameters.1"/>
+    <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.20/@parameters.1"/>
   </partialrelationinterpretation>
   <partialrelationinterpretation>
     <interpretationOf href="generation.logicproblem#//@relations.21"/>
-    <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink" param2="//@newElements.1">
-      <param1 href="generation.logicproblem#//@elements.9"/>
-    </relationlinks>
     <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.21/@parameters.0"/>
-    <param2 xsi:type="language:BoolTypeReference" href="generation.logicproblem#//@relations.21/@parameters.1"/>
+    <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.21/@parameters.1"/>
   </partialrelationinterpretation>
   <partialrelationinterpretation>
     <interpretationOf href="generation.logicproblem#//@relations.22"/>
     <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.22/@parameters.0"/>
-    <param2 xsi:type="language:StringTypeReference" href="generation.logicproblem#//@relations.22/@parameters.1"/>
+    <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.22/@parameters.1"/>
+  </partialrelationinterpretation>
+  <partialrelationinterpretation>
+    <interpretationOf href="generation.logicproblem#//@relations.23"/>
+    <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink">
+      <param1 href="generation.logicproblem#//@elements.3"/>
+      <param2 href="generation.logicproblem#//@elements.16"/>
+    </relationlinks>
+    <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.23/@parameters.0"/>
+    <param2 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.23/@parameters.1"/>
+  </partialrelationinterpretation>
+  <partialrelationinterpretation>
+    <interpretationOf href="generation.logicproblem#//@relations.24"/>
+    <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.24/@parameters.0"/>
+    <param2 xsi:type="language:BoolTypeReference" href="generation.logicproblem#//@relations.24/@parameters.1"/>
+  </partialrelationinterpretation>
+  <partialrelationinterpretation>
+    <interpretationOf href="generation.logicproblem#//@relations.25"/>
+    <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.25/@parameters.0"/>
+    <param2 xsi:type="language:BoolTypeReference" href="generation.logicproblem#//@relations.25/@parameters.1"/>
+  </partialrelationinterpretation>
+  <partialrelationinterpretation>
+    <interpretationOf href="generation.logicproblem#//@relations.26"/>
+    <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink" param2="//@newElements.1">
+      <param1 href="generation.logicproblem#//@elements.1"/>
+    </relationlinks>
+    <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.26/@parameters.0"/>
+    <param2 xsi:type="language:BoolTypeReference" href="generation.logicproblem#//@relations.26/@parameters.1"/>
+  </partialrelationinterpretation>
+  <partialrelationinterpretation>
+    <interpretationOf href="generation.logicproblem#//@relations.27"/>
+    <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink" param2="//@newElements.1">
+      <param1 href="generation.logicproblem#//@elements.10"/>
+    </relationlinks>
+    <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.27/@parameters.0"/>
+    <param2 xsi:type="language:BoolTypeReference" href="generation.logicproblem#//@relations.27/@parameters.1"/>
+  </partialrelationinterpretation>
+  <partialrelationinterpretation>
+    <interpretationOf href="generation.logicproblem#//@relations.28"/>
+    <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.28/@parameters.0"/>
+    <param2 xsi:type="language:StringTypeReference" href="generation.logicproblem#//@relations.28/@parameters.1"/>
+  </partialrelationinterpretation>
+  <partialrelationinterpretation>
+    <interpretationOf href="generation.logicproblem#//@relations.29"/>
+    <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink" param2="//@newElements.1">
+      <param1 href="generation.logicproblem#//@elements.17"/>
+    </relationlinks>
+    <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.29/@parameters.0"/>
+    <param2 xsi:type="language:BoolTypeReference" href="generation.logicproblem#//@relations.29/@parameters.1"/>
+  </partialrelationinterpretation>
+  <partialrelationinterpretation>
+    <interpretationOf href="generation.logicproblem#//@relations.30"/>
+    <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink" param2="//@newElements.1">
+      <param1 href="generation.logicproblem#//@elements.17"/>
+    </relationlinks>
+    <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.30/@parameters.0"/>
+    <param2 xsi:type="language:BoolTypeReference" href="generation.logicproblem#//@relations.30/@parameters.1"/>
+  </partialrelationinterpretation>
+  <partialrelationinterpretation>
+    <interpretationOf href="generation.logicproblem#//@relations.31"/>
+    <relationlinks xsi:type="partialinterpretation:BinaryElementRelationLink" param2="//@newElements.1">
+      <param1 href="generation.logicproblem#//@elements.18"/>
+    </relationlinks>
+    <param1 xsi:type="language:ComplexTypeReference" href="generation.logicproblem#//@relations.31/@parameters.0"/>
+    <param2 xsi:type="language:BoolTypeReference" href="generation.logicproblem#//@relations.31/@parameters.1"/>
   </partialrelationinterpretation>
   <newElements xsi:type="partialinterpretation:BooleanElement" name="true" valueSet="true" value="true"/>
   <newElements xsi:type="partialinterpretation:BooleanElement" name="false" valueSet="true"/>
@@ -214,42 +284,43 @@
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.7" supertypeInterpretation="//@partialtypeinterpratation.28">
     <elements href="generation.logicproblem#//@elements.4"/>
+    <elements href="generation.logicproblem#//@elements.5"/>
     <interpretationOf href="generation.logicproblem#//@types.7"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.8">
-    <elements href="generation.logicproblem#//@elements.5"/>
+    <elements href="generation.logicproblem#//@elements.6"/>
     <interpretationOf href="generation.logicproblem#//@types.8"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.9" supertypeInterpretation="//@partialtypeinterpratation.30 //@partialtypeinterpratation.31 //@partialtypeinterpratation.32 //@partialtypeinterpratation.28 //@partialtypeinterpratation.33">
-    <elements href="generation.logicproblem#//@elements.6"/>
+    <elements href="generation.logicproblem#//@elements.7"/>
     <interpretationOf href="generation.logicproblem#//@types.9"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.10">
-    <elements href="generation.logicproblem#//@elements.7"/>
+    <elements href="generation.logicproblem#//@elements.8"/>
     <interpretationOf href="generation.logicproblem#//@types.10"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.11" supertypeInterpretation="//@partialtypeinterpratation.31 //@partialtypeinterpratation.32 //@partialtypeinterpratation.28 //@partialtypeinterpratation.33">
-    <elements href="generation.logicproblem#//@elements.8"/>
+    <elements href="generation.logicproblem#//@elements.9"/>
     <interpretationOf href="generation.logicproblem#//@types.11"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.12" supertypeInterpretation="//@partialtypeinterpratation.26">
-    <elements href="generation.logicproblem#//@elements.9"/>
+    <elements href="generation.logicproblem#//@elements.10"/>
     <interpretationOf href="generation.logicproblem#//@types.12"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.13">
-    <elements href="generation.logicproblem#//@elements.10"/>
+    <elements href="generation.logicproblem#//@elements.11"/>
     <interpretationOf href="generation.logicproblem#//@types.13"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.14">
-    <elements href="generation.logicproblem#//@elements.11"/>
+    <elements href="generation.logicproblem#//@elements.12"/>
     <interpretationOf href="generation.logicproblem#//@types.14"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.15">
-    <elements href="generation.logicproblem#//@elements.12"/>
+    <elements href="generation.logicproblem#//@elements.13"/>
     <interpretationOf href="generation.logicproblem#//@types.15"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.16" supertypeInterpretation="//@partialtypeinterpratation.32 //@partialtypeinterpratation.28 //@partialtypeinterpratation.33">
-    <elements href="generation.logicproblem#//@elements.13"/>
+    <elements href="generation.logicproblem#//@elements.14"/>
     <interpretationOf href="generation.logicproblem#//@types.16"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.17" supertypeInterpretation="//@partialtypeinterpratation.22 //@partialtypeinterpratation.23 //@partialtypeinterpratation.24">
@@ -273,8 +344,8 @@
     <interpretationOf href="generation.logicproblem#//@types.21"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.22">
-    <elements href="generation.logicproblem#//@elements.9"/>
     <elements href="generation.logicproblem#//@elements.1"/>
+    <elements href="generation.logicproblem#//@elements.10"/>
     <interpretationOf href="generation.logicproblem#//@types.22"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.23" supertypeInterpretation="//@partialtypeinterpratation.9">
@@ -282,123 +353,152 @@
     <interpretationOf href="generation.logicproblem#//@types.23"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.24">
-    <elements href="generation.logicproblem#//@elements.6"/>
+    <elements href="generation.logicproblem#//@elements.14"/>
     <elements href="generation.logicproblem#//@elements.4"/>
-    <elements href="generation.logicproblem#//@elements.8"/>
-    <elements href="generation.logicproblem#//@elements.13"/>
+    <elements href="generation.logicproblem#//@elements.5"/>
+    <elements href="generation.logicproblem#//@elements.7"/>
+    <elements href="generation.logicproblem#//@elements.9"/>
     <interpretationOf href="generation.logicproblem#//@types.24"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.25">
-    <elements href="generation.logicproblem#//@elements.14"/>
+    <elements href="generation.logicproblem#//@elements.15"/>
     <interpretationOf href="generation.logicproblem#//@types.25"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.26">
-    <elements href="generation.logicproblem#//@elements.6"/>
+    <elements href="generation.logicproblem#//@elements.7"/>
     <interpretationOf href="generation.logicproblem#//@types.26"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.27" supertypeInterpretation="//@partialtypeinterpratation.32 //@partialtypeinterpratation.28 //@partialtypeinterpratation.33">
-    <elements href="generation.logicproblem#//@elements.6"/>
-    <elements href="generation.logicproblem#//@elements.8"/>
+    <elements href="generation.logicproblem#//@elements.7"/>
+    <elements href="generation.logicproblem#//@elements.9"/>
     <interpretationOf href="generation.logicproblem#//@types.27"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.28" supertypeInterpretation="//@partialtypeinterpratation.28 //@partialtypeinterpratation.33">
-    <elements href="generation.logicproblem#//@elements.6"/>
-    <elements href="generation.logicproblem#//@elements.8"/>
-    <elements href="generation.logicproblem#//@elements.13"/>
+    <elements href="generation.logicproblem#//@elements.14"/>
+    <elements href="generation.logicproblem#//@elements.7"/>
+    <elements href="generation.logicproblem#//@elements.9"/>
     <interpretationOf href="generation.logicproblem#//@types.28"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.29">
-    <elements href="generation.logicproblem#//@elements.6"/>
-    <elements href="generation.logicproblem#//@elements.8"/>
-    <elements href="generation.logicproblem#//@elements.13"/>
+    <elements href="generation.logicproblem#//@elements.14"/>
+    <elements href="generation.logicproblem#//@elements.7"/>
+    <elements href="generation.logicproblem#//@elements.9"/>
     <interpretationOf href="generation.logicproblem#//@types.29"/>
   </partialtypeinterpratation>
   <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.30">
     <interpretationOf href="generation.logicproblem#//@types.30"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.31" supertypeInterpretation="//@partialtypeinterpratation.6 //@partialtypeinterpratation.21 //@partialtypeinterpratation.22 //@partialtypeinterpratation.23 //@partialtypeinterpratation.24 //@partialtypeinterpratation.50 //@partialtypeinterpratation.51 //@partialtypeinterpratation.52 //@partialtypeinterpratation.53">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.31">
+    <elements href="generation.logicproblem#//@elements.16"/>
+    <interpretationOf href="generation.logicproblem#//@types.31"/>
+  </partialtypeinterpratation>
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.32">
+    <elements href="generation.logicproblem#//@elements.17"/>
     <interpretationOf href="generation.logicproblem#//@types.32"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.32" supertypeInterpretation="//@partialtypeinterpratation.7 //@partialtypeinterpratation.25 //@partialtypeinterpratation.26 //@partialtypeinterpratation.54 //@partialtypeinterpratation.55">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.33" supertypeInterpretation="//@partialtypeinterpratation.38">
+    <elements href="generation.logicproblem#//@elements.18"/>
+    <interpretationOf href="generation.logicproblem#//@types.33"/>
+  </partialtypeinterpratation>
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.34">
+    <elements href="generation.logicproblem#//@elements.18"/>
     <interpretationOf href="generation.logicproblem#//@types.34"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.33" supertypeInterpretation="//@partialtypeinterpratation.8">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.35" supertypeInterpretation="//@partialtypeinterpratation.6 //@partialtypeinterpratation.21 //@partialtypeinterpratation.22 //@partialtypeinterpratation.23 //@partialtypeinterpratation.24 //@partialtypeinterpratation.54 //@partialtypeinterpratation.55 //@partialtypeinterpratation.56 //@partialtypeinterpratation.57">
     <interpretationOf href="generation.logicproblem#//@types.36"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.34" supertypeInterpretation="//@partialtypeinterpratation.9">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.36" supertypeInterpretation="//@partialtypeinterpratation.7 //@partialtypeinterpratation.25 //@partialtypeinterpratation.26 //@partialtypeinterpratation.58 //@partialtypeinterpratation.59">
     <interpretationOf href="generation.logicproblem#//@types.38"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.35" supertypeInterpretation="//@partialtypeinterpratation.10 //@partialtypeinterpratation.27 //@partialtypeinterpratation.9 //@partialtypeinterpratation.56 //@partialtypeinterpratation.38">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.37" supertypeInterpretation="//@partialtypeinterpratation.8">
     <interpretationOf href="generation.logicproblem#//@types.40"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.36" supertypeInterpretation="//@partialtypeinterpratation.11 //@partialtypeinterpratation.28 //@partialtypeinterpratation.57">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.38" supertypeInterpretation="//@partialtypeinterpratation.9">
     <interpretationOf href="generation.logicproblem#//@types.42"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.37" supertypeInterpretation="//@partialtypeinterpratation.12">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.39" supertypeInterpretation="//@partialtypeinterpratation.10 //@partialtypeinterpratation.27 //@partialtypeinterpratation.9 //@partialtypeinterpratation.60 //@partialtypeinterpratation.42">
     <interpretationOf href="generation.logicproblem#//@types.44"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.38" supertypeInterpretation="//@partialtypeinterpratation.13 //@partialtypeinterpratation.30 //@partialtypeinterpratation.31 //@partialtypeinterpratation.32 //@partialtypeinterpratation.28 //@partialtypeinterpratation.33 //@partialtypeinterpratation.59 //@partialtypeinterpratation.60 //@partialtypeinterpratation.61 //@partialtypeinterpratation.57 //@partialtypeinterpratation.62">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.40" supertypeInterpretation="//@partialtypeinterpratation.11 //@partialtypeinterpratation.28 //@partialtypeinterpratation.61">
     <interpretationOf href="generation.logicproblem#//@types.46"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.39" supertypeInterpretation="//@partialtypeinterpratation.14">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.41" supertypeInterpretation="//@partialtypeinterpratation.12">
     <interpretationOf href="generation.logicproblem#//@types.48"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.40" supertypeInterpretation="//@partialtypeinterpratation.15 //@partialtypeinterpratation.31 //@partialtypeinterpratation.32 //@partialtypeinterpratation.28 //@partialtypeinterpratation.33 //@partialtypeinterpratation.60 //@partialtypeinterpratation.61 //@partialtypeinterpratation.57 //@partialtypeinterpratation.62">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.42" supertypeInterpretation="//@partialtypeinterpratation.13 //@partialtypeinterpratation.30 //@partialtypeinterpratation.31 //@partialtypeinterpratation.32 //@partialtypeinterpratation.28 //@partialtypeinterpratation.33 //@partialtypeinterpratation.63 //@partialtypeinterpratation.64 //@partialtypeinterpratation.65 //@partialtypeinterpratation.61 //@partialtypeinterpratation.66">
     <interpretationOf href="generation.logicproblem#//@types.50"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.41" supertypeInterpretation="//@partialtypeinterpratation.16 //@partialtypeinterpratation.26 //@partialtypeinterpratation.55">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.43" supertypeInterpretation="//@partialtypeinterpratation.14">
     <interpretationOf href="generation.logicproblem#//@types.52"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.42" supertypeInterpretation="//@partialtypeinterpratation.17">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.44" supertypeInterpretation="//@partialtypeinterpratation.15 //@partialtypeinterpratation.31 //@partialtypeinterpratation.32 //@partialtypeinterpratation.28 //@partialtypeinterpratation.33 //@partialtypeinterpratation.64 //@partialtypeinterpratation.65 //@partialtypeinterpratation.61 //@partialtypeinterpratation.66">
     <interpretationOf href="generation.logicproblem#//@types.54"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.43" supertypeInterpretation="//@partialtypeinterpratation.18">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.45" supertypeInterpretation="//@partialtypeinterpratation.16 //@partialtypeinterpratation.26 //@partialtypeinterpratation.59">
     <interpretationOf href="generation.logicproblem#//@types.56"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.44" supertypeInterpretation="//@partialtypeinterpratation.19">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.46" supertypeInterpretation="//@partialtypeinterpratation.17">
     <interpretationOf href="generation.logicproblem#//@types.58"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.45" supertypeInterpretation="//@partialtypeinterpratation.20 //@partialtypeinterpratation.32 //@partialtypeinterpratation.28 //@partialtypeinterpratation.33 //@partialtypeinterpratation.61 //@partialtypeinterpratation.57 //@partialtypeinterpratation.62">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.47" supertypeInterpretation="//@partialtypeinterpratation.18">
     <interpretationOf href="generation.logicproblem#//@types.60"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.46" supertypeInterpretation="//@partialtypeinterpratation.21 //@partialtypeinterpratation.22 //@partialtypeinterpratation.23 //@partialtypeinterpratation.24 //@partialtypeinterpratation.51 //@partialtypeinterpratation.52 //@partialtypeinterpratation.53">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.48" supertypeInterpretation="//@partialtypeinterpratation.19">
     <interpretationOf href="generation.logicproblem#//@types.62"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.47" supertypeInterpretation="//@partialtypeinterpratation.22 //@partialtypeinterpratation.23 //@partialtypeinterpratation.24 //@partialtypeinterpratation.52 //@partialtypeinterpratation.53">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.49" supertypeInterpretation="//@partialtypeinterpratation.20 //@partialtypeinterpratation.32 //@partialtypeinterpratation.28 //@partialtypeinterpratation.33 //@partialtypeinterpratation.65 //@partialtypeinterpratation.61 //@partialtypeinterpratation.66">
     <interpretationOf href="generation.logicproblem#//@types.64"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.48" supertypeInterpretation="//@partialtypeinterpratation.23 //@partialtypeinterpratation.24 //@partialtypeinterpratation.53">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.50" supertypeInterpretation="//@partialtypeinterpratation.21 //@partialtypeinterpratation.22 //@partialtypeinterpratation.23 //@partialtypeinterpratation.24 //@partialtypeinterpratation.55 //@partialtypeinterpratation.56 //@partialtypeinterpratation.57">
     <interpretationOf href="generation.logicproblem#//@types.66"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.49" supertypeInterpretation="//@partialtypeinterpratation.24">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.51" supertypeInterpretation="//@partialtypeinterpratation.22 //@partialtypeinterpratation.23 //@partialtypeinterpratation.24 //@partialtypeinterpratation.56 //@partialtypeinterpratation.57">
     <interpretationOf href="generation.logicproblem#//@types.68"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.50" supertypeInterpretation="//@partialtypeinterpratation.25 //@partialtypeinterpratation.26 //@partialtypeinterpratation.55">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.52" supertypeInterpretation="//@partialtypeinterpratation.23 //@partialtypeinterpratation.24 //@partialtypeinterpratation.57">
     <interpretationOf href="generation.logicproblem#//@types.70"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.51" supertypeInterpretation="//@partialtypeinterpratation.26">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.53" supertypeInterpretation="//@partialtypeinterpratation.24">
     <interpretationOf href="generation.logicproblem#//@types.72"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.52" supertypeInterpretation="//@partialtypeinterpratation.27 //@partialtypeinterpratation.9 //@partialtypeinterpratation.38">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.54" supertypeInterpretation="//@partialtypeinterpratation.25 //@partialtypeinterpratation.26 //@partialtypeinterpratation.59">
     <interpretationOf href="generation.logicproblem#//@types.74"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.53" supertypeInterpretation="//@partialtypeinterpratation.28">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.55" supertypeInterpretation="//@partialtypeinterpratation.26">
     <interpretationOf href="generation.logicproblem#//@types.76"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.54" supertypeInterpretation="//@partialtypeinterpratation.29">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.56" supertypeInterpretation="//@partialtypeinterpratation.27 //@partialtypeinterpratation.9 //@partialtypeinterpratation.42">
     <interpretationOf href="generation.logicproblem#//@types.78"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.55" supertypeInterpretation="//@partialtypeinterpratation.30">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.57" supertypeInterpretation="//@partialtypeinterpratation.28">
     <interpretationOf href="generation.logicproblem#//@types.80"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.56" supertypeInterpretation="//@partialtypeinterpratation.31 //@partialtypeinterpratation.32 //@partialtypeinterpratation.28 //@partialtypeinterpratation.33 //@partialtypeinterpratation.61 //@partialtypeinterpratation.57 //@partialtypeinterpratation.62">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.58" supertypeInterpretation="//@partialtypeinterpratation.29">
     <interpretationOf href="generation.logicproblem#//@types.82"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.57" supertypeInterpretation="//@partialtypeinterpratation.32 //@partialtypeinterpratation.28 //@partialtypeinterpratation.33 //@partialtypeinterpratation.57 //@partialtypeinterpratation.62">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.59" supertypeInterpretation="//@partialtypeinterpratation.30">
     <interpretationOf href="generation.logicproblem#//@types.84"/>
   </partialtypeinterpratation>
-  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.58" supertypeInterpretation="//@partialtypeinterpratation.33">
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.60" supertypeInterpretation="//@partialtypeinterpratation.31 //@partialtypeinterpratation.32 //@partialtypeinterpratation.28 //@partialtypeinterpratation.33 //@partialtypeinterpratation.65 //@partialtypeinterpratation.61 //@partialtypeinterpratation.66">
     <interpretationOf href="generation.logicproblem#//@types.86"/>
+  </partialtypeinterpratation>
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.61" supertypeInterpretation="//@partialtypeinterpratation.32 //@partialtypeinterpratation.28 //@partialtypeinterpratation.33 //@partialtypeinterpratation.61 //@partialtypeinterpratation.66">
+    <interpretationOf href="generation.logicproblem#//@types.88"/>
+  </partialtypeinterpratation>
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.62" supertypeInterpretation="//@partialtypeinterpratation.33">
+    <interpretationOf href="generation.logicproblem#//@types.90"/>
+  </partialtypeinterpratation>
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.63" supertypeInterpretation="//@partialtypeinterpratation.35">
+    <interpretationOf href="generation.logicproblem#//@types.92"/>
+  </partialtypeinterpratation>
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.64" supertypeInterpretation="//@partialtypeinterpratation.36">
+    <interpretationOf href="generation.logicproblem#//@types.94"/>
+  </partialtypeinterpratation>
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.65" supertypeInterpretation="//@partialtypeinterpratation.37 //@partialtypeinterpratation.38 //@partialtypeinterpratation.70">
+    <interpretationOf href="generation.logicproblem#//@types.96"/>
+  </partialtypeinterpratation>
+  <partialtypeinterpratation xsi:type="partialinterpretation:PartialComplexTypeInterpretation" scopes="//@scopes.66" supertypeInterpretation="//@partialtypeinterpratation.38">
+    <interpretationOf href="generation.logicproblem#//@types.98"/>
   </partialtypeinterpratation>
   <openWorldElements xsi:type="partialinterpretation:IntegerElement" name="New Integers"/>
   <openWorldElements xsi:type="partialinterpretation:RealElement" name="New Reals"/>
@@ -410,8 +510,8 @@
   <scopes maxNewElements="0" targetTypeInterpretation="//@partialtypeinterpratation.7"/>
   <scopes targetTypeInterpretation="//@partialtypeinterpratation.8"/>
   <scopes targetTypeInterpretation="//@partialtypeinterpratation.9"/>
-  <scopes maxNewElements="0" targetTypeInterpretation="//@partialtypeinterpratation.10"/>
-  <scopes maxNewElements="0" targetTypeInterpretation="//@partialtypeinterpratation.11"/>
+  <scopes targetTypeInterpretation="//@partialtypeinterpratation.10"/>
+  <scopes targetTypeInterpretation="//@partialtypeinterpratation.11"/>
   <scopes maxNewElements="3" targetTypeInterpretation="//@partialtypeinterpratation.12"/>
   <scopes targetTypeInterpretation="//@partialtypeinterpratation.13"/>
   <scopes targetTypeInterpretation="//@partialtypeinterpratation.14"/>
@@ -420,7 +520,7 @@
   <scopes targetTypeInterpretation="//@partialtypeinterpratation.17"/>
   <scopes targetTypeInterpretation="//@partialtypeinterpratation.18"/>
   <scopes targetTypeInterpretation="//@partialtypeinterpratation.19"/>
-  <scopes maxNewElements="0" targetTypeInterpretation="//@partialtypeinterpratation.20"/>
+  <scopes targetTypeInterpretation="//@partialtypeinterpratation.20"/>
   <scopes targetTypeInterpretation="//@partialtypeinterpratation.21"/>
   <scopes targetTypeInterpretation="//@partialtypeinterpratation.22"/>
   <scopes targetTypeInterpretation="//@partialtypeinterpratation.23"/>
@@ -463,4 +563,12 @@
   <scopes targetTypeInterpretation="//@partialtypeinterpratation.60"/>
   <scopes targetTypeInterpretation="//@partialtypeinterpratation.61"/>
   <scopes targetTypeInterpretation="//@partialtypeinterpratation.62"/>
+  <scopes targetTypeInterpretation="//@partialtypeinterpratation.63"/>
+  <scopes targetTypeInterpretation="//@partialtypeinterpratation.64"/>
+  <scopes targetTypeInterpretation="//@partialtypeinterpratation.65"/>
+  <scopes targetTypeInterpretation="//@partialtypeinterpratation.66"/>
+  <scopes targetTypeInterpretation="//@partialtypeinterpratation.67"/>
+  <scopes targetTypeInterpretation="//@partialtypeinterpratation.68"/>
+  <scopes targetTypeInterpretation="//@partialtypeinterpratation.69"/>
+  <scopes targetTypeInterpretation="//@partialtypeinterpratation.70"/>
 </partialinterpretation:PartialInterpretation>
