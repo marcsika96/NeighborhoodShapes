@@ -6,15 +6,11 @@
       <query-specification fqn="validation.hasVar"/>
       <query-specification fqn="validation.hasNoVar"/>
       <query-specification fqn="validation.notFilled"/>
-      <query-specification fqn="validation.valid"/>
-      <query-specification fqn="validation.notValid"/>
-      <query-specification fqn="validation.anonimAndVar"/>
-      <query-specification fqn="validation.hasEntry"/>
-      <query-specification fqn="validation.hasNoEntry"/>
-      <query-specification fqn="validation.hasMapValue"/>
-      <query-specification fqn="validation.hasNoMapValue"/>
-      <query-specification fqn="validation.goodReferenceToVariable"/>
-      <query-specification fqn="validation.notGoodReferenceToVari"/>
+      <query-specification fqn="validation.ppartAndNotElementAndNotFilled"/>
+      <query-specification fqn="validation.pe"/>
+      <query-specification fqn="validation.anonimAndSomething"/>
+      <query-specification fqn="validation.hasReference"/>
+      <query-specification fqn="validation.hasNoReference"/>
     </group>
   </extension>
 </plugin>

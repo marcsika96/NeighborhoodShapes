@@ -27,6 +27,7 @@ import org.slizaa.neo4j.opencypher.OpenCypherStandaloneSetup;
 import org.slizaa.neo4j.opencypher.openCypher.AllOptions;
 import org.slizaa.neo4j.opencypher.openCypher.Cypher;
 import org.slizaa.neo4j.opencypher.openCypher.MapLiteralEntry;
+import org.slizaa.neo4j.opencypher.openCypher.NodeLabel;
 import org.slizaa.neo4j.opencypher.openCypher.OpenCypherFactory;
 import org.slizaa.neo4j.opencypher.openCypher.OpenCypherPackage;
 import org.slizaa.neo4j.opencypher.openCypher.Return;
@@ -171,6 +172,16 @@ public class Translator {
       _builder_2.append("Key");
       _builder_2.append(((i_2).intValue() + 1));
       _get_2.setKey(_builder_2.toString());
+    }
+    final List<NodeLabel> labels = IteratorExtensions.<NodeLabel>toList(Iterators.<NodeLabel>filter(model.eAllContents(), NodeLabel.class));
+    int _size_3 = mapkeys.size();
+    final ExclusiveRange labelIndexes = new ExclusiveRange(0, _size_3, true);
+    for (final Integer i_3 : labelIndexes) {
+      NodeLabel _get_3 = labels.get((i_3).intValue());
+      StringConcatenation _builder_3 = new StringConcatenation();
+      _builder_3.append("Label");
+      _builder_3.append(((i_3).intValue() + 1));
+      _get_3.setLabelName(_builder_3.toString());
     }
     return cypher;
   }

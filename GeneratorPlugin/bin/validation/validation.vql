@@ -1,7 +1,91 @@
 package validation
 
 //import epackage "http://www.slizaa.org/neo4j/opencypher/OpenCypher"
-import epackage "platform:/resource/GeneratorPlugin/model/OpenCypher.ecore"
+import epackage "platform:/resource/GeneratorPlugin/model/OpenCypher%20másolata.ecore"
+
+
+pattern hasReference(retI : ReturnItem, variRef : Expression){
+	VariableRef(variRef);
+	ReturnItem.expression(retI, variRef);
+}
+
+@Constraint(severity ="error", key={ri}, message = "error")
+pattern hasNoReference(ri : ReturnItem){
+	neg find hasReference(ri, _);
+}
+
+pattern wellLookingPattern (^pattern : Pattern, patternElement : PatternElement){
+	Pattern.patterns(^pattern,patternElement);
+}
+
+pattern wellLookingPatternElement(patternElement : PatternElement, nodePattern : NodePattern){
+	PatternElement.nodepattern(patternElement, nodePattern);
+}
+
+
+
+@Constraint(severity ="error", key={^pattern}, message = "error")
+pattern notWellLookingPatter(^pattern : Pattern){
+	neg find wellLookingPattern(^pattern , _);
+}
+
+@Constraint(severity ="error", key={patternElement}, message = "error")
+pattern notWellLookingPatternElement(patternElement : PatternElement){
+	neg find wellLookingPatternElement(patternElement, _);
+}
+
+@Constraint(severity ="error", key={patternElement}, message = "error")
+pattern  patternElementHasVar(patternElement : PatternElement, variable : VariableDeclaration){
+	PatternElement.^var(patternElement,variable);
+}
+
+@Constraint(severity ="error", key={patternElement}, message = "error")
+pattern  patternElementHasPart(patternElement : PatternElement, part : PatternPart){
+	PatternElement.part(patternElement,part);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-------vége a jo reszeknek
+
 
 //pattern hasReturn(q : SinglePartQuery, r : Return) {
 //    SinglePartQuery.^return(q,r);
@@ -50,46 +134,63 @@ import epackage "platform:/resource/GeneratorPlugin/model/OpenCypher.ecore"
 
 //patternPart validator 
 
-pattern hasPart (pp : PatternPart, app : AnonymousPatternPart){
-	PatternPart.part(pp , app);
-}
+//------------------eredeti alternatíva ami szar
 
-pattern hasNoPart(pp : PatternPart) {
-    neg find hasPart(pp,_);
-}
+//pattern hasPart (pp : PatternPart, app : AnonymousPatternPart){
+//	PatternPart.part(pp , app);
+//}
+//
+//pattern hasNoPart(pp : PatternPart) {
+//    neg find hasPart(pp,_);
+//}
+//
+//pattern hasVar (pp : PatternPart, varDec : VariableDeclaration){
+//	PatternPart.^var(pp , varDec);
+//}
+//
+//pattern hasNoVar(pp : PatternPart) {
+//    neg find hasVar(pp,_);
+//}
+//
+//
+//pattern notFilled(pp : PatternPart){
+//	find hasNoVar(pp);
+//}or{
+//	find hasNoPart(pp);
+//}
+//
+////pattern valid(pp : PatternPart){
+////	PatternElement(pp);
+////	}or{
+////	PatternPart.^var(pp, _);
+////	PatternPart.part(pp, _);
+////	}
+////
+////@Constraint(severity = "error", key ={pp}, message ="error")
+////pattern notValid(pp : PatternPart){
+////	neg find valid(pp);
+////}
+//@Constraint(severity = "error", key ={pp}, message ="error")
+//pattern ppartAndNotElementAndNotFilled(pp : PatternPart) {
+//	find notFilled(pp);
+//	neg find pe(pp);
+//}
+//
+//pattern pe(pe:PatternElement) {
+//	PatternElement(pe);
+//}
+//
+//@Constraint(severity = "error", key ={pp}, message ="error")
+//pattern anonimAndSomething(pp : PatternElement){
+//	PatternPart.^var(pp, _);
+//	PatternElement(pp); 
+//	
+//} or {
+//	PatternPart.part(pp, _);
+//	PatternElement(pp); 
+//}
 
-pattern hasVar (pp : PatternPart, varDec : VariableDeclaration){
-	PatternPart.^var(pp , varDec);
-}
-
-pattern hasNoVar(pp : PatternPart) {
-    neg find hasVar(pp,_);
-}
-
-
-pattern notFilled(pp : PatternPart){
-	find hasNoVar(pp);
-}or{
-	find hasNoPart(pp);
-}
-
-pattern valid(pp : PatternPart){
-	AnonymousPatternPart(pp);
-	}or{
-	neg find notFilled(pp);	
-}
-
-@Constraint(severity = "error", key ={pp}, message ="error")
-pattern notValid(pp : PatternPart){
-	neg find valid(pp);
-}
-
-@Constraint(severity = "error", key ={pp}, message ="error")
-pattern anonimAndVar(pp : AnonymousPatternPart){
-	PatternPart.^var(pp, _);
-	AnonymousPatternPart(pp); 
-	
-}
+//-------------------eddig tart
 
 //pattern hasEntry(map : MapLiteral, entry : MapLiteralEntry){
 //	MapLiteral.entries(map, entry);
@@ -110,17 +211,23 @@ pattern anonimAndVar(pp : AnonymousPatternPart){
 //}
 	
 
-pattern goodReferenceToVariable(q : SinglePartQuery, match : Match, vari : VariableDeclaration,  variRef : VariableRef ){	
-	SinglePartQuery.readingClauses(q ,match);
-	Match.^pattern.patterns.^var(match, vari);
-	SinglePartQuery.^return.body.returnItems.items.expression(q , variRef);
-	VariableRef.variableRef(variRef, vari);
-}	
-
-@Constraint(severity = "error", key ={variRef}, message ="error")
-pattern notGoodReferenceToVari(variRef : VariableRef){
-	neg find goodReferenceToVariable(_, _, vari ,variRef );
-	VariableRef.variableRef(variRef,vari);
-}
+//pattern goodReferenceToVariable(q : SinglePartQuery, match : Match, vari : VariableDeclaration,  variRef : VariableRef ){	
+//	SinglePartQuery.readingClauses(q ,match);
+//	Match.^pattern.patterns.^var(match, vari);
+//	SinglePartQuery.^return.body.returnItems.items.expression(q , variRef);
+//	
+//}	
+//
+//
+//@Constraint(severity = "error", key ={variRef}, message ="error")
+//pattern notGoodReferenceToVari(variRef : VariableRef){
+//	neg find goodReferenceToVariable(_, _, vari ,variRef );
+//	VariableRef.variableRef(variRef,vari);
+//}
+//
+//@Constraint(severity = "error", key ={varRef}, message ="error")
+//pattern unfinishableReferenceByScope(varRef : VariableRef){
+//	neg find goodReferenceToVariable(_,_,_,varRef);
+//}
 
 //vagy van saját variabledecje egy returnitemnek vagy csak referenciája van a matchbol

@@ -15,6 +15,7 @@ import org.slizaa.neo4j.opencypher.openCypher.SinglePartQuery
 import org.slizaa.neo4j.opencypher.openCypher.VariableDeclaration
 import org.slizaa.neo4j.opencypher.openCypher.StringLiteral
 import org.slizaa.neo4j.opencypher.openCypher.MapLiteralEntry
+import org.slizaa.neo4j.opencypher.openCypher.NodeLabel
 
 class Translator {
 	def static void main(String[] args) {
@@ -102,6 +103,12 @@ class Translator {
 		val mapKeyIndexes = 0..<mapkeys.size
 		for(i : mapKeyIndexes){
 			mapkeys.get(i).key = '''Key«i+1»'''
+		}
+		//NodeLabelNames keys
+		val labels = model.eAllContents.filter(NodeLabel).toList
+		val labelIndexes = 0..<mapkeys.size
+		for(i : labelIndexes){
+			labels.get(i).labelName = '''Label«i+1»'''
 		}
 		
 		return cypher

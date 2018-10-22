@@ -1,4 +1,4 @@
-import epackage "platform:/resource/GeneratorPlugin/model/OpenCypher.ecore"
+import epackage "platform:/resource/GeneratorPlugin/model/OpenCypher%20másolata.ecore"
 import viatra "platform:/resource/GeneratorPlugin/src/validation/validation.vql"
 
 metamodel target  {
@@ -13,11 +13,11 @@ NodePattern, NodePattern.properties, NodePattern.variable,
 VariableDeclaration,
 MapLiteral, MapLiteral.entries,
 MapLiteralEntry, MapLiteralEntry.value,
-StringLiteral, //itt tartok
+StringLiteral, 
 Return, Return.distinct, Return.body,
 ReturnBody,ReturnBody.returnItems,
 ReturnItems, ReturnItems.all,ReturnItems.items,
-ReturnItem,ReturnItem.alias, ReturnItem.expression,
+ReturnItem, ReturnItem.expression,
 VariableRef, VariableRef.variableRef,
 SingleQuery,
 RegularQuery,
@@ -26,7 +26,7 @@ Statement,
 ReadingClause,
 Clause,
 AnonymousPatternPart,
-NodeLabels,
+NodeLabels,NodeLabels.nodeLabels, NodeLabel,
 Properties,
 Literal,
 Expression, 
@@ -35,96 +35,11 @@ QueryOptions
 	
 }
 
-metamodel target2  {
-Cypher, Cypher.statement, Cypher.statement,
-AllOptions,AllOptions.explain,AllOptions.profile,
-SinglePartQuery, SinglePartQuery.readingClauses, SinglePartQuery.return,
-Match, Match.optional, Match.pattern,
-Pattern, Pattern.patterns, 
-PatternPart,PatternPart.var,PatternPart.part,
-PatternElement,PatternElement.nodepattern,
-NodePattern, NodePattern.properties, NodePattern.variable,
-VariableDeclaration,
-MapLiteral, MapLiteral.entries,
-MapLiteralEntry, MapLiteralEntry.value,
-StringLiteral, //itt tartok
-Return, Return.distinct, Return.body,
-ReturnBody,ReturnBody.returnItems,
-ReturnItems, ReturnItems.all,ReturnItems.items,
-ReturnItem,ReturnItem.alias, ReturnItem.expression,
-VariableRef, VariableRef.variableRef,
-SingleQuery,
-RegularQuery,
-Query,
-Statement,
-ReadingClause,
-Clause,
-AnonymousPatternPart,
-NodeLabels,
-Properties,
-Literal,
-Expression, 
-PropertyExpression,
-QueryOptions,	
-Where, Where.expression,
-AndExpression,AndExpression.operator,AndExpression.left,AndExpression.right,
-ComparisonExpression,ComparisonExpression.operator,ComparisonExpression.left,ComparisonExpression.right,
-PropertyLookupExpression,
-PropertyLookup, PropertyLookup.propertyKeyName,PropertyLookup.propertyOperator,
-NumberLiteral,NumberLiteral.value
 
-
-	
-}
-
-metamodel target3  {
-Cypher, Cypher.statement, Cypher.statement,
-AllOptions,AllOptions.explain,AllOptions.profile,
-SinglePartQuery, SinglePartQuery.readingClauses, SinglePartQuery.return,
-Match, Match.optional, Match.pattern,
-Pattern, Pattern.patterns, 
-PatternPart,PatternPart.var,PatternPart.part,
-PatternElement,PatternElement.nodepattern,
-NodePattern, NodePattern.properties, NodePattern.variable,
-VariableDeclaration,
-MapLiteral, MapLiteral.entries,
-MapLiteralEntry, MapLiteralEntry.value,
-StringLiteral, //itt tartok
-Return, Return.distinct, Return.body,
-ReturnBody,ReturnBody.returnItems,
-ReturnItems, ReturnItems.all,ReturnItems.items,
-ReturnItem,ReturnItem.alias, ReturnItem.expression,
-VariableRef, VariableRef.variableRef,
-SingleQuery,
-RegularQuery,
-Query,
-Statement,
-ReadingClause,
-Clause,
-AnonymousPatternPart,
-NodeLabels,
-Properties,
-Literal,
-Expression, 
-PropertyExpression,
-QueryOptions,
-///új cuuccokk
-PatternElementChain, PatternElementChain.nodePattern, PatternElementChain.relationshipPattern,
-RelationshipsPattern, RelationshipPattern.detail, RelationshipPattern.incoming, RelationshipPattern.outgoing,
-RelationshipDetail, RelationshipDetail.optional,RelationshipDetail.properties,RelationshipDetail.range,RelationshipDetail.relTypeNames,RelationshipDetail.variable,
-Where, Where.expression,
-AndExpression, AndExpression.operator,AndExpression.left,AndExpression.right,
-NotExpression, NotExpression.left,NotExpression.nodeLabels,NotExpression.operator, NotExpression.propertyLookups,
-ComparisonExpression,ComparisonExpression.operator,ComparisonExpression.left,ComparisonExpression.right,
-PropertyLookupExpression,PropertyLookupExpression.left, PropertyLookupExpression.nodeLabels,PropertyLookupExpression.propertyLookups,
-PropertyLookup, PropertyLookup.propertyKeyName,PropertyLookup.propertyOperator,
-Count, Count.nodeLabels, Count.propertyLookups
-	
-}
 
 generate {
 	metamodel = target
-	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery.xmi" }
+	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
 	number = 5
 	solver = ViatraSolver
 	constraints = { package validation }
@@ -132,9 +47,98 @@ generate {
 		log-level = normal
 	}
 	scope = {
-		# node = 11..*, # string += {"A"}, # int += { 1 },
-		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1 ,  #<VariableDeclaration> += 0..3 
+		# node += 17..20, # string += {"A"}, # int += { 1 },
+		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1 ,  #<VariableDeclaration> += 0..3, #<NodePattern> +=0,  #<PatternElement> += 0,  #<VariableRef> += 0
 	}
 	debug = "platform:/resource/GeneratorPlugin/debug"
 	output = "platform:/resource/GeneratorPlugin/models"
 }
+
+
+
+//metamodel target2  {
+//Cypher, Cypher.statement, Cypher.statement,
+//AllOptions,AllOptions.explain,AllOptions.profile,
+//SinglePartQuery, SinglePartQuery.readingClauses, SinglePartQuery.return,
+//Match, Match.optional, Match.pattern,
+//Pattern, Pattern.patterns, 
+//PatternPart,PatternPart.var,PatternPart.part,
+//PatternElement,PatternElement.nodepattern,
+//NodePattern, NodePattern.properties, NodePattern.variable,
+//VariableDeclaration,
+//MapLiteral, MapLiteral.entries,
+//MapLiteralEntry, MapLiteralEntry.value,
+//StringLiteral, //itt tartok
+//Return, Return.distinct, Return.body,
+//ReturnBody,ReturnBody.returnItems,
+//ReturnItems, ReturnItems.all,ReturnItems.items,
+//ReturnItem,ReturnItem.alias, ReturnItem.expression,
+//VariableRef, VariableRef.variableRef,
+//SingleQuery,
+//RegularQuery,
+//Query,
+//Statement,
+//ReadingClause,
+//Clause,
+//AnonymousPatternPart,
+//NodeLabels,
+//Properties,
+//Literal,
+//Expression, 
+//PropertyExpression,
+//QueryOptions,	
+//Where, Where.expression,
+//AndExpression,AndExpression.operator,AndExpression.left,AndExpression.right,
+//ComparisonExpression,ComparisonExpression.operator,ComparisonExpression.left,ComparisonExpression.right,
+//PropertyLookupExpression,
+//PropertyLookup, PropertyLookup.propertyKeyName,PropertyLookup.propertyOperator,
+//NumberLiteral,NumberLiteral.value
+//
+//
+//	
+//}
+//
+//metamodel target3  {
+//Cypher, Cypher.statement, Cypher.statement,
+//AllOptions,AllOptions.explain,AllOptions.profile,
+//SinglePartQuery, SinglePartQuery.readingClauses, SinglePartQuery.return,
+//Match, Match.optional, Match.pattern,
+//Pattern, Pattern.patterns, 
+//PatternPart,PatternPart.var,PatternPart.part,
+//PatternElement,PatternElement.nodepattern,
+//NodePattern, NodePattern.properties, NodePattern.variable,
+//VariableDeclaration,
+//MapLiteral, MapLiteral.entries,
+//MapLiteralEntry, MapLiteralEntry.value,
+//StringLiteral, //itt tartok
+//Return, Return.distinct, Return.body,
+//ReturnBody,ReturnBody.returnItems,
+//ReturnItems, ReturnItems.all,ReturnItems.items,
+//ReturnItem,ReturnItem.alias, ReturnItem.expression,
+//VariableRef, VariableRef.variableRef,
+//SingleQuery,
+//RegularQuery,
+//Query,
+//Statement,
+//ReadingClause,
+//Clause,
+//AnonymousPatternPart,
+//NodeLabels,
+//Properties,
+//Literal,
+//Expression, 
+//PropertyExpression,
+//QueryOptions,
+/////új cuuccokk
+//PatternElementChain, PatternElementChain.nodePattern, PatternElementChain.relationshipPattern,
+//RelationshipsPattern, RelationshipPattern.detail, RelationshipPattern.incoming, RelationshipPattern.outgoing,
+//RelationshipDetail, RelationshipDetail.optional,RelationshipDetail.properties,RelationshipDetail.range,RelationshipDetail.relTypeNames,RelationshipDetail.variable,
+//Where, Where.expression,
+//AndExpression, AndExpression.operator,AndExpression.left,AndExpression.right,
+//NotExpression, NotExpression.left,NotExpression.nodeLabels,NotExpression.operator, NotExpression.propertyLookups,
+//ComparisonExpression,ComparisonExpression.operator,ComparisonExpression.left,ComparisonExpression.right,
+//PropertyLookupExpression,PropertyLookupExpression.left, PropertyLookupExpression.nodeLabels,PropertyLookupExpression.propertyLookups,
+//PropertyLookup, PropertyLookup.propertyKeyName,PropertyLookup.propertyOperator,
+//Count, Count.nodeLabels, Count.propertyLookups
+//	
+//}

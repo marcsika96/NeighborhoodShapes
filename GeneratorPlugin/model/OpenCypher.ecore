@@ -49,7 +49,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="SingleQuery" eSuperTypes="#//RegularQuery"/>
   <eClassifiers xsi:type="ecore:EClass" name="SinglePartQuery" eSuperTypes="#//SingleQuery">
     <eStructuralFeatures xsi:type="ecore:EReference" name="readingClauses" lowerBound="1"
-        upperBound="-1" eType="#//ReadingClause" containment="true"/>
+        upperBound="-1" eType="#//Match" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="return" lowerBound="1"
         eType="#//Return" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="updatingClauses" upperBound="-1"
@@ -143,7 +143,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fieldterminator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Match" eSuperTypes="#//ReadingClause">
+  <eClassifiers xsi:type="ecore:EClass" name="Match" eSuperTypes="#//Clause">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
         eType="#//Pattern" containment="true"/>
@@ -237,24 +237,17 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="distinct" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="body" lowerBound="1" eType="#//ReturnBody"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
+        eType="#//Expression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReturnBody">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="returnItems" lowerBound="1"
-        eType="#//ReturnItems" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="order" eType="#//Order"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="skip" eType="#//Skip" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="limit" eType="#//Limit"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReturnItems">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="all" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="items" lowerBound="1" upperBound="-1"
-        eType="#//ReturnItem" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReturnItem">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
-        eType="#//Expression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="alias" eType="#//VariableDeclaration"
         containment="true"/>
   </eClassifiers>
@@ -326,16 +319,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="PatternPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//VariableDeclaration"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="part" eType="#//AnonymousPatternPart"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="part" lowerBound="1" eType="#//PatternElement"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnonymousPatternPart" abstract="true"
-      eSuperTypes="#//PatternPart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AnonymousPatternPart" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ShortestPathPattern" eSuperTypes="#//AnonymousPatternPart #//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="patternElement" eType="#//PatternElement"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PatternElement" eSuperTypes="#//AnonymousPatternPart">
+  <eClassifiers xsi:type="ecore:EClass" name="PatternElement" eSuperTypes="#//AnonymousPatternPart #//PatternPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="nodepattern" lowerBound="1"
         eType="#//NodePattern" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="chain" upperBound="-1"
@@ -344,8 +336,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="NodePattern" eSuperTypes="#//NodeLabels">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
         eType="#//VariableDeclaration" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" eType="#//Properties"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" lowerBound="1"
+        eType="#//Properties" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PatternElementChain">
     <eStructuralFeatures xsi:type="ecore:EReference" name="relationshipPattern" eType="#//RelationshipPattern"
@@ -495,11 +487,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="MapLiteral" eSuperTypes="#//Properties #//Literal">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entries" lowerBound="1"
         upperBound="-1" eType="#//MapLiteralEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//Expression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MapLiteralEntry">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//Expression"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LegacyParameter" eSuperTypes="#//Properties #//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
