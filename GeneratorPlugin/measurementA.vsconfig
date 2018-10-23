@@ -1,0 +1,127 @@
+import epackage "platform:/resource/GeneratorPlugin/model/OpenCypher%20másolata.ecore"
+import viatra "platform:/resource/GeneratorPlugin/src/validation/validation.vql"
+
+metamodel targetChainnel  {
+Cypher, Cypher.statement, Cypher.statement,
+AllOptions,AllOptions.explain,AllOptions.profile,
+SinglePartQuery, SinglePartQuery.readingClauses, SinglePartQuery.return,
+Match, Match.optional, Match.pattern,
+Pattern, Pattern.patterns, 
+PatternPart,PatternPart.var,PatternPart.part,
+PatternElement,PatternElement.nodepattern,
+NodePattern, NodePattern.properties, NodePattern.variable,
+VariableDeclaration,
+MapLiteral, MapLiteral.entries,
+MapLiteralEntry, MapLiteralEntry.value,
+StringLiteral, 
+Return, Return.distinct, Return.body,
+ReturnBody,ReturnBody.returnItems,
+ReturnItems, ReturnItems.all,ReturnItems.items,
+ReturnItem, ReturnItem.expression,
+VariableRef, VariableRef.variableRef,
+SingleQuery,
+RegularQuery,
+Query,
+Statement,
+ReadingClause,
+Clause,
+AnonymousPatternPart,
+NodeLabels,NodeLabels.nodeLabels, NodeLabel,
+Properties,
+Literal,
+Expression, 
+PropertyExpression,
+QueryOptions,
+//chainhez kellő eddig nem levő dolgok
+PatternElementChain,PatternElementChain.nodePattern,PatternElementChain.relationshipPattern,
+RelationshipPattern,RelationshipPattern.incoming,RelationshipPattern.outgoing,RelationshipPattern.detail,
+RelationshipDetail,RelationshipDetail.optional, RelationshipDetail.variable,RelationshipDetail.properties,
+
+RelationshipTypes,
+PatternElement.chain
+	
+}
+
+
+generate {
+	metamodel = targetChainnel
+	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
+	number = 5
+	runs = 3
+	solver = ViatraSolver
+	constraints = { package validation }
+	config = {
+		log-level = none,
+		"diversity-range" = "1"
+	}
+	scope = {
+		# node += 10..*, # string += {"A"}, # int += { 1 },
+		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
+	}
+	debug = "platform:/resource/GeneratorPlugin/trash/debug"
+	output = "platform:/resource/GeneratorPlugin/trash/models"
+	statistics = "platform:/resource/GeneratorPlugin/trash/statistics.csv"
+}
+
+generate {
+	metamodel = targetChainnel
+	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
+	number = 50
+	runs = 12
+	solver = ViatraSolver
+	constraints = { package validation }
+	config = {
+		log-level = none,
+		"diversity-range" = "1"
+	}
+	scope = {
+		# node += 10..*, # string += {"A"}, # int += { 1 },
+		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
+	}
+	debug = "platform:/resource/GeneratorPlugin/measurementA/debug"
+	output = "platform:/resource/GeneratorPlugin/measurementA/models"
+	statistics = "platform:/resource/GeneratorPlugin/measurementA/statistics.csv"
+}
+
+generate {
+	metamodel = targetChainnel
+	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
+	number = 50
+	runs = 12
+	solver = ViatraSolver
+	constraints = { package validation }
+	config = {
+		log-level = none,
+		"diversity-range" = "1"
+	}
+	scope = {
+		# node += 20..*, # string += {"A"}, # int += { 1 },
+		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
+	}
+	debug = "platform:/resource/GeneratorPlugin/measurementAp/debug"
+	output = "platform:/resource/GeneratorPlugin/measurementAp/models"
+	statistics = "platform:/resource/GeneratorPlugin/measurementAp/statistics.csv"
+}
+generate {
+	metamodel = targetChainnel
+	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
+	number = 50
+	runs = 12
+	solver = ViatraSolver
+	constraints = { package validation }
+	config = {
+		log-level = none,
+		"diversity-range" = "1"
+	}
+	scope = {
+		# node += 30..*, # string += {"A"}, # int += { 1 },
+		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
+	}
+	debug = "platform:/resource/GeneratorPlugin/measurementApp/debug"
+	output = "platform:/resource/GeneratorPlugin/measurementApp/models"
+	statistics = "platform:/resource/GeneratorPlugin/measurementApp/statistics.csv"
+}
+
+
+
+

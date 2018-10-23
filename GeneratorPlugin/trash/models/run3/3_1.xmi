@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ASCII"?>
+<openCypher:SinglePartQuery xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:openCypher="http://www.slizaa.org/neo4j/opencypher/OpenCypher" xsi:schemaLocation="http://www.slizaa.org/neo4j/opencypher/OpenCypher ../../../model/OpenCypher%20másolata.ecore">
+  <readingClauses xsi:type="openCypher:Match">
+    <pattern>
+      <patterns xsi:type="openCypher:PatternElement">
+        <nodepattern>
+          <nodeLabels/>
+          <variable/>
+          <properties xsi:type="openCypher:MapLiteral">
+            <entries>
+              <value xsi:type="openCypher:StringLiteral">
+                <nodeLabels/>
+              </value>
+            </entries>
+          </properties>
+        </nodepattern>
+        <chain>
+          <relationshipPattern>
+            <detail>
+              <variable/>
+            </detail>
+          </relationshipPattern>
+          <nodePattern>
+            <variable/>
+            <properties xsi:type="openCypher:MapLiteral">
+              <entries>
+                <value xsi:type="openCypher:StringLiteral"/>
+              </entries>
+            </properties>
+          </nodePattern>
+        </chain>
+        <chain>
+          <relationshipPattern>
+            <detail>
+              <variable/>
+            </detail>
+          </relationshipPattern>
+          <nodePattern>
+            <variable/>
+            <properties xsi:type="openCypher:MapLiteral">
+              <entries>
+                <value xsi:type="openCypher:StringLiteral">
+                  <nodeLabels/>
+                </value>
+              </entries>
+            </properties>
+          </nodePattern>
+        </chain>
+      </patterns>
+    </pattern>
+  </readingClauses>
+  <return>
+    <body>
+      <returnItems>
+        <items>
+          <expression xsi:type="openCypher:VariableRef" variableRef="//@readingClauses.0/@pattern/@patterns.0/@nodepattern/@variable">
+            <nodeLabels/>
+          </expression>
+        </items>
+      </returnItems>
+    </body>
+  </return>
+</openCypher:SinglePartQuery>
