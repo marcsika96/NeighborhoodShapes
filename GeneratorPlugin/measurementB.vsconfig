@@ -64,6 +64,197 @@ generate {
 	statistics = "platform:/resource/GeneratorPlugin/trash/statistics.csv"
 }
 
+//generate {
+//	metamodel = targetChainnel
+//	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
+//	number = 10
+//	runs = 10
+//	solver = ViatraSolver
+//	constraints = { package validation }
+//	config = {
+//		log-level = none,
+//		"diversity-range" = "1"
+//	}
+//	scope = {
+//		# node += 5..*, # string += {"A"}, # int += { 1 },
+//		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
+//	}
+//	debug = "platform:/resource/GeneratorPlugin/measurementB/debug5"
+//	output = "platform:/resource/GeneratorPlugin/measurementB/models5"
+//	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
+//}
+//
+//generate {
+//	metamodel = targetChainnel
+//	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
+//	number = 10
+//	runs = 10
+//	solver = ViatraSolver
+//	constraints = { package validation }
+//	config = {
+//		log-level = none,
+//		"diversity-range" = "1"
+//	}
+//	scope = {
+//		# node += 10..*, # string += {"A"}, # int += { 1 },
+//		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
+//	}
+//	debug = "platform:/resource/GeneratorPlugin/measurementB/debug10"
+//	output = "platform:/resource/GeneratorPlugin/measurementB/models10"
+//	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
+//}
+//generate {
+//	metamodel = targetChainnel
+//	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
+//	number = 10
+//	runs = 10
+//	solver = ViatraSolver
+//	constraints = { package validation }
+//	config = {
+//		log-level = none,
+//		"diversity-range" = "1"
+//	}
+//	scope = {
+//		# node += 15..*, # string += {"A"}, # int += { 1 },
+//		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
+//	}
+//	debug = "platform:/resource/GeneratorPlugin/measurementB/debug15"
+//	output = "platform:/resource/GeneratorPlugin/measurementB/models15"
+//	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
+//}
+//generate {
+//	metamodel = targetChainnel
+//	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
+//	number = 10
+//	runs = 10
+//	solver = ViatraSolver
+//	constraints = { package validation }
+//	config = {
+//		log-level = none,
+//		"diversity-range" = "1"
+//	}
+//	scope = {
+//		# node += 20..*, # string += {"A"}, # int += { 1 },
+//		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
+//	}
+//	debug = "platform:/resource/GeneratorPlugin/measurementB/debug20"
+//	output = "platform:/resource/GeneratorPlugin/measurementB/models20"
+//	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
+//}
+//generate {
+//	metamodel = targetChainnel
+//	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
+//	number = 10
+//	runs = 10
+//	solver = ViatraSolver
+//	constraints = { package validation }
+//	config = {
+//		log-level = none,
+//		"diversity-range" = "1"
+//	}
+//	scope = {
+//		# node += 25..*, # string += {"A"}, # int += { 1 },
+//		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
+//	}
+//	debug = "platform:/resource/GeneratorPlugin/measurementB/debug25"
+//	output = "platform:/resource/GeneratorPlugin/measurementB/models25"
+//	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
+//}
+//generate {
+//	metamodel = targetChainnel
+//	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
+//	number = 10
+//	runs = 10
+//	solver = ViatraSolver
+//	constraints = { package validation }
+//	config = {
+//		log-level = none,
+//		"diversity-range" = "1"
+//	}
+//	scope = {
+//		# node += 30..*, # string += {"A"}, # int += { 1 },
+//		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
+//	}
+//	debug = "platform:/resource/GeneratorPlugin/measurementB/debug30"
+//	output = "platform:/resource/GeneratorPlugin/measurementB/models30"
+//	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
+//}
+//generate {
+//	metamodel = targetChainnel
+//	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
+//	number = 10
+//	runs = 10
+//	solver = ViatraSolver
+//	constraints = { package validation }
+//	config = {
+//		log-level = none,
+//		"diversity-range" = "1"
+//	}
+//	scope = {
+//		# node += 35..*, # string += {"A"}, # int += { 1 },
+//		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
+//	}
+//	debug = "platform:/resource/GeneratorPlugin/measurementB/debug35"
+//	output = "platform:/resource/GeneratorPlugin/measurementB/models35"
+//	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
+//}
+//generate {
+//	metamodel = targetChainnel
+//	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
+//	number = 10
+//	runs = 10
+//	solver = ViatraSolver
+//	constraints = { package validation }
+//	config = {
+//		log-level = none,
+//		"diversity-range" = "1"
+//	}
+//	scope = {
+//		# node += 40..*, # string += {"A"}, # int += { 1 },
+//		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
+//	}
+//	debug = "platform:/resource/GeneratorPlugin/measurementB/debug40"
+//	output = "platform:/resource/GeneratorPlugin/measurementB/models40"
+//	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
+//}
+//generate {
+//	metamodel = targetChainnel
+//	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
+//	number = 10
+//	runs = 10
+//	solver = ViatraSolver
+//	constraints = { package validation }
+//	config = {
+//		log-level = none,
+//		"diversity-range" = "1"
+//	}
+//	scope = {
+//		# node += 45..*, # string += {"A"}, # int += { 1 },
+//		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
+//	}
+//	debug = "platform:/resource/GeneratorPlugin/measurementB/debug45"
+//	output = "platform:/resource/GeneratorPlugin/measurementB/models45"
+//	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
+//}
+//generate {
+//	metamodel = targetChainnel
+//	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
+//	number = 10
+//	runs = 10
+//	solver = ViatraSolver
+//	constraints = { package validation }
+//	config = {
+//		log-level = none,
+//		"diversity-range" = "1"
+//	}
+//	scope = {
+//		# node += 50..*, # string += {"A"}, # int += { 1 },
+//		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
+//	}
+//	debug = "platform:/resource/GeneratorPlugin/measurementB/debug50"
+//	output = "platform:/resource/GeneratorPlugin/measurementB/models50"
+//	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
+//}
 generate {
 	metamodel = targetChainnel
 	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
@@ -76,141 +267,7 @@ generate {
 		"diversity-range" = "1"
 	}
 	scope = {
-		# node += 5..*, # string += {"A"}, # int += { 1 },
-		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
-	}
-	debug = "platform:/resource/GeneratorPlugin/measurementB/debug5"
-	output = "platform:/resource/GeneratorPlugin/measurementB/models5"
-	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
-}
-
-generate {
-	metamodel = targetChainnel
-	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
-	number = 10
-	runs = 10
-	solver = ViatraSolver
-	constraints = { package validation }
-	config = {
-		log-level = none,
-		"diversity-range" = "1"
-	}
-	scope = {
-		# node += 10..*, # string += {"A"}, # int += { 1 },
-		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
-	}
-	debug = "platform:/resource/GeneratorPlugin/measurementB/debug10"
-	output = "platform:/resource/GeneratorPlugin/measurementB/models10"
-	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
-}
-generate {
-	metamodel = targetChainnel
-	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
-	number = 10
-	runs = 10
-	solver = ViatraSolver
-	constraints = { package validation }
-	config = {
-		log-level = none,
-		"diversity-range" = "1"
-	}
-	scope = {
-		# node += 15..*, # string += {"A"}, # int += { 1 },
-		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
-	}
-	debug = "platform:/resource/GeneratorPlugin/measurementB/debug15"
-	output = "platform:/resource/GeneratorPlugin/measurementB/models15"
-	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
-}
-generate {
-	metamodel = targetChainnel
-	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
-	number = 10
-	runs = 10
-	solver = ViatraSolver
-	constraints = { package validation }
-	config = {
-		log-level = none,
-		"diversity-range" = "1"
-	}
-	scope = {
-		# node += 20..*, # string += {"A"}, # int += { 1 },
-		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
-	}
-	debug = "platform:/resource/GeneratorPlugin/measurementB/debug20"
-	output = "platform:/resource/GeneratorPlugin/measurementB/models20"
-	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
-}
-generate {
-	metamodel = targetChainnel
-	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
-	number = 10
-	runs = 10
-	solver = ViatraSolver
-	constraints = { package validation }
-	config = {
-		log-level = none,
-		"diversity-range" = "1"
-	}
-	scope = {
-		# node += 25..*, # string += {"A"}, # int += { 1 },
-		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
-	}
-	debug = "platform:/resource/GeneratorPlugin/measurementB/debug25"
-	output = "platform:/resource/GeneratorPlugin/measurementB/models25"
-	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
-}
-generate {
-	metamodel = targetChainnel
-	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
-	number = 10
-	runs = 10
-	solver = ViatraSolver
-	constraints = { package validation }
-	config = {
-		log-level = none,
-		"diversity-range" = "1"
-	}
-	scope = {
-		# node += 30..*, # string += {"A"}, # int += { 1 },
-		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
-	}
-	debug = "platform:/resource/GeneratorPlugin/measurementB/debug30"
-	output = "platform:/resource/GeneratorPlugin/measurementB/models30"
-	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
-}
-generate {
-	metamodel = targetChainnel
-	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
-	number = 10
-	runs = 10
-	solver = ViatraSolver
-	constraints = { package validation }
-	config = {
-		log-level = none,
-		"diversity-range" = "1"
-	}
-	scope = {
-		# node += 35..*, # string += {"A"}, # int += { 1 },
-		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
-	}
-	debug = "platform:/resource/GeneratorPlugin/measurementB/debug35"
-	output = "platform:/resource/GeneratorPlugin/measurementB/models35"
-	statistics = "platform:/resource/GeneratorPlugin/measurementB/statistics.csv"
-}
-generate {
-	metamodel = targetChainnel
-	partial-model = { "platform:/resource/GeneratorPlugin/model/SinglePartQuery2.xmi" }
-	number = 10
-	runs = 10
-	solver = ViatraSolver
-	constraints = { package validation }
-	config = {
-		log-level = none,
-		"diversity-range" = "1"
-	}
-	scope = {
-		# node += 40..*, # string += {"A"}, # int += { 1 },
+		# node += 100..*, # string += {"A"}, # int += { 1 },
 		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
 	}
 	debug = "platform:/resource/GeneratorPlugin/measurementB/debug40"
@@ -229,7 +286,7 @@ generate {
 		"diversity-range" = "1"
 	}
 	scope = {
-		# node += 45..*, # string += {"A"}, # int += { 1 },
+		# node += 150..*, # string += {"A"}, # int += { 1 },
 		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
 	}
 	debug = "platform:/resource/GeneratorPlugin/measurementB/debug45"
@@ -248,7 +305,7 @@ generate {
 		"diversity-range" = "1"
 	}
 	scope = {
-		# node += 50..*, # string += {"A"}, # int += { 1 },
+		# node += 200..*, # string += {"A"}, # int += { 1 },
 		#<SinglePartQuery> = 1, #<Match>= 1, #<Return>= 1  
 	}
 	debug = "platform:/resource/GeneratorPlugin/measurementB/debug50"

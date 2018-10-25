@@ -17,11 +17,13 @@ class Translator {
 		OpenCypherStandaloneSetup.doSetup
 		
 		val t = new Translator
-		
 		val models = t.loadModels("models")
-		println('''Load completed.''')
+		
+		
+		
 		t.saveModels(models,"cypher")
-		println('''Save completed.''')
+		
+		
 	}
 	
 	def loadModels(String path) {
@@ -55,13 +57,16 @@ class Translator {
 			val uri = URI.createFileURI('''«folder.absolutePath»/«original.name.split("\\.").head».cypher''')
 			val resource = rsi.createResource(uri)
 			
+			val startTime = System.currentTimeMillis
 			
 			val cypher = (new PostProcessor).postProcessModel(model)
-			resource.contents.add(cypher)
 			
+			resource.contents.add(cypher)
+			val postProcessingFinished = System.currentTimeMillis
 			try{
 				resource.save(emptyMap)
-				println('''Successfully saved file "«original.absolutePath»"''')
+				val saveFinished = System.currentTimeMillis
+				println('''Successfully saved file "«original.absolutePath»;«postProcessingFinished-startTime»;«saveFinished-postProcessingFinished»''')
 				
 			} catch(Exception e) {
 				println('''

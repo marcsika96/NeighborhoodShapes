@@ -8,7 +8,9 @@
           <variable/>
           <properties xsi:type="openCypher:MapLiteral">
             <entries>
-              <value xsi:type="openCypher:StringLiteral"/>
+              <value xsi:type="openCypher:StringLiteral">
+                <nodeLabels/>
+              </value>
             </entries>
           </properties>
         </nodepattern>
@@ -23,7 +25,9 @@
             <variable/>
             <properties xsi:type="openCypher:MapLiteral">
               <entries>
-                <value xsi:type="openCypher:StringLiteral"/>
+                <value xsi:type="openCypher:StringLiteral">
+                  <nodeLabels/>
+                </value>
               </entries>
             </properties>
           </nodePattern>
@@ -31,7 +35,6 @@
         <chain>
           <relationshipPattern>
             <detail>
-              <variable/>
               <properties xsi:type="openCypher:MapLiteral">
                 <entries>
                   <value xsi:type="openCypher:StringLiteral">

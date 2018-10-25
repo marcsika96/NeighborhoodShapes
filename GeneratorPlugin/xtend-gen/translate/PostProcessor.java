@@ -1,9 +1,12 @@
 package translate;
 
 import com.google.common.collect.Iterators;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
@@ -24,6 +27,8 @@ public class PostProcessor {
   public Cypher postProcessModel(final SinglePartQuery model) {
     final OpenCypherFactory factory = OpenCypherFactory.eINSTANCE;
     final Cypher cypher = factory.createCypher();
+    int _hashCode = "Marcsi".hashCode();
+    final Random random = new Random(_hashCode);
     cypher.setStatement(model);
     AllOptions _createAllOptions = factory.createAllOptions();
     final Procedure1<AllOptions> _function = (AllOptions it) -> {
@@ -57,36 +62,35 @@ public class PostProcessor {
       _builder_1.append("\"");
       _get_1.setValue(_builder_1.toString());
     }
+    final List<String> keysToUse = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("id", "active", "position", "currentPosition", "length", "signal"));
+    final List<String> nodeLabelsToUse = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("Region", "Route", "Segment", "Semaphore", "Sensor", "Switch", "SwitchPosition"));
+    final List<String> relTypeNamesToUse = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("connectsTo", "entry", "exit", "follows", "monitoredBy", "monitors", "requires", "target"));
     final List<MapLiteralEntry> mapkeys = IteratorExtensions.<MapLiteralEntry>toList(Iterators.<MapLiteralEntry>filter(model.eAllContents(), MapLiteralEntry.class));
     int _size_2 = mapkeys.size();
     final ExclusiveRange mapKeyIndexes = new ExclusiveRange(0, _size_2, true);
     for (final Integer i_2 : mapKeyIndexes) {
       MapLiteralEntry _get_2 = mapkeys.get((i_2).intValue());
-      StringConcatenation _builder_2 = new StringConcatenation();
-      _builder_2.append("Key");
-      _builder_2.append(((i_2).intValue() + 1));
-      _get_2.setKey(_builder_2.toString());
+      _get_2.setKey(this.selectRandomly(keysToUse, random));
     }
     final List<NodeLabel> labels = IteratorExtensions.<NodeLabel>toList(Iterators.<NodeLabel>filter(model.eAllContents(), NodeLabel.class));
     int _size_3 = labels.size();
     final ExclusiveRange labelIndexes = new ExclusiveRange(0, _size_3, true);
     for (final Integer i_3 : labelIndexes) {
       NodeLabel _get_3 = labels.get((i_3).intValue());
-      StringConcatenation _builder_3 = new StringConcatenation();
-      _builder_3.append("Label");
-      _builder_3.append(((i_3).intValue() + 1));
-      _get_3.setLabelName(_builder_3.toString());
+      _get_3.setLabelName(this.selectRandomly(nodeLabelsToUse, random));
     }
     final List<RelationshipDetail> relDetails = IteratorExtensions.<RelationshipDetail>toList(Iterators.<RelationshipDetail>filter(model.eAllContents(), RelationshipDetail.class));
     int _size_4 = relDetails.size();
     final ExclusiveRange relDetailsIndexes = new ExclusiveRange(0, _size_4, true);
     for (final Integer i_4 : relDetailsIndexes) {
       EList<String> _relTypeNames = relDetails.get((i_4).intValue()).getRelTypeNames();
-      StringConcatenation _builder_4 = new StringConcatenation();
-      _builder_4.append("RelTypeName");
-      _builder_4.append(((i_4).intValue() + 1));
-      _relTypeNames.add(_builder_4.toString());
+      String _selectRandomly = this.selectRandomly(relTypeNamesToUse, random);
+      _relTypeNames.add(_selectRandomly);
     }
     return cypher;
+  }
+  
+  protected String selectRandomly(final List<String> collection, final Random random) {
+    return collection.get(random.nextInt(collection.size()));
   }
 }

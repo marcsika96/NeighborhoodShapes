@@ -16,11 +16,10 @@
         </nodepattern>
         <chain>
           <relationshipPattern>
-            <detail>
-              <variable/>
-            </detail>
+            <detail/>
           </relationshipPattern>
           <nodePattern>
+            <nodeLabels/>
             <variable/>
             <properties xsi:type="openCypher:MapLiteral">
               <entries>
@@ -33,15 +32,19 @@
           <relationshipPattern>
             <detail>
               <variable/>
+              <properties xsi:type="openCypher:MapLiteral">
+                <entries>
+                  <value xsi:type="openCypher:StringLiteral"/>
+                </entries>
+              </properties>
             </detail>
           </relationshipPattern>
           <nodePattern>
+            <nodeLabels/>
             <variable/>
             <properties xsi:type="openCypher:MapLiteral">
               <entries>
-                <value xsi:type="openCypher:StringLiteral">
-                  <nodeLabels/>
-                </value>
+                <value xsi:type="openCypher:StringLiteral"/>
               </entries>
             </properties>
           </nodePattern>
@@ -53,7 +56,7 @@
     <body>
       <returnItems>
         <items>
-          <expression xsi:type="openCypher:VariableRef" variableRef="//@readingClauses.0/@pattern/@patterns.0/@nodepattern/@variable">
+          <expression xsi:type="openCypher:VariableRef" variableRef="//@readingClauses.0/@pattern/@patterns.0/@chain.1/@nodePattern/@variable">
             <nodeLabels/>
           </expression>
         </items>

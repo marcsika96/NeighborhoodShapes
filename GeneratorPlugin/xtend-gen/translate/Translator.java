@@ -34,13 +34,7 @@ public class Translator {
     OpenCypherStandaloneSetup.doSetup();
     final Translator t = new Translator();
     final HashMap<File, SinglePartQuery> models = t.loadModels("models");
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("Load completed.");
-    InputOutput.<String>println(_builder.toString());
     t.saveModels(models, "cypher");
-    StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("Save completed.");
-    InputOutput.<String>println(_builder_1.toString());
   }
   
   public HashMap<File, SinglePartQuery> loadModels(final String path) {
@@ -86,15 +80,21 @@ public class Translator {
         _builder.append(".cypher");
         final URI uri = URI.createFileURI(_builder.toString());
         final Resource resource = rsi.createResource(uri);
+        final long startTime = System.currentTimeMillis();
         final Cypher cypher = new PostProcessor().postProcessModel(model);
         resource.getContents().add(cypher);
+        final long postProcessingFinished = System.currentTimeMillis();
         try {
           resource.save(CollectionLiterals.<Object, Object>emptyMap());
+          final long saveFinished = System.currentTimeMillis();
           StringConcatenation _builder_1 = new StringConcatenation();
           _builder_1.append("Successfully saved file \"");
           String _absolutePath_1 = original.getAbsolutePath();
           _builder_1.append(_absolutePath_1);
-          _builder_1.append("\"");
+          _builder_1.append(";");
+          _builder_1.append((postProcessingFinished - startTime));
+          _builder_1.append(";");
+          _builder_1.append((saveFinished - postProcessingFinished));
           InputOutput.<String>println(_builder_1.toString());
         } catch (final Throwable _t) {
           if (_t instanceof Exception) {
