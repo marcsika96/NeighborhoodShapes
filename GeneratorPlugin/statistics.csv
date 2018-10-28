@@ -2,3 +2,5 @@ Task;Run;Result;Domain to logic transformation time;Logic to solver transformati
 3;1;ModelResultImpl;19;9271;231920;686263962;104358;116451;117250;140879;145709;128904;154;3816;0;10;3;1.0
 Task;Run;Result;Domain to logic transformation time;Logic to solver transformation time;Solver time;Postprocessing time;_Solution0FoundAt;_Solution1FoundAt;_Solution2FoundAt;_Solution3FoundAt;_Solution4FoundAt;TransformationExecutionTime;TypeAnalysisTime;StateCoderTime;StateCoderFailCount;SolutionCopyTime;SolutionDiversityCheckTime;SolutionDiversitySuccessRate
 3;1;ModelResultImpl;679;13296;189165;1144205271;92645;93789;102681;104145;105978;92991;1133;3313;0;34;5;1.0
+Task;Run;Result;Domain to logic transformation time;Logic to solver transformation time;Solver time;Postprocessing time;_Solution0FoundAt;_Solution1FoundAt;_Solution2FoundAt;_Solution3FoundAt;_Solution4FoundAt;TransformationExecutionTime;TypeAnalysisTime;StateCoderTime;StateCoderFailCount;SolutionCopyTime;SolutionDiversityCheckTime;SolutionDiversitySuccessRate
+3;1;ModelResultImpl;3190;12876;196081;936100200;99757;100320;107687;108651;110229;96567;1323;3175;0;27;4;1.0

@@ -1,6 +1,8 @@
 package translate;
 
+import com.google.common.collect.Iterables;
 import java.io.File;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -16,6 +18,7 @@ import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.eclipse.xtext.xbase.lib.IntegerRange;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.slizaa.neo4j.opencypher.OpenCypherStandaloneSetup;
@@ -33,8 +36,19 @@ public class Translator {
     _extensionToFactoryMap.put("xmi", _xMIResourceFactoryImpl);
     OpenCypherStandaloneSetup.doSetup();
     final Translator t = new Translator();
-    final HashMap<File, SinglePartQuery> models = t.loadModels("models");
-    t.saveModels(models, "cypher");
+    final Function1<Integer, Integer> _function = (Integer it) -> {
+      return Integer.valueOf(((it).intValue() * 5));
+    };
+    Iterable<Integer> _map = IterableExtensions.<Integer, Integer>map(new IntegerRange(1, 10), _function);
+    Iterable<Integer> _plus = Iterables.<Integer>concat(_map, Collections.<Integer>unmodifiableList(CollectionLiterals.<Integer>newArrayList(Integer.valueOf(100), Integer.valueOf(150), Integer.valueOf(200))));
+    for (final Integer scenario : _plus) {
+      for (int i = 1; (i <= 10); i++) {
+        {
+          final HashMap<File, SinglePartQuery> models = t.loadModels(((("measurementB/models" + scenario) + "/run") + Integer.valueOf(i)));
+          t.saveModels(models, ((("measurementB/cyphers" + scenario) + "/run") + Integer.valueOf(i)));
+        }
+      }
+    }
   }
   
   public HashMap<File, SinglePartQuery> loadModels(final String path) {
@@ -61,6 +75,7 @@ public class Translator {
   
   public void saveModels(final HashMap<File, SinglePartQuery> file2Query, final String path) {
     final File folder = new File(path);
+    folder.mkdirs();
     final Consumer<File> _function = (File it) -> {
       it.delete();
     };
@@ -80,13 +95,13 @@ public class Translator {
         _builder.append(".cypher");
         final URI uri = URI.createFileURI(_builder.toString());
         final Resource resource = rsi.createResource(uri);
-        final long startTime = System.currentTimeMillis();
+        final long startTime = System.nanoTime();
         final Cypher cypher = new PostProcessor().postProcessModel(model);
         resource.getContents().add(cypher);
-        final long postProcessingFinished = System.currentTimeMillis();
+        final long postProcessingFinished = System.nanoTime();
         try {
           resource.save(CollectionLiterals.<Object, Object>emptyMap());
-          final long saveFinished = System.currentTimeMillis();
+          final long saveFinished = System.nanoTime();
           StringConcatenation _builder_1 = new StringConcatenation();
           _builder_1.append("Successfully saved file \"");
           String _absolutePath_1 = original.getAbsolutePath();

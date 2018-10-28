@@ -17,13 +17,20 @@ class Translator {
 		OpenCypherStandaloneSetup.doSetup
 		
 		val t = new Translator
-		val models = t.loadModels("models")
-		
-		
-		
-		t.saveModels(models,"cypher")
-		
-		
+//		for(scenario : #["A","A","Ap","App"]) {
+//			for(var i = 1; i<=10; i++) {
+//				val models = t.loadModels("measurement"+scenario+"/models/run"+i)
+//				t.saveModels(models,'''measurement«scenario»/cypher/run«i»''')
+//			}
+//		}
+
+		for(scenario : (1..10).map[it*5]+#[100,150,200]) {
+			for(var i = 1; i<=10; i++) {
+				val models = t.loadModels("measurementB/models"+scenario+"/run"+i)
+				t.saveModels(models,"measurementB/cyphers"+scenario+"/run"+i)
+			}
+			
+		}
 	}
 	
 	def loadModels(String path) {
@@ -46,6 +53,7 @@ class Translator {
 	
 	def saveModels(HashMap<File, SinglePartQuery> file2Query, String path) {
 		val folder = new File(path)
+		folder.mkdirs
 		
 		folder.listFiles.toList.forEach[delete]
 		
@@ -57,15 +65,15 @@ class Translator {
 			val uri = URI.createFileURI('''«folder.absolutePath»/«original.name.split("\\.").head».cypher''')
 			val resource = rsi.createResource(uri)
 			
-			val startTime = System.currentTimeMillis
+			val startTime = System.nanoTime
 			
 			val cypher = (new PostProcessor).postProcessModel(model)
 			
 			resource.contents.add(cypher)
-			val postProcessingFinished = System.currentTimeMillis
+			val postProcessingFinished = System.nanoTime
 			try{
 				resource.save(emptyMap)
-				val saveFinished = System.currentTimeMillis
+				val saveFinished = System.nanoTime
 				println('''Successfully saved file "«original.absolutePath»;«postProcessingFinished-startTime»;«saveFinished-postProcessingFinished»''')
 				
 			} catch(Exception e) {

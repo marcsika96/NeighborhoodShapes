@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><plugin>
   <extension id="validation.Validation" point="org.eclipse.viatra.query.runtime.queryspecification">
     <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:validation.Validation" id="validation.Validation">
-      <query-specification fqn="validation.hasPart"/>
-      <query-specification fqn="validation.hasNoPart"/>
-      <query-specification fqn="validation.hasVar"/>
-      <query-specification fqn="validation.hasNoVar"/>
-      <query-specification fqn="validation.notFilled"/>
-      <query-specification fqn="validation.ppartAndNotElementAndNotFilled"/>
-      <query-specification fqn="validation.pe"/>
-      <query-specification fqn="validation.anonimAndSomething"/>
       <query-specification fqn="validation.hasReference"/>
       <query-specification fqn="validation.hasNoReference"/>
+      <query-specification fqn="validation.wellLookingPattern"/>
+      <query-specification fqn="validation.wellLookingPatternElement"/>
+      <query-specification fqn="validation.notWellLookingPatter"/>
+      <query-specification fqn="validation.notWellLookingPatternElement"/>
+      <query-specification fqn="validation.patternElementHasVar"/>
+      <query-specification fqn="validation.patternElementHasPart"/>
+      <query-specification fqn="validation.pe"/>
+      <query-specification fqn="validation.notPatternElement"/>
+      <query-specification fqn="validation.notWellLookingMapliteral"/>
+      <query-specification fqn="validation.wellDeepMap"/>
+      <query-specification fqn="validation.notWellDeepMap"/>
     </group>
   </extension>
 </plugin>

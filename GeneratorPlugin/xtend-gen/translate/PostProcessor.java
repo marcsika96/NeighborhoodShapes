@@ -2,25 +2,35 @@ package translate;
 
 import com.google.common.collect.Iterators;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.slizaa.neo4j.opencypher.openCypher.AllOptions;
 import org.slizaa.neo4j.opencypher.openCypher.Cypher;
+import org.slizaa.neo4j.opencypher.openCypher.Expression;
+import org.slizaa.neo4j.opencypher.openCypher.MapLiteral;
 import org.slizaa.neo4j.opencypher.openCypher.MapLiteralEntry;
 import org.slizaa.neo4j.opencypher.openCypher.NodeLabel;
+import org.slizaa.neo4j.opencypher.openCypher.NodePattern;
 import org.slizaa.neo4j.opencypher.openCypher.OpenCypherFactory;
+import org.slizaa.neo4j.opencypher.openCypher.Properties;
 import org.slizaa.neo4j.opencypher.openCypher.RelationshipDetail;
 import org.slizaa.neo4j.opencypher.openCypher.Return;
+import org.slizaa.neo4j.opencypher.openCypher.ReturnItem;
 import org.slizaa.neo4j.opencypher.openCypher.SinglePartQuery;
 import org.slizaa.neo4j.opencypher.openCypher.StringLiteral;
 import org.slizaa.neo4j.opencypher.openCypher.VariableDeclaration;
+import org.slizaa.neo4j.opencypher.openCypher.VariableRef;
 
 @SuppressWarnings("all")
 public class PostProcessor {
@@ -87,10 +97,51 @@ public class PostProcessor {
       String _selectRandomly = this.selectRandomly(relTypeNamesToUse, random);
       _relTypeNames.add(_selectRandomly);
     }
+    List<Return> _list = IteratorExtensions.<Return>toList(Iterators.<Return>filter(model.eAllContents(), Return.class));
+    for (final Return ret : _list) {
+      {
+        final HashSet<VariableDeclaration> usedVariables = new HashSet<VariableDeclaration>();
+        final LinkedList<ReturnItem> itemToDelete = new LinkedList<ReturnItem>();
+        EList<ReturnItem> _items = ret.getBody().getReturnItems().getItems();
+        for (final ReturnItem i_5 : _items) {
+          {
+            Expression _expression = i_5.getExpression();
+            final VariableRef valRef = ((VariableRef) _expression);
+            final VariableDeclaration declaration = valRef.getVariableRef();
+            boolean _contains = usedVariables.contains(declaration);
+            if (_contains) {
+              itemToDelete.add(i_5);
+            } else {
+              usedVariables.add(declaration);
+            }
+          }
+        }
+        ret.getBody().getReturnItems().getItems().removeAll(itemToDelete);
+      }
+    }
+    final Procedure1<NodePattern> _function_2 = (NodePattern it) -> {
+      Properties _properties = it.getProperties();
+      if ((_properties instanceof MapLiteral)) {
+        it.setProperties(null);
+      }
+    };
+    IteratorExtensions.<NodePattern>forEach(Iterators.<NodePattern>filter(cypher.eAllContents(), NodePattern.class), _function_2);
+    final Procedure1<RelationshipDetail> _function_3 = (RelationshipDetail it) -> {
+      Properties _properties = it.getProperties();
+      if ((_properties instanceof MapLiteral)) {
+        it.setProperties(null);
+      }
+    };
+    IteratorExtensions.<RelationshipDetail>forEach(Iterators.<RelationshipDetail>filter(cypher.eAllContents(), RelationshipDetail.class), _function_3);
+    InputOutput.<Integer>println(Integer.valueOf(IteratorExtensions.size(Iterators.<StringLiteral>filter(cypher.eAllContents(), StringLiteral.class))));
     return cypher;
   }
   
   protected String selectRandomly(final List<String> collection, final Random random) {
     return collection.get(random.nextInt(collection.size()));
+  }
+  
+  public static int getSize(final Resource r) {
+    return IteratorExtensions.size(r.getAllContents());
   }
 }

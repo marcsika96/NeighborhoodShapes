@@ -12,6 +12,13 @@ import org.slizaa.neo4j.opencypher.openCypher.Return
 import org.slizaa.neo4j.opencypher.openCypher.SinglePartQuery
 import org.slizaa.neo4j.opencypher.openCypher.StringLiteral
 import org.slizaa.neo4j.opencypher.openCypher.VariableDeclaration
+import java.util.HashSet
+import java.util.LinkedList
+import org.slizaa.neo4j.opencypher.openCypher.VariableRef
+import org.slizaa.neo4j.opencypher.openCypher.NodePattern
+import org.slizaa.neo4j.opencypher.openCypher.MapLiteral
+import org.slizaa.neo4j.opencypher.openCypher.RelationshipPattern
+import org.eclipse.emf.ecore.resource.Resource
 
 class PostProcessor {
 	public def Cypher postProcessModel(SinglePartQuery model) {
@@ -65,12 +72,49 @@ class PostProcessor {
 			relDetails.get(i).relTypeNames += relTypeNamesToUse.selectRandomly(random)
 		}
 		
-		
+		//Filter returns
+		for(ret : model.eAllContents.filter(Return).toList) {
+			val usedVariables = new HashSet
+			val itemToDelete = new LinkedList
+			
+			for(i : ret.body.returnItems.items) {
+				val valRef = i.expression as VariableRef
+				val declaration = valRef.variableRef
+				if(usedVariables.contains(declaration)) {
+					itemToDelete += i
+				} else {
+					usedVariables += declaration
+				}			
+			}
+			
+			ret.body.returnItems.items.removeAll(itemToDelete)
+			
+ 		}
+ 		
+ 		
+ 		//filter mapliterals
+ 		
+ 		cypher.eAllContents.filter(NodePattern).forEach[
+ 			if(it.properties instanceof MapLiteral) {
+ 				it.properties = null
+ 			}
+ 		]
+ 		cypher.eAllContents.filter(RelationshipDetail).forEach[
+ 			if(it.properties instanceof MapLiteral) {
+ 				it.properties = null
+ 			}
+ 		]
+ 		
+ 		println(cypher.eAllContents.filter(StringLiteral).size)
 		
 		return cypher
 	}
 	
 	protected def String selectRandomly(List<String> collection, Random random) {
 		collection.get(random.nextInt(collection.size))
+	}
+	
+	def public static getSize(Resource r) {
+		r.allContents.size
 	}
 }
